@@ -1,0 +1,28 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "JAVA • All posts by \"dos命令\" tag",
+    "description": "爱编程，爱生活",
+    "home_page_url": "http://www.startanew.cn",
+    "items": [
+        {
+            "id": "http://www.startanew.cn/2020/07/14/windows-%E5%BF%AB%E6%8D%B7%E9%94%AE/",
+            "url": "http://www.startanew.cn/2020/07/14/windows-%E5%BF%AB%E6%8D%B7%E9%94%AE/",
+            "title": "windows 快捷键",
+            "date_published": "2020-07-14T00:52:04.000Z",
+            "content_html": "<ol>\n<li>F2   重命名</li>\n<li>shift+delete   永久删除文件</li>\n</ol>\n<a id=\"more\"></a>  \n<ol start=\"3\">\n<li>win  或  ctrl + esc   打开开始菜单</li>\n<li>win  + m   最新化隐藏所有窗口</li>\n<li>alt + F4  关闭当前程序</li>\n<li>alt +tab  窗口切换</li>\n<li>alt  +  esc   切换当前程序</li>\n</ol>\n",
+            "tags": [
+                "dos命令"
+            ]
+        },
+        {
+            "id": "http://www.startanew.cn/2020/07/14/dos%E5%91%BD%E4%BB%A4/",
+            "url": "http://www.startanew.cn/2020/07/14/dos%E5%91%BD%E4%BB%A4/",
+            "title": "dos命令",
+            "date_published": "2020-07-14T00:43:07.000Z",
+            "content_html": "<ol>\n<li>shutdown  -s  -t  180  -c ” 文本 “</li>\n<li>dir   查看目录</li>\n<li>start  文件名   打开文件</li>\n<li>type   文件名    查看文件</li>\n</ol>\n<a id=\"more\"></a>  \n<ol start=\"5\">\n<li>copy  con  文件名   创建文件  并写入内容  ctrl+Z 停止输入  enter  保存</li>\n<li>md   目录名   创建目录</li>\n<li>rd   目录名   删除目录</li>\n<li>ren  原名   新名    修改文件夹或文件名称</li>\n<li>del   文件名   删除文件</li>\n<li>copy   文件名   目标路径   拷贝文件</li>\n<li>move  文件名   目标路径   移动文件</li>\n<li>tree   列出文件树</li>\n<li>net use k: \\ip\\c$     将远程主机 c 盘映射到本地主机 K 盘</li>\n<li>net use k: \\ip\\c$   del   删除</li>\n<li>net  start 查看开启的服务</li>\n<li>net  start 服务名  开启服务</li>\n<li>net  stop 服务名  关闭服务</li>\n<li>net share     查看共享</li>\n<li>net share ipc$ 创建共享</li>\n<li>net share ipc$ /del   删除共享</li>\n<li>netstat -a   查看端口</li>\n<li>netstat -n    查看端口网络状态</li>\n<li>netstat -v   查看正在进行的工作</li>\n<li>net  user  用户名  密码  /add   添加用户</li>\n<li>net  user  用户名  /del  删除用户</li>\n<li>net  localgroup  administrator  用户名   /add   添加用户到 administrator  组</li>\n<li>calc  打开计算器</li>\n<li>charmap：启动字符映射表</li>\n<li>自动关机命令</li>\n</ol>\n<ul>\n<li>Shutdown -s -t 600：表示 600 秒后自动关机</li>\n<li>shutdown -a ：可取消定时关机</li>\n<li>Shutdown -r -t 600：表示 600 秒后自动重启</li>\n</ul>\n<ol start=\"30\">\n<li>control  控制面版</li>\n<li>netstat -ano | findstr “端口号” 查看端口占用情况</li>\n<li>tasklist | findstr pid  根据 pid 查询程序</li>\n<li>taskkill /f/t  /im  软件名称   杀死程序</li>\n</ol>\n",
+            "tags": [
+                "dos命令"
+            ]
+        }
+    ]
+}

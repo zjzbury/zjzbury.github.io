@@ -1,0 +1,681 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="JAVA" href="http://www.startanew.cn/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="JAVA" href="http://www.startanew.cn/atom.xml" />
+<link rel="alternate" type="application/json" title="JAVA" href="http://www.startanew.cn/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="员工关系管理" />
+
+
+<link rel="canonical" href="http://www.startanew.cn/2020/10/08/%E5%91%98%E5%B7%A5%E7%A6%BB%E8%81%8C%E7%AE%A1%E7%90%86/">
+
+
+
+  <title>
+第八章 员工离职管理 - 人力资源管理 |
+小小程序员 = JAVA = startanew Blog</title>
+<meta name="generator" content="Hexo 5.3.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">第八章 员工离职管理
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2020-10-08 22:36:42">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2020-10-08T22:36:42+08:00">2020-10-08</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>1.7k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>2 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">小小程序员</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="http://vps.startanew.cn/8574385535439588778763686%26fm%3D26%26gp%3D0.jpg">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86/" itemprop="item" rel="index" title="分类于 人力资源管理"><span itemprop="name">人力资源管理</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="http://www.startanew.cn/2020/10/08/%E5%91%98%E5%B7%A5%E7%A6%BB%E8%81%8C%E7%AE%A1%E7%90%86/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="startanew">
+    <meta itemprop="description" content="startanew Blog, 爱编程，爱生活">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="JAVA">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h3 id="题型分析-第八章占18分"><a class="markdownIt-Anchor" href="#题型分析-第八章占18分">#</a> 题型分析 (第八章占 18 分)</h3>
+<blockquote>
+<p>单选 5 题<br>
+填空一题<br>
+名词解释一题（必考）<br>
+简答一题（50%）<br>
+论述一题（20%）</p>
+</blockquote>
+<h3 id="名词解释"><a class="markdownIt-Anchor" href="#名词解释">#</a> 名词解释</h3>
+<h5 id="员工离职"><a class="markdownIt-Anchor" href="#员工离职">#</a> 员工离职</h5>
+<blockquote>
+<p>是雇员和雇主之间结束雇佣关系，员工离开原公司的行为。</p>
+</blockquote>
+<h5 id="功能性离职"><a class="markdownIt-Anchor" href="#功能性离职">#</a> 功能性离职</h5>
+<blockquote>
+<p>指员工个人想离开组织，而组织也不刻意挽留情况下的离职行为</p>
+</blockquote>
+<h5 id="非功能性离职"><a class="markdownIt-Anchor" href="#非功能性离职">#</a> 非功能性离职</h5>
+<blockquote>
+<p>也称功能不良性离职，是指员工个人想离开组织，但组织希望阻止的离职行为</p>
+</blockquote>
+<h5 id="员工隐性离职1901"><a class="markdownIt-Anchor" href="#员工隐性离职1901">#</a> 员工隐性离职 <code>1901</code></h5>
+<blockquote>
+<p>是指员工没有与组织终止雇佣契约关系，但又不在本组织内任职的行为，例如临时性下岗职工，不符合法律规范的内退职工，以及将人事关系挂靠在组织内，但在其他组织任职和获取报酬的行为</p>
+</blockquote>
+<h5 id="可避免离职"><a class="markdownIt-Anchor" href="#可避免离职">#</a> 可避免离职</h5>
+<blockquote>
+<p>是指经过组织或员工个人的努力可以不发生的离职，如由于工作条件恶劣而导致的员工离职，由于管理者决策失误导致经营不善而引发的裁员等</p>
+</blockquote>
+<h5 id="经济性裁员企业内部组织变化而引起的集中裁员"><a class="markdownIt-Anchor" href="#经济性裁员企业内部组织变化而引起的集中裁员">#</a> 经济性裁员 <code>企业内部组织变化而引起的集中裁员</code></h5>
+<blockquote>
+<p>是指由于市场因素或者企业经营不善，导致经营状况出现严重困难，盈利能力下降，企业生存和发展受到挑战，为降低运营成本而被迫采取的裁员行为</p>
+</blockquote>
+<h5 id="结构性裁员"><a class="markdownIt-Anchor" href="#结构性裁员">#</a> 结构性裁员</h5>
+<blockquote>
+<p>是指由于企业的业务方向、提供的产品或服务发生变化，导致内部组织机构的重组、分立或撤销，进而引起的集中裁员</p>
+</blockquote>
+<h5 id="优化性裁员1801"><a class="markdownIt-Anchor" href="#优化性裁员1801">#</a> 优化性裁员 <code>1801</code></h5>
+<blockquote>
+<p>是企业为保持人力资源的质量，根据绩效考核结果解聘不合格员工的行为。目的是淘汰不适合岗位的人员，调剂出岗位空缺并补充新的人员</p>
+</blockquote>
+<h5 id="离职成本1910-2001"><a class="markdownIt-Anchor" href="#离职成本1910-2001">#</a> 离职成本 <code>1910、2001</code></h5>
+<blockquote>
+<p>是指由于员工离职而发生的或将要发生的企业经济性利益的总流出</p>
+</blockquote>
+<h5 id="离职面谈"><a class="markdownIt-Anchor" href="#离职面谈">#</a> 离职面谈</h5>
+<blockquote>
+<p>离职面谈通常是指雇员主动提出离职或企业为通告雇员被解雇，企业与雇员进行的谈话</p>
+</blockquote>
+<h5 id="裁员"><a class="markdownIt-Anchor" href="#裁员">#</a> 裁员</h5>
+<blockquote>
+<p>指企业基于自身的人力资源需求，以非员工意愿单方面解除聘用合同的方式，裁掉不适应企业发展或相对富余的员工，与其终止雇佣关系的行为</p>
+</blockquote>
+<h3 id="主观题"><a class="markdownIt-Anchor" href="#主观题">#</a> 主观题</h3>
+<h5 id="离职成本的概念及其构成"><a class="markdownIt-Anchor" href="#离职成本的概念及其构成">#</a> 离职成本的概念及其构成</h5>
+<blockquote>
+<p>离职成本包括 <code>1901</code>  离职补偿金（赔偿金）、违约赔偿金、解雇安置费、离职前的低效成本和职位空缺成本等</p>
+</blockquote>
+<h5 id="有效控制员工主动离职成本"><a class="markdownIt-Anchor" href="#有效控制员工主动离职成本">#</a> 有效控制员工主动离职成本</h5>
+<ol>
+<li>分清人员类别，有的放矢，控制流动率。</li>
+<li>严把招聘关，将有明显跳槽倾向的候选人尽早挡在企业之外。</li>
+<li>加强知识管理。</li>
+<li>用好培训协议</li>
+</ol>
+<h5 id="试述离职面谈的概念-目的及作用"><a class="markdownIt-Anchor" href="#试述离职面谈的概念-目的及作用">#</a> 试述离职面谈的概念、目的及作用</h5>
+<ul>
+<li>目的： <code>了解原因，减轻负面；揭示问题，采取措施；离职挽留。</code></li>
+</ul>
+<ol>
+<li>对员工离职的原因有更深入的了解，以减轻离职对其他员工带来的负面心理及对企业形象的不利影响。</li>
+<li>揭示出企业在员工管理中存在的问题，采取有针对性的措施加以纠正。</li>
+<li>对于有价值的离职员工做最后挽留。</li>
+</ol>
+<ul>
+<li>作用： <code>体现人性；改善关系；缓解矛盾；重新决策；检验效果。</code></li>
+</ul>
+<ol>
+<li>体现企业管理的人性化。</li>
+<li>广泛听取员工意见，改善组织与员工的关系。</li>
+<li>通过双向沟通缓解矛盾和冲突。</li>
+<li>给员工重新决策的机会。</li>
+<li>检验组织政策的有效性。</li>
+</ol>
+<h5 id="试述挽留优秀员工的方法物事共同晋升扩大丰富挑战竞争薪酬结合职组"><a class="markdownIt-Anchor" href="#试述挽留优秀员工的方法物事共同晋升扩大丰富挑战竞争薪酬结合职组">#</a> 试述挽留优秀员工的方法 <code>物事共同，晋升扩大；丰富挑战；竞争薪酬；结合职组 </code></h5>
+<ol>
+<li>物质与事业共同留人；</li>
+<li>晋升留人及工作扩大化；</li>
+<li>工作丰富化及增强工作挑战性；</li>
+<li>制定具有竞争力的薪酬福利制度；</li>
+<li>将员工的职业生涯规划与组级规划结合起来</li>
+</ol>
+<h5 id="简述裁员的概念及其作用"><a class="markdownIt-Anchor" href="#简述裁员的概念及其作用">#</a> 简述裁员的概念及其作用</h5>
+<ul>
+<li>裁员的作用 <code>1801</code></li>
+</ul>
+<ol>
+<li>适应市场竞争的需要；</li>
+<li>适应企业变革的工具；</li>
+<li>保持企业生机和活力的手段</li>
+</ol>
+<h5 id="员工主动离职的留用策略及如何消除或降低员工主动离职对组织的影响"><a class="markdownIt-Anchor" href="#员工主动离职的留用策略及如何消除或降低员工主动离职对组织的影响">#</a> 员工主动离职的留用策略，及如何消除或降低员工主动离职对组织的影响</h5>
+<ul>
+<li>留用策略</li>
+</ul>
+<ol>
+<li>设计具有激励作用的薪酬与福利体系：待遇留人是企业留住人才最基础的一步。</li>
+<li>事业留人。</li>
+<li>感情留人。</li>
+<li>制度留人。</li>
+<li>环境留人。</li>
+</ol>
+<ul>
+<li>消除影响【1410 论】</li>
+</ul>
+<ol>
+<li>重视离职事件。对离职事件的分析不能就事论事，要注意收集相关的管理制度和政策实施的问题，并关注事件之间的相互联系，避免 “集体跳槽” 和 “恶性跳槽” 事件给组织带来的巨大损失。</li>
+<li>重视离职面谈。尽量询问出离职的真正原因，特别是与公司管理模式、管理程序、薪酬福利、开发激励等制度和政策相关的问题，这些信息都可对公司改进管理提供依据。</li>
+<li>降低离职影响。及时检查公司是否存在诱发员工离职的一些需要改进的问题，如果存在要马上采取善后措施，以避免其他优秀员工再因为同样的原因离职。</li>
+<li>真诚挽留离职员工。对企业有价值的离职员工，要诚恳挽留，或者提出希望将来再次合作的承诺。</li>
+</ol>
+<h5 id="辞退员工的原则及程序"><a class="markdownIt-Anchor" href="#辞退员工的原则及程序">#</a> 辞退员工的原则及程序</h5>
+<ul>
+<li>原则：</li>
+</ul>
+<ol>
+<li>有据，以事实为依据；</li>
+<li>有理，考虑员工的体面；</li>
+<li>有力，态度坚决。</li>
+</ol>
+<ul>
+<li>程序： <code>1501、1901 简</code> ： <code>提前警告；申请材料；准备核对单；手续办理；善后工作；公开消息</code></li>
+</ul>
+<ol>
+<li>辞退决定前的正式警告；</li>
+<li>提交相关申请材料；</li>
+<li>准备离职核对单；</li>
+<li>辞退员工离职手续办理；</li>
+<li>员工辞退后的善后工作；</li>
+<li>公开员工的辞退消息</li>
+</ol>
+
+      <div class="tags">
+          <a href="/tags/%E5%91%98%E5%B7%A5%E5%85%B3%E7%B3%BB%E7%AE%A1%E7%90%86/" rel="tag"><i class="ic i-tag"></i> 员工关系管理</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2020-10-11 16:14:44" itemprop="dateModified" datetime="2020-10-11T16:14:44+08:00">2020-10-11</time>
+  </span>
+  <span id="2020/10/08/员工离职管理/" class="item leancloud_visitors" data-flag-title="第八章 员工离职管理" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>startanew <i class="ic i-at"><em>@</em></i>JAVA
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="http://www.startanew.cn/2020/10/08/%E5%91%98%E5%B7%A5%E7%A6%BB%E8%81%8C%E7%AE%A1%E7%90%86/" title="第八章 员工离职管理">http://www.startanew.cn/2020/10/08/员工离职管理/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2020/10/08/%E5%91%98%E5%B7%A5%E5%BC%82%E5%8A%A8%E7%AE%A1%E7%90%86/" itemprop="url" rel="prev" data-background-image="http:&#x2F;&#x2F;vps.startanew.cn&#x2F;8574385535439588778763686%26fm%3D26%26gp%3D0.jpg" title="第七章 员工异动管理">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 人力资源管理</span>
+  <h3>第七章 员工异动管理</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2020/10/08/%E5%8E%8B%E5%8A%9B%E4%B8%8E%E5%BF%83%E7%90%86%E5%81%A5%E5%BA%B7%E7%AE%A1%E7%90%86/" itemprop="url" rel="next" data-background-image="http:&#x2F;&#x2F;vps.startanew.cn&#x2F;8574385535439588778763686%26fm%3D26%26gp%3D0.jpg" title="第九章 压力与心理健康管理">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 人力资源管理</span>
+  <h3>第九章 压力与心理健康管理</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E5%9E%8B%E5%88%86%E6%9E%90-%E7%AC%AC%E5%85%AB%E7%AB%A0%E5%8D%A018%E5%88%86"><span class="toc-number">1.</span> <span class="toc-text"> 题型分析 (第八章占 18 分)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A"><span class="toc-number">2.</span> <span class="toc-text"> 名词解释</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%91%98%E5%B7%A5%E7%A6%BB%E8%81%8C"><span class="toc-number">2.0.1.</span> <span class="toc-text"> 员工离职</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E6%80%A7%E7%A6%BB%E8%81%8C"><span class="toc-number">2.0.2.</span> <span class="toc-text"> 功能性离职</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%9D%9E%E5%8A%9F%E8%83%BD%E6%80%A7%E7%A6%BB%E8%81%8C"><span class="toc-number">2.0.3.</span> <span class="toc-text"> 非功能性离职</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%91%98%E5%B7%A5%E9%9A%90%E6%80%A7%E7%A6%BB%E8%81%8C1901"><span class="toc-number">2.0.4.</span> <span class="toc-text"> 员工隐性离职 1901</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%AF%E9%81%BF%E5%85%8D%E7%A6%BB%E8%81%8C"><span class="toc-number">2.0.5.</span> <span class="toc-text"> 可避免离职</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%8F%E6%B5%8E%E6%80%A7%E8%A3%81%E5%91%98%E4%BC%81%E4%B8%9A%E5%86%85%E9%83%A8%E7%BB%84%E7%BB%87%E5%8F%98%E5%8C%96%E8%80%8C%E5%BC%95%E8%B5%B7%E7%9A%84%E9%9B%86%E4%B8%AD%E8%A3%81%E5%91%98"><span class="toc-number">2.0.6.</span> <span class="toc-text"> 经济性裁员 企业内部组织变化而引起的集中裁员</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E6%80%A7%E8%A3%81%E5%91%98"><span class="toc-number">2.0.7.</span> <span class="toc-text"> 结构性裁员</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BC%98%E5%8C%96%E6%80%A7%E8%A3%81%E5%91%981801"><span class="toc-number">2.0.8.</span> <span class="toc-text"> 优化性裁员 1801</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%A6%BB%E8%81%8C%E6%88%90%E6%9C%AC1910-2001"><span class="toc-number">2.0.9.</span> <span class="toc-text"> 离职成本 1910、2001</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%A6%BB%E8%81%8C%E9%9D%A2%E8%B0%88"><span class="toc-number">2.0.10.</span> <span class="toc-text"> 离职面谈</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A3%81%E5%91%98"><span class="toc-number">2.0.11.</span> <span class="toc-text"> 裁员</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A7%82%E9%A2%98"><span class="toc-number">3.</span> <span class="toc-text"> 主观题</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%A6%BB%E8%81%8C%E6%88%90%E6%9C%AC%E7%9A%84%E6%A6%82%E5%BF%B5%E5%8F%8A%E5%85%B6%E6%9E%84%E6%88%90"><span class="toc-number">3.0.1.</span> <span class="toc-text"> 离职成本的概念及其构成</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9C%89%E6%95%88%E6%8E%A7%E5%88%B6%E5%91%98%E5%B7%A5%E4%B8%BB%E5%8A%A8%E7%A6%BB%E8%81%8C%E6%88%90%E6%9C%AC"><span class="toc-number">3.0.2.</span> <span class="toc-text"> 有效控制员工主动离职成本</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AF%95%E8%BF%B0%E7%A6%BB%E8%81%8C%E9%9D%A2%E8%B0%88%E7%9A%84%E6%A6%82%E5%BF%B5-%E7%9B%AE%E7%9A%84%E5%8F%8A%E4%BD%9C%E7%94%A8"><span class="toc-number">3.0.3.</span> <span class="toc-text"> 试述离职面谈的概念、目的及作用</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AF%95%E8%BF%B0%E6%8C%BD%E7%95%99%E4%BC%98%E7%A7%80%E5%91%98%E5%B7%A5%E7%9A%84%E6%96%B9%E6%B3%95%E7%89%A9%E4%BA%8B%E5%85%B1%E5%90%8C%E6%99%8B%E5%8D%87%E6%89%A9%E5%A4%A7%E4%B8%B0%E5%AF%8C%E6%8C%91%E6%88%98%E7%AB%9E%E4%BA%89%E8%96%AA%E9%85%AC%E7%BB%93%E5%90%88%E8%81%8C%E7%BB%84"><span class="toc-number">3.0.4.</span> <span class="toc-text"> 试述挽留优秀员工的方法 物事共同，晋升扩大；丰富挑战；竞争薪酬；结合职组 </span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AE%80%E8%BF%B0%E8%A3%81%E5%91%98%E7%9A%84%E6%A6%82%E5%BF%B5%E5%8F%8A%E5%85%B6%E4%BD%9C%E7%94%A8"><span class="toc-number">3.0.5.</span> <span class="toc-text"> 简述裁员的概念及其作用</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%91%98%E5%B7%A5%E4%B8%BB%E5%8A%A8%E7%A6%BB%E8%81%8C%E7%9A%84%E7%95%99%E7%94%A8%E7%AD%96%E7%95%A5%E5%8F%8A%E5%A6%82%E4%BD%95%E6%B6%88%E9%99%A4%E6%88%96%E9%99%8D%E4%BD%8E%E5%91%98%E5%B7%A5%E4%B8%BB%E5%8A%A8%E7%A6%BB%E8%81%8C%E5%AF%B9%E7%BB%84%E7%BB%87%E7%9A%84%E5%BD%B1%E5%93%8D"><span class="toc-number">3.0.6.</span> <span class="toc-text"> 员工主动离职的留用策略，及如何消除或降低员工主动离职对组织的影响</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BE%9E%E9%80%80%E5%91%98%E5%B7%A5%E7%9A%84%E5%8E%9F%E5%88%99%E5%8F%8A%E7%A8%8B%E5%BA%8F"><span class="toc-number">3.0.7.</span> <span class="toc-text"> 辞退员工的原则及程序</span></a></li></ol></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/2020/10/08/%E5%B7%A5%E4%BD%9C%E5%88%86%E6%9E%90%E7%9A%84%E5%8E%86%E5%8F%B2%E4%B8%8E%E5%8F%91%E5%B1%95/" rel="bookmark" title="第一章 工作分析的历史与发展">第一章 工作分析的历史与发展</a></li><li><a href="/2020/10/08/%E5%B7%A5%E4%BD%9C%E5%88%86%E6%9E%90%E6%A6%82%E8%BF%B0/" rel="bookmark" title="第二章 工作分析概述">第二章 工作分析概述</a></li><li><a href="/2020/10/08/%E5%B7%A5%E4%BD%9C%E5%88%86%E6%9E%90%E7%9A%84%E4%B8%BB%E8%A6%81%E6%96%B9%E6%B3%95/" rel="bookmark" title="第三章 工作分析的主要方法">第三章 工作分析的主要方法</a></li><li><a href="/2020/10/08/%E5%B7%A5%E4%BD%9C%E5%88%86%E6%9E%90%E7%9A%84%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/" rel="bookmark" title="第四章 工作分析的前期准备工作">第四章 工作分析的前期准备工作</a></li><li><a href="/2020/10/08/%E5%B7%A5%E4%BD%9C%E5%88%86%E6%9E%90%E7%9A%84%E6%B5%81%E7%A8%8B/" rel="bookmark" title="第五章 工作分析的流程">第五章 工作分析的流程</a></li><li><a href="/2020/10/08/%E5%B7%A5%E4%BD%9C%E5%88%86%E6%9E%90%E7%BB%93%E6%9E%9C%E5%8F%8A%E5%BA%94%E7%94%A8/" rel="bookmark" title="第六章 工作分析结果及应用">第六章 工作分析结果及应用</a></li><li><a href="/2020/10/08/%E5%B2%97%E4%BD%8D%E8%AF%84%E4%BB%B7/" rel="bookmark" title="第七章 岗位评价">第七章 岗位评价</a></li><li><a href="/2020/10/08/%E5%B7%A5%E4%BD%9C%E8%AE%BE%E8%AE%A1/" rel="bookmark" title="第八章 工作设计">第八章 工作设计</a></li><li><a href="/2020/10/08/%E5%B7%A5%E4%BD%9C%E5%88%86%E6%9E%90%E6%95%88%E6%9E%9C%E8%AF%84%E4%BC%B0/" rel="bookmark" title="第九章 工作分析效果评估">第九章 工作分析效果评估</a></li><li><a href="/2020/10/08/%E5%B7%A5%E4%BD%9C%E5%88%86%E6%9E%90%E5%9C%A8%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E4%B8%AD%E7%9A%84%E5%BA%94/" rel="bookmark" title="第十章 工作分析在人力资源管理中的应用">第十章 工作分析在人力资源管理中的应用</a></li><li><a href="/2020/10/08/%E5%91%98%E5%B7%A5%E5%85%B3%E7%B3%BB%E7%AE%A1%E7%90%86%E6%A6%82%E8%AE%BA/" rel="bookmark" title="第一章 员工关系管理概论">第一章 员工关系管理概论</a></li><li><a href="/2020/10/08/%E5%8A%B3%E5%8A%A8%E5%85%B3%E7%B3%BB%E7%AE%A1%E7%90%86/" rel="bookmark" title="第二章 劳动关系管理">第二章 劳动关系管理</a></li><li><a href="/2020/10/08/%E5%91%98%E5%B7%A5%E6%B2%9F%E9%80%9A%E7%AE%A1%E7%90%86/" rel="bookmark" title="第三章 员工沟通管理">第三章 员工沟通管理</a></li><li><a href="/2020/10/08/%E5%91%98%E5%B7%A5%E5%BF%83%E7%90%86%E5%A5%91%E7%BA%A6%E4%B8%8E%E6%BB%A1%E6%84%8F%E5%BA%A6%E7%AE%A1%E7%90%86/" rel="bookmark" title="第四章 员工心理契约与满意度管理">第四章 员工心理契约与满意度管理</a></li><li><a href="/2020/10/08/%E5%86%B2%E7%AA%81%E7%AE%A1%E7%90%86%E5%92%8C%E5%8D%B1%E6%9C%BA%E7%AE%A1%E7%90%86/" rel="bookmark" title="第五章 冲突管理和危机管理">第五章 冲突管理和危机管理</a></li><li><a href="/2020/10/08/%E5%91%98%E5%B7%A5%E7%BA%AA%E5%BE%8B%E7%AE%A1%E7%90%86/" rel="bookmark" title="第六章 员工纪律管理">第六章 员工纪律管理</a></li><li><a href="/2020/10/08/%E5%91%98%E5%B7%A5%E5%BC%82%E5%8A%A8%E7%AE%A1%E7%90%86/" rel="bookmark" title="第七章 员工异动管理">第七章 员工异动管理</a></li><li class="active"><a href="/2020/10/08/%E5%91%98%E5%B7%A5%E7%A6%BB%E8%81%8C%E7%AE%A1%E7%90%86/" rel="bookmark" title="第八章 员工离职管理">第八章 员工离职管理</a></li><li><a href="/2020/10/08/%E5%8E%8B%E5%8A%9B%E4%B8%8E%E5%BF%83%E7%90%86%E5%81%A5%E5%BA%B7%E7%AE%A1%E7%90%86/" rel="bookmark" title="第九章 压力与心理健康管理">第九章 压力与心理健康管理</a></li><li><a href="/2020/10/08/%E5%8A%B3%E5%8A%A8%E4%BA%89%E8%AE%AE%E7%AE%A1%E7%90%86/" rel="bookmark" title="第十章 劳动争议管理">第十章 劳动争议管理</a></li><li><a href="/2020/10/08/%E5%8F%8D%E5%AF%B9%E5%A4%96%E5%9B%BD%E4%BE%B5%E7%95%A5%E7%9A%84%E6%96%97%E4%BA%89/" rel="bookmark" title="第一章 反对外国侵略的斗争">第一章 反对外国侵略的斗争</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="startanew"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">startanew</p>
+  <div class="description" itemprop="description">爱编程，爱生活</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">68</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">5</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">19</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL3pqemJ1cnk=" title="https:&#x2F;&#x2F;github.com&#x2F;zjzbury"><i class="ic i-github"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTEzMDczMjU3OTM=" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;1307325793"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOnpqenN0YXJ0YW5ld0AxNjNjb20=" title="mailto:zjzstartanew@163com"><i class="ic i-envelope"></i></span>
+      <span class="exturl item douban" data-url="aHR0cHM6Ly93d3cuZG91YmFuLmNvbS9wZW9wbGUvMjIzOTg5NzEyLw==" title="https:&#x2F;&#x2F;www.douban.com&#x2F;people&#x2F;223989712&#x2F;"><i class="ic i-douban"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/tool/" rel="section"><i class="ic i-magic"></i>工具</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/resources/" rel="section"><i class="ic i-heart"></i>资源</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2020/10/08/%E5%91%98%E5%B7%A5%E5%BC%82%E5%8A%A8%E7%AE%A1%E7%90%86/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2020/10/08/%E5%8E%8B%E5%8A%9B%E4%B8%8E%E5%BF%83%E7%90%86%E5%81%A5%E5%BA%B7%E7%AE%A1%E7%90%86/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B/" title="分类于 编程">编程</a>
+</div>
+
+    <span><a href="/2020/07/13/mysql-%E4%BC%98%E5%8C%96%EF%BC%88%E4%B8%80%EF%BC%89/" title="mysql 优化（一）">mysql 优化（一）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86/" title="分类于 人力资源管理">人力资源管理</a>
+</div>
+
+    <span><a href="/2020/10/08/%E5%91%98%E5%B7%A5%E5%BF%83%E7%90%86%E5%A5%91%E7%BA%A6%E4%B8%8E%E6%BB%A1%E6%84%8F%E5%BA%A6%E7%AE%A1%E7%90%86/" title="第四章 员工心理契约与满意度管理">第四章 员工心理契约与满意度管理</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%B7%A5%E4%BD%9C/" title="分类于 工作">工作</a>
+</div>
+
+    <span><a href="/2020/07/12/git-%E5%91%BD%E4%BB%A4%E4%B8%80-%E5%9F%BA%E7%A1%80%E7%AF%87/" title="git 命令一 (基础篇)">git 命令一 (基础篇)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%B7%A5%E4%BD%9C/" title="分类于 工作">工作</a>
+</div>
+
+    <span><a href="/2020/07/13/swagger%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90api%E6%96%87%E6%A1%A3/" title="swagger自动生成api文档">swagger自动生成api文档</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B/" title="分类于 编程">编程</a>
+</div>
+
+    <span><a href="/2020/07/13/mysql%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6-mycat/" title="mysql主从复制-mycat">mysql主从复制-mycat</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B/" title="分类于 编程">编程</a>
+</div>
+
+    <span><a href="/2020/07/12/maven%E6%89%93%E5%8C%85jar/" title="maven打包jar">maven打包jar</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86/" title="分类于 人力资源管理">人力资源管理</a>
+</div>
+
+    <span><a href="/2020/10/08/%E5%8F%8D%E5%AF%B9%E5%A4%96%E5%9B%BD%E4%BE%B5%E7%95%A5%E7%9A%84%E6%96%97%E4%BA%89/" title="第一章 反对外国侵略的斗争">第一章 反对外国侵略的斗争</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%B7%A5%E4%BD%9C/" title="分类于 工作">工作</a>
+</div>
+
+    <span><a href="/2020/07/12/redis%E5%AE%89%E8%A3%85/" title="redis安装">redis安装</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B/" title="分类于 编程">编程</a>
+</div>
+
+    <span><a href="/2020/07/14/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85docker/" title="树莓派安装docker">树莓派安装docker</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%B7%A5%E4%BD%9C/" title="分类于 工作">工作</a>
+</div>
+
+    <span><a href="/2020/10/18/git-%E6%8B%89%E5%8F%96%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%85%A8%E9%83%A8%E5%88%86%E6%94%AF/" title="git 拉取远程仓库全部分支">git 拉取远程仓库全部分支</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2020</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">startanew @ 小小程序员</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">200k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">3:02</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2020/10/08/员工离职管理/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

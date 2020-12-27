@@ -1,0 +1,646 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="JAVA" href="http://www.startanew.cn/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="JAVA" href="http://www.startanew.cn/atom.xml" />
+<link rel="alternate" type="application/json" title="JAVA" href="http://www.startanew.cn/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="mysql" />
+
+
+<link rel="canonical" href="http://www.startanew.cn/2020/07/13/mysql%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6-mycat/">
+
+
+
+  <title>
+mysql主从复制-mycat - 编程 |
+小小程序员 = JAVA = startanew Blog</title>
+<meta name="generator" content="Hexo 5.3.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">mysql主从复制-mycat
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2020-07-13 16:50:13">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2020-07-13T16:50:13+08:00">2020-07-13</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>19k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>18 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">小小程序员</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="http://vps.startanew.cn/u%3D2742417061%2C4093062017%26fm%3D26%26gp%3D0.jpg">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="item" rel="index" title="分类于 编程"><span itemprop="name">编程</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="http://www.startanew.cn/2020/07/13/mysql%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6-mycat/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="startanew">
+    <meta itemprop="description" content="startanew Blog, 爱编程，爱生活">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="JAVA">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h4 id="基本环境"><a class="markdownIt-Anchor" href="#基本环境">#</a> 基本环境</h4>
+<ul>
+<li>master1：172.18.12.1</li>
+<li>master2：172.18.12.2</li>
+<li>slave1：172.18.12.3</li>
+<li>slave2：172.18.12.4</li>
+<li>架构双主双从</li>
+</ul>
+<a id="more"></a>
+<h4 id="mycat-配置"><a class="markdownIt-Anchor" href="#mycat-配置">#</a> mycat 配置</h4>
+<p>server.xml 配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;!-- - - Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); </span><br><span class="line">- you may not use this file except in compliance with the License. - You </span><br><span class="line">may obtain a copy of the License at - - http:&#x2F;&#x2F;www.apache.org&#x2F;licenses&#x2F;LICENSE-2.0 </span><br><span class="line">- - Unless required by applicable law or agreed to in writing, software - </span><br><span class="line">distributed under the License is distributed on an &quot;AS IS&quot; BASIS, - WITHOUT </span><br><span class="line">WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. - See the </span><br><span class="line">License for the specific language governing permissions and - limitations </span><br><span class="line">under the License. --&gt;</span><br><span class="line">&lt;!DOCTYPE mycat:server SYSTEM &quot;server.dtd&quot;&gt;</span><br><span class="line">&lt;mycat:server xmlns:mycat&#x3D;&quot;http:&#x2F;&#x2F;io.mycat&#x2F;&quot;&gt;</span><br><span class="line">&lt;system&gt;</span><br><span class="line">&lt;property name&#x3D;&quot;nonePasswordLogin&quot;&gt;0&lt;&#x2F;property&gt; &lt;!-- 0为需要密码登陆、1为不需要密码登陆 ,默认为0，设置为1则需要指定默认账户--&gt;</span><br><span class="line">&lt;property name&#x3D;&quot;useHandshakeV10&quot;&gt;1&lt;&#x2F;property&gt;</span><br><span class="line">&lt;property name&#x3D;&quot;useSqlStat&quot;&gt;0&lt;&#x2F;property&gt; &lt;!-- 1为开启实时统计、0为关闭 --&gt;</span><br><span class="line">&lt;property name&#x3D;&quot;useGlobleTableCheck&quot;&gt;0&lt;&#x2F;property&gt; &lt;!-- 1为开启全加班一致性检测、0为关闭 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;property name&#x3D;&quot;sequnceHandlerType&quot;&gt;2&lt;&#x2F;property&gt;</span><br><span class="line">&lt;property name&#x3D;&quot;subqueryRelationshipCheck&quot;&gt;false&lt;&#x2F;property&gt; &lt;!-- 子查询中存在关联查询的情况下,检查关联字段中是否有分片字段 .默认 false --&gt;</span><br><span class="line">&lt;!-- &lt;property name&#x3D;&quot;useCompression&quot;&gt;1&lt;&#x2F;property&gt;--&gt; &lt;!--1为开启mysql压缩协议--&gt;</span><br><span class="line">&lt;!-- &lt;property name&#x3D;&quot;fakeMySQLVersion&quot;&gt;5.6.20&lt;&#x2F;property&gt;--&gt; &lt;!--设置模拟的MySQL版本号--&gt;</span><br><span class="line">&lt;!-- &lt;property name&#x3D;&quot;processorBufferChunk&quot;&gt;40960&lt;&#x2F;property&gt; --&gt;</span><br><span class="line">&lt;!-- </span><br><span class="line">&lt;property name&#x3D;&quot;processors&quot;&gt;1&lt;&#x2F;property&gt; </span><br><span class="line">&lt;property name&#x3D;&quot;processorExecutor&quot;&gt;32&lt;&#x2F;property&gt; </span><br><span class="line">--&gt;</span><br><span class="line">&lt;!--默认为type 0: DirectByteBufferPool | type 1 ByteBufferArena | type 2 NettyBufferPool --&gt;</span><br><span class="line">&lt;property name&#x3D;&quot;processorBufferPoolType&quot;&gt;0&lt;&#x2F;property&gt;</span><br><span class="line">&lt;!--默认是65535 64K 用于sql解析时最大文本长度 --&gt;</span><br><span class="line">&lt;!--&lt;property name&#x3D;&quot;maxStringLiteralLength&quot;&gt;65535&lt;&#x2F;property&gt;--&gt;</span><br><span class="line">&lt;!--&lt;property name&#x3D;&quot;sequnceHandlerType&quot;&gt;0&lt;&#x2F;property&gt;--&gt;</span><br><span class="line">&lt;!--&lt;property name&#x3D;&quot;backSocketNoDelay&quot;&gt;1&lt;&#x2F;property&gt;--&gt;</span><br><span class="line">&lt;!--&lt;property name&#x3D;&quot;frontSocketNoDelay&quot;&gt;1&lt;&#x2F;property&gt;--&gt;</span><br><span class="line">&lt;!--&lt;property name&#x3D;&quot;processorExecutor&quot;&gt;16&lt;&#x2F;property&gt;--&gt;</span><br><span class="line">&lt;!--</span><br><span class="line">&lt;property name&#x3D;&quot;serverPort&quot;&gt;8066&lt;&#x2F;property&gt; &lt;property name&#x3D;&quot;managerPort&quot;&gt;9066&lt;&#x2F;property&gt; </span><br><span class="line">&lt;property name&#x3D;&quot;idleTimeout&quot;&gt;300000&lt;&#x2F;property&gt; &lt;property name&#x3D;&quot;bindIp&quot;&gt;0.0.0.0&lt;&#x2F;property&gt; </span><br><span class="line">&lt;property name&#x3D;&quot;frontWriteQueueSize&quot;&gt;4096&lt;&#x2F;property&gt; &lt;property name&#x3D;&quot;processors&quot;&gt;32&lt;&#x2F;property&gt; --&gt;</span><br><span class="line">&lt;!--分布式事务开关，0为不过滤分布式事务，1为过滤分布式事务（如果分布式事务内只涉及全局表，则不过滤），2为不过滤分布式事务,但是记录分布式事务日志--&gt;</span><br><span class="line">&lt;property name&#x3D;&quot;handleDistributedTransactions&quot;&gt;0&lt;&#x2F;property&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--</span><br><span class="line">off heap for merge&#x2F;order&#x2F;group&#x2F;limit 1开启 0关闭</span><br><span class="line">--&gt;</span><br><span class="line">&lt;property name&#x3D;&quot;useOffHeapForMerge&quot;&gt;1&lt;&#x2F;property&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--</span><br><span class="line">单位为m</span><br><span class="line">--&gt;</span><br><span class="line">&lt;property name&#x3D;&quot;memoryPageSize&quot;&gt;64k&lt;&#x2F;property&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--</span><br><span class="line">单位为k</span><br><span class="line">--&gt;</span><br><span class="line">&lt;property name&#x3D;&quot;spillsFileBufferSize&quot;&gt;1k&lt;&#x2F;property&gt;</span><br><span class="line"></span><br><span class="line">&lt;property name&#x3D;&quot;useStreamOutput&quot;&gt;0&lt;&#x2F;property&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--</span><br><span class="line">单位为m</span><br><span class="line">--&gt;</span><br><span class="line">&lt;property name&#x3D;&quot;systemReserveMemorySize&quot;&gt;384m&lt;&#x2F;property&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;!--是否采用zookeeper协调切换 --&gt;</span><br><span class="line">&lt;property name&#x3D;&quot;useZKSwitch&quot;&gt;false&lt;&#x2F;property&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- XA Recovery Log日志路径 --&gt;</span><br><span class="line">&lt;!--&lt;property name&#x3D;&quot;XARecoveryLogBaseDir&quot;&gt;.&#x2F;&lt;&#x2F;property&gt;--&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- XA Recovery Log日志名称 --&gt;</span><br><span class="line">&lt;!--&lt;property name&#x3D;&quot;XARecoveryLogBaseName&quot;&gt;tmlog&lt;&#x2F;property&gt;--&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;system&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 全局SQL防火墙设置 --&gt;</span><br><span class="line">&lt;!--白名单可以使用通配符%或着*--&gt;</span><br><span class="line">&lt;!--例如&lt;host host&#x3D;&quot;127.0.0.*&quot; user&#x3D;&quot;root&quot;&#x2F;&gt;--&gt;</span><br><span class="line">&lt;!--例如&lt;host host&#x3D;&quot;127.0.*&quot; user&#x3D;&quot;root&quot;&#x2F;&gt;--&gt;</span><br><span class="line">&lt;!--例如&lt;host host&#x3D;&quot;127.*&quot; user&#x3D;&quot;root&quot;&#x2F;&gt;--&gt;</span><br><span class="line">&lt;!--例如&lt;host host&#x3D;&quot;1*7.*&quot; user&#x3D;&quot;root&quot;&#x2F;&gt;--&gt;</span><br><span class="line">&lt;!--这些配置情况下对于127.0.0.1都能以root账户登录--&gt;</span><br><span class="line">&lt;!--</span><br><span class="line">&lt;firewall&gt;</span><br><span class="line">&lt;whitehost&gt;</span><br><span class="line">&lt;host host&#x3D;&quot;1*7.0.0.*&quot; user&#x3D;&quot;root&quot;&#x2F;&gt;</span><br><span class="line">&lt;&#x2F;whitehost&gt;</span><br><span class="line">&lt;blacklist check&#x3D;&quot;false&quot;&gt;</span><br><span class="line">&lt;&#x2F;blacklist&gt;</span><br><span class="line">&lt;&#x2F;firewall&gt;</span><br><span class="line">--&gt;</span><br><span class="line"></span><br><span class="line">&lt;user name&#x3D;&quot;root&quot; defaultAccount&#x3D;&quot;true&quot;&gt;</span><br><span class="line">&lt;property name&#x3D;&quot;password&quot;&gt;1234567&lt;&#x2F;property&gt;</span><br><span class="line">&lt;property name&#x3D;&quot;schemas&quot;&gt;TESTDB&lt;&#x2F;property&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 表级 DML 权限设置 --&gt;</span><br><span class="line">&lt;!-- </span><br><span class="line">&lt;privileges check&#x3D;&quot;false&quot;&gt;</span><br><span class="line">&lt;schema name&#x3D;&quot;TESTDB&quot; dml&#x3D;&quot;0110&quot; &gt;</span><br><span class="line">&lt;table name&#x3D;&quot;tb01&quot; dml&#x3D;&quot;0000&quot;&gt;&lt;&#x2F;table&gt;</span><br><span class="line">&lt;table name&#x3D;&quot;tb02&quot; dml&#x3D;&quot;1111&quot;&gt;&lt;&#x2F;table&gt;</span><br><span class="line">&lt;&#x2F;schema&gt;</span><br><span class="line">&lt;&#x2F;privileges&gt; </span><br><span class="line">--&gt;</span><br><span class="line">&lt;&#x2F;user&gt;</span><br><span class="line"></span><br><span class="line">&lt;user name&#x3D;&quot;user&quot;&gt;</span><br><span class="line">&lt;property name&#x3D;&quot;password&quot;&gt;user&lt;&#x2F;property&gt;</span><br><span class="line">&lt;property name&#x3D;&quot;schemas&quot;&gt;TESTDB&lt;&#x2F;property&gt;</span><br><span class="line">&lt;property name&#x3D;&quot;readOnly&quot;&gt;true&lt;&#x2F;property&gt;</span><br><span class="line">&lt;&#x2F;user&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;&#x2F;mycat:server&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>scheam.xml   配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot;?&gt;</span><br><span class="line">&lt;!DOCTYPE mycat:schema SYSTEM &quot;schema.dtd&quot;&gt;</span><br><span class="line">&lt;mycat:schema xmlns:mycat&#x3D;&quot;http:&#x2F;&#x2F;io.mycat&#x2F;&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;schema name&#x3D;&quot;TESTDB&quot; checkSQLschema&#x3D;&quot;false&quot; sqlMaxLimit&#x3D;&quot;100&quot; dataNode&#x3D;&quot;dn1&quot;&gt;</span><br><span class="line">&lt;&#x2F;schema&gt;</span><br><span class="line">&lt;dataNode name&#x3D;&quot;dn1&quot; dataHost&#x3D;&quot;localhost1&quot; database&#x3D;&quot;test&quot; &#x2F;&gt;</span><br><span class="line">&lt;!--&lt;dataNode name&#x3D;&quot;dn4&quot; dataHost&#x3D;&quot;sequoiadb1&quot; database&#x3D;&quot;SAMPLE&quot; &#x2F;&gt;</span><br><span class="line">&lt;dataNode name&#x3D;&quot;jdbc_dn1&quot; dataHost&#x3D;&quot;jdbchost&quot; database&#x3D;&quot;db1&quot; &#x2F;&gt;</span><br><span class="line">&lt;dataNode name&#x3D;&quot;jdbc_dn2&quot; dataHost&#x3D;&quot;jdbchost&quot; database&#x3D;&quot;db2&quot; &#x2F;&gt;</span><br><span class="line">&lt;dataNode name&#x3D;&quot;jdbc_dn3&quot; dataHost&#x3D;&quot;jdbchost&quot; database&#x3D;&quot;db3&quot; &#x2F;&gt; --&gt;</span><br><span class="line">&lt;dataHost name&#x3D;&quot;localhost1&quot; maxCon&#x3D;&quot;1000&quot; minCon&#x3D;&quot;10&quot; balance&#x3D;&quot;1&quot;</span><br><span class="line">writeType&#x3D;&quot;0&quot; dbType&#x3D;&quot;mysql&quot; dbDriver&#x3D;&quot;native&quot; switchType&#x3D;&quot;1&quot; slaveThreshold&#x3D;&quot;100&quot;&gt;</span><br><span class="line">&lt;heartbeat&gt;select user()&lt;&#x2F;heartbeat&gt;</span><br><span class="line">&lt;!-- can have multi write hosts --&gt;</span><br><span class="line">&lt;writeHost host&#x3D;&quot;hostM1&quot; url&#x3D;&quot;172.18.12.1:3306&quot; user&#x3D;&quot;root&quot;</span><br><span class="line">password&#x3D;&quot;root&quot;&gt;</span><br><span class="line">&lt;!-- can have multi read hosts --&gt;</span><br><span class="line">&lt;readHost host&#x3D;&quot;hostS2&quot; url&#x3D;&quot;172.18.12.3:3306&quot; user&#x3D;&quot;root&quot; password&#x3D;&quot;root&quot; &#x2F;&gt;</span><br><span class="line">&lt;&#x2F;writeHost&gt;</span><br><span class="line">&lt;writeHost host&#x3D;&quot;hostM2&quot; url&#x3D;&quot;172.18.12.2:3306&quot; user&#x3D;&quot;root&quot;</span><br><span class="line">password&#x3D;&quot;root&quot;&gt;</span><br><span class="line">&lt;!-- can have multi read hosts --&gt;</span><br><span class="line">&lt;readHost host&#x3D;&quot;hostS2&quot; url&#x3D;&quot;172.18.12.4:3306&quot; user&#x3D;&quot;root&quot; password&#x3D;&quot;root&quot; &#x2F;&gt;</span><br><span class="line">&lt;&#x2F;writeHost&gt;</span><br><span class="line">&lt;!-- &lt;writeHost host&#x3D;&quot;hostM2&quot; url&#x3D;&quot;localhost:3316&quot; user&#x3D;&quot;root&quot; password&#x3D;&quot;123456&quot;&#x2F;&gt; --&gt;</span><br><span class="line">&lt;&#x2F;dataHost&gt;</span><br><span class="line">&lt;!--</span><br><span class="line">&lt;dataHost name&#x3D;&quot;sequoiadb1&quot; maxCon&#x3D;&quot;1000&quot; minCon&#x3D;&quot;1&quot; balance&#x3D;&quot;0&quot; dbType&#x3D;&quot;sequoiadb&quot; dbDriver&#x3D;&quot;jdbc&quot;&gt;</span><br><span class="line">&lt;heartbeat&gt; &lt;&#x2F;heartbeat&gt;</span><br><span class="line">&lt;writeHost host&#x3D;&quot;hostM1&quot; url&#x3D;&quot;sequoiadb:&#x2F;&#x2F;1426587161.dbaas.sequoialab.net:11920&#x2F;SAMPLE&quot; user&#x3D;&quot;jifeng&quot; password&#x3D;&quot;jifeng&quot;&gt;&lt;&#x2F;writeHost&gt;</span><br><span class="line">&lt;&#x2F;dataHost&gt;</span><br><span class="line"></span><br><span class="line">&lt;dataHost name&#x3D;&quot;oracle1&quot; maxCon&#x3D;&quot;1000&quot; minCon&#x3D;&quot;1&quot; balance&#x3D;&quot;0&quot; writeType&#x3D;&quot;0&quot; dbType&#x3D;&quot;oracle&quot; dbDriver&#x3D;&quot;jdbc&quot;&gt; &lt;heartbeat&gt;select 1 from dual&lt;&#x2F;heartbeat&gt;</span><br><span class="line">&lt;connectionInitSql&gt;alter session set nls_date_format&#x3D;&#39;yyyy-mm-dd hh24:mi:ss&#39;&lt;&#x2F;connectionInitSql&gt;</span><br><span class="line">&lt;writeHost host&#x3D;&quot;hostM1&quot; url&#x3D;&quot;jdbc:oracle:thin:@127.0.0.1:1521:nange&quot; user&#x3D;&quot;base&quot; password&#x3D;&quot;123456&quot; &gt; &lt;&#x2F;writeHost&gt; &lt;&#x2F;dataHost&gt;</span><br><span class="line"></span><br><span class="line">&lt;dataHost name&#x3D;&quot;jdbchost&quot; maxCon&#x3D;&quot;1000&quot; minCon&#x3D;&quot;1&quot; balance&#x3D;&quot;0&quot; writeType&#x3D;&quot;0&quot; dbType&#x3D;&quot;mongodb&quot; dbDriver&#x3D;&quot;jdbc&quot;&gt;</span><br><span class="line">&lt;heartbeat&gt;select user()&lt;&#x2F;heartbeat&gt;</span><br><span class="line">&lt;writeHost host&#x3D;&quot;hostM&quot; url&#x3D;&quot;mongodb:&#x2F;&#x2F;192.168.0.99&#x2F;test&quot; user&#x3D;&quot;admin&quot; password&#x3D;&quot;123456&quot; &gt;&lt;&#x2F;writeHost&gt; &lt;&#x2F;dataHost&gt;</span><br><span class="line"></span><br><span class="line">&lt;dataHost name&#x3D;&quot;sparksql&quot; maxCon&#x3D;&quot;1000&quot; minCon&#x3D;&quot;1&quot; balance&#x3D;&quot;0&quot; dbType&#x3D;&quot;spark&quot; dbDriver&#x3D;&quot;jdbc&quot;&gt;</span><br><span class="line">&lt;heartbeat&gt; &lt;&#x2F;heartbeat&gt;</span><br><span class="line">&lt;writeHost host&#x3D;&quot;hostM1&quot; url&#x3D;&quot;jdbc:hive2:&#x2F;&#x2F;feng01:10000&quot; user&#x3D;&quot;jifeng&quot; password&#x3D;&quot;jifeng&quot;&gt;&lt;&#x2F;writeHost&gt; &lt;&#x2F;dataHost&gt; --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- &lt;dataHost name&#x3D;&quot;jdbchost&quot; maxCon&#x3D;&quot;1000&quot; minCon&#x3D;&quot;10&quot; balance&#x3D;&quot;0&quot; dbType&#x3D;&quot;mysql&quot;</span><br><span class="line">dbDriver&#x3D;&quot;jdbc&quot;&gt; &lt;heartbeat&gt;select user()&lt;&#x2F;heartbeat&gt; &lt;writeHost host&#x3D;&quot;hostM1&quot;</span><br><span class="line">url&#x3D;&quot;jdbc:mysql:&#x2F;&#x2F;localhost:3306&quot; user&#x3D;&quot;root&quot; password&#x3D;&quot;123456&quot;&gt; &lt;&#x2F;writeHost&gt;</span><br><span class="line">&lt;&#x2F;dataHost&gt; --&gt;</span><br><span class="line">&lt;&#x2F;mycat:schema&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>MyCAT 配置解析</p>
+<p>server.xml Mycat 的配置文件，设置账号、参数等<br>
+ schema.xml Mycat 对应的物理数据库和数据库表的配置<br>
+ rule.xml Mycat 分片（分库分表）规则</p>
+<p>一 ：wrapper.conf<br>
+–配置 jdk<br>
+wrapper.java.command=D:/Program Files/Java/jdk1.8.0_131/bin/java.exe</p>
+<p>二：server.xml</p>
+<ol>
+<li>user 标签</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;user name&#x3D;”root”&gt;  </span><br><span class="line">     &lt;property name&#x3D;”password”&gt;&lt;&#x2F;property&gt;</span><br><span class="line">      &lt;property name&#x3D;”schemas”&gt;TESTDB&lt;&#x2F;property&gt;</span><br><span class="line">&lt;&#x2F;user&gt;</span><br></pre></td></tr></table></figure>
+<p>user 用户配置节点<br>
+–name 登录的用户名，也就是连接 Mycat 的用户名<br>
+–password 登录的密码，也就是连接 Mycat 的密码<br>
+–schemas 数据库名，这里会和 schema.xml 中的配置关联，多个用逗号分开，例如需要这个用户需要管理两个数据库 db1,db2，则配置 db1,dbs</p>
+<p>2、privileges 标签<br>
+对用户的 schema 以及表进行精细化的 DML 权限控制</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;privileges check&#x3D;”false”&gt;</span><br><span class="line">&lt;&#x2F;privileges&gt;</span><br></pre></td></tr></table></figure>
+<p>–check 表示是否开启 DML 权限检查。默认是关闭。server.dtd 文件中 <!ELEMENT privileges (schema)*> 说明可以有多个 schema 的配置。<br>
+–dml 顺序说明：insert,update,select,delete</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;schema name&#x3D;”db1″ dml&#x3D;”0110″ &gt;</span><br><span class="line">&lt;table name&#x3D;”tb01″ dml&#x3D;”0000″&gt;&lt;&#x2F;table&gt;</span><br><span class="line">&lt;table name&#x3D;”tb02″ dml&#x3D;”1111″&gt;&lt;&#x2F;table&gt;</span><br><span class="line">&lt;&#x2F;schema&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>db1 的权限是 update,select。<br>
+tb01 的权限是啥都不能干。<br>
+tb02 的权限是 insert,update,select,delete。<br>
+其他表默认是 udpate,select。</p>
+<ol start="2">
+<li>system 标签</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line">这个标签内嵌套的所有 property 标签都与系统配置有关。</span><br><span class="line">&lt;property name&#x3D;”charset”&gt;utf8&lt;&#x2F;property&gt;</span><br><span class="line">字符集</span><br><span class="line">&lt;property name&#x3D;”processors”&gt;1&lt;&#x2F;property&gt;</span><br><span class="line">处理线程数量，默认是cpu数量。</span><br><span class="line"></span><br><span class="line">&lt;property name&#x3D;”processorBufferChunk”&gt;4096&lt;&#x2F;property&gt;</span><br><span class="line">每次读取留的数量，默认4096。</span><br><span class="line"></span><br><span class="line">&lt;property name&#x3D;”processorBufferPool”&gt;409600&lt;&#x2F;property&gt;</span><br><span class="line">创建共享buffer需要占用的总空间大小。processorBufferChunk*processors*100。</span><br><span class="line"></span><br><span class="line">&lt;property name&#x3D;”processorBufferPoolType”&gt;0&lt;&#x2F;property&gt;</span><br><span class="line">默认为0。0表示DirectByteBufferPool，1表示ByteBufferArena。</span><br><span class="line"></span><br><span class="line">&lt;property name&#x3D;”processorBufferLocalPercent”&gt;100&lt;&#x2F;property&gt;</span><br><span class="line">二级共享buffer是processorBufferPool的百分比，这里设置的是百分比。</span><br><span class="line"></span><br><span class="line">&lt;property name&#x3D;”sequnceHandlerType”&gt;100&lt;&#x2F;property&gt;</span><br><span class="line">全局ID生成方式。(0:为本地文件方式，1:为数据库方式；2:为时间戳序列方式；3:为ZK生成ID；4:为ZK递增ID生成。</span><br><span class="line"></span><br><span class="line">&lt;property name&#x3D;”useCompression”&gt;1&lt;&#x2F;property&gt;</span><br><span class="line">是否开启mysql压缩协议。1为开启，0为关闭，默认关闭。</span><br><span class="line"></span><br><span class="line">&lt;property name&#x3D;”packetHeaderSize”&gt;4&lt;&#x2F;property&gt;</span><br><span class="line">指定 Mysql 协议中的报文头长度。默认 4。</span><br><span class="line"></span><br><span class="line">&lt;property name&#x3D;”maxPacketSize”&gt;16M&lt;&#x2F;property&gt;</span><br><span class="line">指定 Mysql 协议可以携带的数据最大长度。默认 16M。</span><br><span class="line"></span><br><span class="line">&lt;property name&#x3D;”idleTimeout”&gt;1800000&lt;&#x2F;property&gt;</span><br><span class="line">指定连接的空闲超时时间。某连接在发起空闲检查下，发现距离上次使用超过了空闲时间，那么这个连接会被回收，就是被直接的关闭掉。默认 30 分钟，单位毫秒。</span><br><span class="line"></span><br><span class="line">&lt;property name&#x3D;”txIsolation”&gt;3&lt;&#x2F;property&gt;</span><br><span class="line">前端连接的初始化事务隔离级别，只在初始化的时候使用，后续会根据客户端传递过来的属性对后端数据库连接进行同步。默认为 REPEATED_READ，设置值为数字默认 3。</span><br><span class="line">READ_UNCOMMITTED &#x3D; 1;</span><br><span class="line">READ_COMMITTED &#x3D; 2;</span><br><span class="line">REPEATED_READ &#x3D; 3;</span><br><span class="line">SERIALIZABLE &#x3D; 4;</span><br><span class="line"></span><br><span class="line">&lt;property name&#x3D;”sqlExecuteTimeout”&gt;300&lt;&#x2F;property&gt;</span><br><span class="line">SQL 执行超时的时间，Mycat 会检查连接上最后一次执行 SQL 的时间，若超过这个时间则会直接关闭这连接。默认时间为 300 秒，单位秒。</span><br><span class="line"></span><br><span class="line">&lt;property name&#x3D;”processorCheckPeriod”&gt;1000&lt;&#x2F;property&gt;</span><br><span class="line">清理 NIOProcessor 上前后端空闲、超时和关闭连接的间隔时间。默认是 1 秒，单</span><br><span class="line">位毫秒。</span><br><span class="line"></span><br><span class="line">&lt;property name&#x3D;”dataNodeIdleCheckPeriod”&gt;300000&lt;&#x2F;property&gt;</span><br><span class="line">对后端连接进行空闲、超时检查的时间间隔，默认是 300 秒，单位毫秒。</span><br><span class="line"></span><br><span class="line">&lt;property name&#x3D;”dataNodeHeartbeatPeriod”&gt;10000&lt;&#x2F;property&gt;</span><br><span class="line">对后端所有读、写库发起心跳的间隔时间，默认是 10 秒，单位毫秒。</span><br><span class="line"></span><br><span class="line">&lt;property name&#x3D;”bindIp”&gt;0.0.0.0&lt;&#x2F;property&gt;</span><br><span class="line">mycat 服务监听的 IP 地址，默认值为 0.0.0.0。</span><br><span class="line"></span><br><span class="line">&lt;property name&#x3D;”serverPort”&gt;8066&lt;&#x2F;property&gt;</span><br><span class="line">定义 mycat 的使用端口，默认值为 8066。</span><br><span class="line"></span><br><span class="line">&lt;property name&#x3D;”managerPort”&gt;9066&lt;&#x2F;property&gt;</span><br><span class="line">定义 mycat 的管理端口，默认值为 9066。</span><br><span class="line"></span><br><span class="line">&lt;property name&#x3D;”fakeMySQLVersion”&gt;5.6&lt;&#x2F;property&gt;</span><br><span class="line">mycat 模拟的 mysql 版本号，默认值为 5.6 版本，如非特需，不要修改这个值，目前支持设置 5.5,5.6,5.7 版本，其他版本可能会有问题。</span><br><span class="line"></span><br><span class="line">&lt;property name&#x3D;”useSqlStat”&gt;0&lt;&#x2F;property&gt;</span><br><span class="line">是否开启实时统计。1为开启；0为关闭 。</span><br><span class="line"></span><br><span class="line">&lt;property name&#x3D;”useGlobleTableCheck”&gt;0&lt;&#x2F;property&gt;</span><br><span class="line">是否开启全局表一致性检测。1为开启；0为关闭 。</span><br><span class="line"></span><br><span class="line">&lt;property name&#x3D;”handleDistributedTransactions”&gt;0&lt;&#x2F;property&gt;</span><br><span class="line">分布式事务开关。0为不过滤分布式事务；1为过滤分布式事务；2 为不过滤分布式事务,但是记录分布式事务日志。</span><br><span class="line"></span><br><span class="line">&lt;property name&#x3D;”maxStringLiteralLength”&gt;65535&lt;&#x2F;property&gt;</span><br><span class="line">默认是65535。 64K 用于sql解析时最大文本长度</span><br><span class="line">以上举例的属性仅仅是一部分，可以配置的变量很多，具体可以查看SystemConfig这个类的属性内容。</span><br><span class="line">System标签下的属性，一般是上线后，需要根据实际运行的情况，分析后调优的时候进行修改。</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>Firewall 标签<br>
+顾名思义，这个就是关于防火墙的设置，也就是在网络层对请求的地址进行限制，主要是从安全角度来保证 Mycat 不被匿名 IP 进行访问</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;firewall&gt;</span><br><span class="line">&lt;whitehost&gt;</span><br><span class="line">&lt;host host&#x3D;”127.0.0.1″ user&#x3D;”mycat”&#x2F;&gt;</span><br><span class="line">&lt;host host&#x3D;”127.0.0.2″ user&#x3D;”mycat”&#x2F;&gt;</span><br><span class="line">&lt;&#x2F;whitehost&gt;</span><br><span class="line">&lt;blacklist check&#x3D;”false”&gt;</span><br><span class="line">&lt;&#x2F;blacklist&gt;</span><br><span class="line">&lt;&#x2F;firewall&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>设置很简单，很容易理解，只要设置了白名单，表示开启了防火墙，只有白名单的连接才可以进行连接。</p>
+<p>三：schema.xml<br>
+–schema 数据库设置，此数据库为逻辑数据库，name 与 server.xml 中 schema 对应<br>
+–dataNode 分片信息，也就是分库相关配置<br>
+–dataHost 物理数据库，真正存储数据的数据库<br>
+ 1、schema 标签</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;schema name&#x3D;”TESTDB” checkSQLschema&#x3D;”false” sqlMaxLimit&#x3D;”10″&gt;</span><br><span class="line">&lt;&#x2F;schema&gt;</span><br></pre></td></tr></table></figure>
+<p>schema 标签用来定义 mycat 实例中的逻辑库，mycat 可以有多个逻辑库，每个逻辑库都有自己的相关配置。可以使用 schema 标签来划分这些不同的逻辑库<br>
+如果不配置 schema 标签，所有表的配置会属于同一个默认的逻辑库。逻辑库的概念和 MySql 的 database 的概念一样，我们在查询两个不同逻辑库中的表的时候，需要切换到该逻辑库下进行查询。</p>
+<p>–name 逻辑数据库名，与 server.xml 中的 schema 对应<br>
+–checkSQLschema 数据库前缀相关设置，当该值为 true 时，例如我们执行语句 select * from TESTDB.company 。mycat 会把语句修改为 select * from company 去掉 TESTDB。<br>
+–sqlMaxLimit 当该值设置为某个数值时，每条执行的 sql 语句，如果没有加上 limit 语句，Mycat 会自动加上对应的值。不写的话，默认返回所有的值。<br>
+需要注意的是，如果运行的 schema 为非拆分库的，那么该属性不会生效。需要自己 sql 语句加 limit。<br>
+2、table 标签</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;table name&#x3D;”travelrecord” dataNode&#x3D;”dn1,dn2,dn3″ rule&#x3D;”auto-sharding-long” &#x2F;&gt;</span><br><span class="line">&lt;table name&#x3D;”company” primaryKey&#x3D;”ID” type&#x3D;”global” dataNode&#x3D;”dn1,dn2,dn3″ &#x2F;&gt;</span><br></pre></td></tr></table></figure>
+<p>–name 表名，物理数据库中表名<br>
+–dataNode 表存储到哪些节点，多个节点用逗号分隔。节点为下文 dataNode 设置的 name<br>
+–primaryKey 主键字段名，自动生成主键时需要设置<br>
+–autoIncrement 是否自增<br>
+–rule 分片规则名，具体规则下文 rule 详细介绍<br>
+–type 该属性定义了逻辑表的类型，目前逻辑表只有全局表和普通表。全局表： global 普通表：无<br>
+注：全局表查询任意节点，普通表查询所有节点效率低<br>
+–autoIncrement mysql 对非自增长主键，使用 last_insert_id () 是不会返回结果的，只会返回 0. 所以，只有定义了自增长主键的表，才可以用 last_insert_id () 返回主键值。<br>
+mycat 提供了自增长主键功能，但是对应的 mysql 节点上数据表，没有 auto_increment, 那么在 mycat 层调用 last_insert_id () 也是不会返回结果的。<br>
+–needAddLimit 指定表是否需要自动的在每个语句后面加上 limit 限制，由于使用了分库分表，数据量有时候会特别庞大，这时候执行查询语句，<br>
+忘记加上 limt 就会等好久，所以 mycat 自动为我们加上了 limit 100，这个属性默认为 true，可以自己设置为 false 禁用。如果使用这个功能，最好配合使用数据库模式的全局序列。<br>
+–subTables 分表，分表目前不支持 Join。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1) childTable标签</span><br><span class="line">&lt;table name&#x3D;”customer” primaryKey&#x3D;”ID” dataNode&#x3D;”dn1,dn2″ rule&#x3D;”sharding-by-intfile”&gt;</span><br><span class="line">&lt;childTable name&#x3D;”c_a” primaryKey&#x3D;”ID” joinKey&#x3D;”customer_id” parentKey&#x3D;”id” &#x2F;&gt;</span><br><span class="line">&lt;&#x2F;table&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>–childTable 标签用于定义 E-R 分片的子表。通过标签上的属性与父表进行关联。<br>
+–name 子表的名称<br>
+–joinKey 子表中字段的名称<br>
+–parentKey 父表中字段名称<br>
+–primaryKey 同 Table<br>
+–needAddLimit 同 Table</p>
+<p>3、dataNode 标签</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;dataNode name&#x3D;”dn1″ dataHost&#x3D;”localhost1″ database&#x3D;”db1″ &#x2F;&gt; </span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;  </span><br><span class="line"></span><br><span class="line">datanode标签定义了mycat中的数据节点，也就是我们所说的数据分片。一个datanode标签就是一个独立的数据分片。</span><br><span class="line">例子中的表述的意思为，使用名字为localhost1数据库实例上的db1物理数据库，这就组成一个数据分片，最后我们用dn1来标示这个分片。  </span><br><span class="line">–name 定义数据节点的名字，这个名字需要唯一。我们在table标签上用这个名字来建立表与分片对应的关系  </span><br><span class="line">–dataHost 用于定义该分片属于哪个数据库实例，属性与datahost标签上定义的name对应  </span><br><span class="line">–database 用于定义该分片属于数据库实例上 的具体库。  </span><br><span class="line"></span><br><span class="line">4、dataHost标签  </span><br><span class="line">这个标签直接定义了具体数据库实例，读写分离配置和心跳语句。  </span><br></pre></td></tr></table></figure>
+<dataHost name=”localhost1″ maxCon=”1000″ minCon=”10″ balance=”0″ writeType=”0″ dbType=”mysql” dbDriver=”native” switchType=”1″ slaveThreshold=”100″>
+<heartbeat>select user()</heartbeat>
+<writeHost host=”hostM1″ url=”192.168.1.100:3306″ user=”root” password=”123456″>
+<readHost host=”hostS1″ url=”192.168.1.101:3306″ user=”root” password=”123456″ />
+</writeHost>
+</dataHost>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">–name 唯一标示dataHost标签，供上层使用  </span><br><span class="line">–maxCon 指定每个读写实例连接池的最大连接  </span><br><span class="line">–minCon 指定每个读写实例连接池的最小连接，初始化连接池的大小  </span><br><span class="line">–balance 负载均称类型  </span><br><span class="line">balance&#x3D;”0″：不开启读写分离机制，所有读操作都发送到当前可用的writeHost上  </span><br><span class="line">balance&#x3D;”1″：全部的readHost与stand by writeHost参与select语句的负载均衡，简单的说，当双主双从模式（M1-S1，M2-S2 并且M1 M2互为主备），正常情况下，M2,S1,S2都参与select语句的负载均衡。</span><br><span class="line">balance&#x3D;”2″：所有读操作都随机的在writeHost、readHost上分发</span><br><span class="line">balance&#x3D;”3″：所有读请求随机的分发到writeHst对应的readHost执行，writeHost不负担读写压力。（1.4之后版本有）  </span><br><span class="line">–writeType 负载均衡类型   </span><br><span class="line">writeType&#x3D;”0″, 所有写操作发送到配置的第一个 writeHost，第一个挂了切到还生存的第二个writeHost，重新启动后已切换后的为准，切换记录在配置文件中:dnindex.properties .</span><br><span class="line">writeType&#x3D;”1″，所有写操作都随机的发送到配置的 writeHost。1.5以后版本废弃不推荐。</span><br><span class="line">–switchType -1不自动切换  </span><br><span class="line">1 默认值 自动切换  </span><br><span class="line">2 基于MySql主从同步的状态决定是否切换心跳语句为 show slave status  </span><br><span class="line">3 基于mysql galary cluster 的切换机制（适合集群）  1.4.1 心跳语句为 show status like ‘wsrep%’</span><br><span class="line">–dbType 指定后端链接的数据库类型目前支持二进制的mysql协议，还有其他使用jdbc链接的数据库，例如：mongodb，oracle，spark等    </span><br><span class="line">–dbDriver 指定连接后段数据库使用的driver，目前可选的值有native和JDBC。使用native的话，因为这个值执行的是二进制的mysql协议，所以可以使用mysql和maridb，其他类型的则需要使用JDBC驱动来支持。  </span><br><span class="line">如果使用JDBC的话需要符合JDBC4标准的驱动jar 放到mycat\lib目录下，并检查驱动jar包中包括如下目录结构文件 META-INF\services\java.sql.Driver。 在这个文件写上具体的driver类名，例如com.mysql.jdbc.Driver</span><br><span class="line">writeHost readHost指定后端数据库的相关配置给mycat，用于实例化后端连接池。  </span><br><span class="line">–tempReadHostAvailable  </span><br><span class="line">如果配置了这个属性 writeHost 下面的 readHost 仍旧可用，默认 0 可配置（0、1）。  </span><br><span class="line"></span><br><span class="line">1）heartbeat标签  </span><br><span class="line">这个标签内指明用于和后端数据库进行心跳检查的语句。</span><br><span class="line">例如：MYSQL 可以使用 select user()，Oracle 可以使用 select 1 from dual 等。  </span><br><span class="line">2） writeHost &#x2F;readHost 标签  </span><br><span class="line">这两个标签都指定后端数据库的相关配置，用于实例化后端连接池。唯一不同的是，writeHost 指定写实例、readHost 指定读实例。  </span><br><span class="line">在一个 dataHost 内可以定义多个 writeHost 和 readHost。但是，如果 writeHost 指定的后端数据库宕机，那么这个 writeHost 绑定的所有 readHost 都将不可用。  </span><br><span class="line">另一方面，由于这个 writeHost 宕机，系统会自动的检测到，并切换到备用的 writeHost 上去。这两个标签的属性相同，这里就一起介绍。  </span><br><span class="line"></span><br><span class="line">–host 用于标识不同实例，一般 writeHost 我们使用*M1，readHost 我们用*S1。  </span><br><span class="line">–url 后端实例连接地址。Native：地址：端口 JDBC：jdbc的url  </span><br><span class="line">–password 后端存储实例需要的密码  </span><br><span class="line">–user 后端存储实例需要的用户名字  </span><br><span class="line">–weight 权重 配置在 readhost 中作为读节点的权重  </span><br><span class="line">–usingDecrypt 是否对密码加密，默认0。具体加密方法看官方文档。  </span><br><span class="line">四： Rule.xml  </span><br><span class="line">ule.xml 里面就定义了我们对表进行拆分所涉及到的规则定义。我们可以灵活的对表使用不同的分片算法，或者对表使用相同的算法但具体的参数不同。 包含的标签 tableRule 和 function。  </span><br><span class="line"></span><br><span class="line">1.tableRule 标签</span><br><span class="line"></span><br><span class="line">这个标签定义表规则。  </span><br><span class="line">定义的表规则，在 schema.xml：  </span><br></pre></td></tr></table></figure>
+<tableRule name=”rule1″>
+<rule>
+<columns>id</columns>
+<algorithm>func1</algorithm>
+</rule>
+</tableRule>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">–name 属性指定唯一的名字，用于标识不同的表规则。 内嵌的 rule 标签则指定对物理表中的哪一列进行拆分和使用什么路由算法。  </span><br><span class="line">–columns 内指定要拆分的列名字。  </span><br><span class="line">–algorithm 使用 function 标签中的 name 属性。连接表规则和具体路由算法。当然，多个表规则可以连接到 同一个路由算法上。table 标签内使用。让逻辑表使用这个规则进行分片。  </span><br><span class="line">2.function 标签  </span><br></pre></td></tr></table></figure>
+<function name=”hash-int” class=”org.opencloudb.route.function.PartitionByFileMap”>
+<property name=”mapFile”>partition-hash-int.txt</property>
+</function>
+```
+<p>–name 指定算法的名字。<br>
+–class 制定路由算法具体的类名字。<br>
+–property 为具体算法需要用到的一些属性</p>
+
+      <div class="tags">
+          <a href="/tags/mysql/" rel="tag"><i class="ic i-tag"></i> mysql</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2020-09-25 20:35:10" itemprop="dateModified" datetime="2020-09-25T20:35:10+08:00">2020-09-25</time>
+  </span>
+  <span id="2020/07/13/mysql主从复制-mycat/" class="item leancloud_visitors" data-flag-title="mysql主从复制-mycat" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>startanew <i class="ic i-at"><em>@</em></i>JAVA
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="http://www.startanew.cn/2020/07/13/mysql%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6-mycat/" title="mysql主从复制-mycat">http://www.startanew.cn/2020/07/13/mysql主从复制-mycat/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2020/07/13/docker-%E7%9F%A5%E8%AF%86%E8%A1%A5%E5%85%85-1/" itemprop="url" rel="prev" data-background-image="http:&#x2F;&#x2F;vps.startanew.cn&#x2F;docker.jpg" title="docker 知识补充">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 编程</span>
+  <h3>docker 知识补充</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2020/07/13/mycat-%E9%AB%98%E5%8F%AF%E7%94%A8haproxy/" itemprop="url" rel="next" data-background-image="http:&#x2F;&#x2F;vps.startanew.cn&#x2F;u%3D1436897367%2C534682266%26fm%3D26%26gp%3D0.jpg" title="mycat 高可用haproxy">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 编程</span>
+  <h3>mycat 高可用haproxy</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%8E%AF%E5%A2%83"><span class="toc-number">1.</span> <span class="toc-text"> 基本环境</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mycat-%E9%85%8D%E7%BD%AE"><span class="toc-number">2.</span> <span class="toc-text"> mycat 配置</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/2020/07/12/Mysql%E5%BC%80%E5%90%AF%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/" rel="bookmark" title="Mysql开启远程连接">Mysql开启远程连接</a></li><li><a href="/2020/07/12/redis%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" rel="bookmark" title="redis基本用法">redis基本用法</a></li><li><a href="/2020/07/12/Redis-jedis/" rel="bookmark" title="Redis jedis">Redis jedis</a></li><li><a href="/2020/07/12/stunserver%E6%90%AD%E5%BB%BA/" rel="bookmark" title="stunserver搭建">stunserver搭建</a></li><li><a href="/2020/07/12/HashMap-%E5%92%8C-HashTable-%E7%9A%84%E5%8C%BA%E5%88%AB/" rel="bookmark" title="HashMap 和 HashTable 的区别">HashMap 和 HashTable 的区别</a></li><li><a href="/2020/07/12/maven%E6%89%93%E5%8C%85jar/" rel="bookmark" title="maven打包jar">maven打包jar</a></li><li><a href="/2020/07/13/docker-%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/" rel="bookmark" title="docker 基础入门">docker 基础入门</a></li><li><a href="/2020/07/13/docker-%E5%88%9B%E5%BB%BA%E9%95%9C%E5%83%8F%E4%B8%8E%E6%8F%90%E4%BA%A4/" rel="bookmark" title="docker 创建镜像与提交">docker 创建镜像与提交</a></li><li><a href="/2020/07/13/SpringBoot-%E9%9B%86%E6%88%90Websocket%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%EF%BC%88%E4%B8%80%EF%BC%89/" rel="bookmark" title="SpringBoot 集成Websocket问题解决（一）">SpringBoot 集成Websocket问题解决（一）</a></li><li><a href="/2020/07/13/%E5%AE%89%E5%8D%93%E6%9C%8D%E5%8A%A1%E9%87%8C%E7%9B%91%E5%90%AC%E6%8C%89%E9%92%AE/" rel="bookmark" title="安卓服务里监听按钮">安卓服务里监听按钮</a></li><li><a href="/2020/07/13/ssm-%E9%9B%86%E6%88%90-websocket/" rel="bookmark" title="ssm 集成 websocket">ssm 集成 websocket</a></li><li><a href="/2020/07/13/%E6%A0%BC%E6%9E%97%E5%A8%81%E6%B2%BB%E6%97%B6%E9%97%B4%E8%BD%AC%E6%97%B6%E9%97%B4%E6%88%B3/" rel="bookmark" title="格林威治时间转时间戳">格林威治时间转时间戳</a></li><li><a href="/2020/07/13/%E5%AE%89%E5%8D%93%E7%89%88%E8%90%BD%E5%8F%B6%E7%89%B9%E6%95%88-canvas%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89/" rel="bookmark" title="安卓版落叶特效-canvas篇（一）">安卓版落叶特效-canvas篇（一）</a></li><li><a href="/2020/07/13/kotlin%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%88%E4%B8%80%EF%BC%89/" rel="bookmark" title="kotlin基础知识（一）">kotlin基础知识（一）</a></li><li><a href="/2020/07/13/kotlin%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%88%E4%BA%8C%EF%BC%89/" rel="bookmark" title="kotlin基础知识（二）">kotlin基础知识（二）</a></li><li><a href="/2020/07/13/ssm%E6%95%B4%E5%90%88sceurity-%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95%E4%B9%8B%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E7%AF%87/" rel="bookmark" title="ssm整合sceurity-基础用法之基础环境搭建篇">ssm整合sceurity-基础用法之基础环境搭建篇</a></li><li><a href="/2020/07/13/ssm%E6%95%B4%E5%90%88sceurity-%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95%E4%B9%8Bsceurity%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D/" rel="bookmark" title="ssm整合sceurity-基础用法之sceurity基本配置介绍">ssm整合sceurity-基础用法之sceurity基本配置介绍</a></li><li><a href="/2020/07/13/ssm%E6%95%B4%E5%90%88sceurity-%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95%E4%B9%8Bsceurity%E7%BB%93%E5%90%88%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8A%A8%E6%80%81%E9%89%B4%E6%9D%83/" rel="bookmark" title="ssm整合sceurity-基础用法之sceurity结合数据库动态鉴权">ssm整合sceurity-基础用法之sceurity结合数据库动态鉴权</a></li><li><a href="/2020/07/13/mysql-%E4%BC%98%E5%8C%96%EF%BC%88%E4%B8%80%EF%BC%89/" rel="bookmark" title="mysql 优化（一）">mysql 优化（一）</a></li><li><a href="/2020/07/13/mysql%E4%BC%98%E5%8C%96-%EF%BC%88%E4%BA%8C%EF%BC%89/" rel="bookmark" title="mysql优化-（二）">mysql优化-（二）</a></li><li><a href="/2020/07/13/mysql%E4%BC%98%E5%8C%96-%EF%BC%88%E4%B8%89%EF%BC%89/" rel="bookmark" title="mysql优化-（三）">mysql优化-（三）</a></li><li><a href="/2020/07/13/mysql-%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/" rel="bookmark" title="mysql 主从复制">mysql 主从复制</a></li><li><a href="/2020/07/13/docker-%E7%9F%A5%E8%AF%86%E8%A1%A5%E5%85%85-1/" rel="bookmark" title="docker 知识补充">docker 知识补充</a></li><li class="active"><a href="/2020/07/13/mysql%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6-mycat/" rel="bookmark" title="mysql主从复制-mycat">mysql主从复制-mycat</a></li><li><a href="/2020/07/13/mycat-%E9%AB%98%E5%8F%AF%E7%94%A8haproxy/" rel="bookmark" title="mycat 高可用haproxy">mycat 高可用haproxy</a></li><li><a href="/2020/07/14/redis%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/" rel="bookmark" title="redis主从复制">redis主从复制</a></li><li><a href="/2020/07/14/redis5-0-5%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/" rel="bookmark" title="redis5.0.5集群搭建">redis5.0.5集群搭建</a></li><li><a href="/2020/07/14/jwt%E7%A7%81%E9%92%A5%E7%94%9F%E6%88%90/" rel="bookmark" title="jwt私钥生成">jwt私钥生成</a></li><li><a href="/2020/07/14/%E5%AE%89%E5%8D%93%E6%88%AA%E5%B1%8F%E5%8A%9F%E8%83%BD%E4%B8%8E%E5%8A%A0%E8%BD%BDsd%E5%8D%A1%E7%9A%84html/" rel="bookmark" title="安卓截屏功能与加载sd卡的html">安卓截屏功能与加载sd卡的html</a></li><li><a href="/2020/07/14/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85docker/" rel="bookmark" title="树莓派安装docker">树莓派安装docker</a></li><li><a href="/2020/07/14/%E8%A7%A3%E5%86%B3SpringBoot%E9%9B%86%E6%88%90WebSocket%E6%89%93%E5%8C%85%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98/" rel="bookmark" title="解决SpringBoot集成WebSocket打包失败问题">解决SpringBoot集成WebSocket打包失败问题</a></li><li><a href="/2020/10/15/java-%E6%B1%89%E5%AD%97%E8%BD%AC%E6%8B%BC%E9%9F%B3/" rel="bookmark" title="java 汉字转拼音">java 汉字转拼音</a></li><li><a href="/2020/10/16/springboot-%E9%9B%86%E6%88%90redis%E7%BC%93%E5%AD%98/" rel="bookmark" title="springboot 集成redis缓存">springboot 集成redis缓存</a></li><li><a href="/2020/10/22/CompletableFuture-%E5%BC%82%E6%AD%A5%E4%BB%BB%E5%8A%A1/" rel="bookmark" title="CompletableFuture  异步任务">CompletableFuture  异步任务</a></li><li><a href="/2020/10/24/Log4j2%E5%85%A5%E9%97%A8/" rel="bookmark" title="Log4j2入门">Log4j2入门</a></li><li><a href="/2020/11/12/Excel%E5%AF%BC%E5%87%BA/" rel="bookmark" title="Excel导出">Excel导出</a></li><li><a href="/2020/11/12/XMLHttpRequest%20%E5%BC%82%E6%AD%A5%E4%B8%8B%E8%BD%BD/" rel="bookmark" title="XMLHttpRequest 异步下载">XMLHttpRequest 异步下载</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="startanew"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">startanew</p>
+  <div class="description" itemprop="description">爱编程，爱生活</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">68</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">5</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">19</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL3pqemJ1cnk=" title="https:&#x2F;&#x2F;github.com&#x2F;zjzbury"><i class="ic i-github"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTEzMDczMjU3OTM=" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;1307325793"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOnpqenN0YXJ0YW5ld0AxNjNjb20=" title="mailto:zjzstartanew@163com"><i class="ic i-envelope"></i></span>
+      <span class="exturl item douban" data-url="aHR0cHM6Ly93d3cuZG91YmFuLmNvbS9wZW9wbGUvMjIzOTg5NzEyLw==" title="https:&#x2F;&#x2F;www.douban.com&#x2F;people&#x2F;223989712&#x2F;"><i class="ic i-douban"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/tool/" rel="section"><i class="ic i-magic"></i>工具</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/resources/" rel="section"><i class="ic i-heart"></i>资源</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2020/07/13/docker-%E7%9F%A5%E8%AF%86%E8%A1%A5%E5%85%85-1/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2020/07/13/mycat-%E9%AB%98%E5%8F%AF%E7%94%A8haproxy/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B/" title="分类于 编程">编程</a>
+</div>
+
+    <span><a href="/2020/07/14/%E8%A7%A3%E5%86%B3SpringBoot%E9%9B%86%E6%88%90WebSocket%E6%89%93%E5%8C%85%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98/" title="解决SpringBoot集成WebSocket打包失败问题">解决SpringBoot集成WebSocket打包失败问题</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B/" title="分类于 编程">编程</a>
+</div>
+
+    <span><a href="/2020/07/13/kotlin%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%88%E4%BA%8C%EF%BC%89/" title="kotlin基础知识（二）">kotlin基础知识（二）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%B7%A5%E4%BD%9C/" title="分类于 工作">工作</a>
+</div>
+
+    <span><a href="/2020/07/13/swagger%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90api%E6%96%87%E6%A1%A3/" title="swagger自动生成api文档">swagger自动生成api文档</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B/" title="分类于 编程">编程</a>
+</div>
+
+    <span><a href="/2020/07/13/ssm%E6%95%B4%E5%90%88sceurity-%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95%E4%B9%8Bsceurity%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D/" title="ssm整合sceurity-基础用法之sceurity基本配置介绍">ssm整合sceurity-基础用法之sceurity基本配置介绍</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86/" title="分类于 人力资源管理">人力资源管理</a>
+</div>
+
+    <span><a href="/2020/10/08/%E5%91%98%E5%B7%A5%E5%BC%82%E5%8A%A8%E7%AE%A1%E7%90%86/" title="第七章 员工异动管理">第七章 员工异动管理</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B/" title="分类于 编程">编程</a>
+</div>
+
+    <span><a href="/2020/07/13/%E5%AE%89%E5%8D%93%E7%89%88%E8%90%BD%E5%8F%B6%E7%89%B9%E6%95%88-canvas%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89/" title="安卓版落叶特效-canvas篇（一）">安卓版落叶特效-canvas篇（一）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B/" title="分类于 编程">编程</a>
+</div>
+
+    <span><a href="/2020/07/12/Mysql%E5%BC%80%E5%90%AF%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/" title="Mysql开启远程连接">Mysql开启远程连接</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B/" title="分类于 编程">编程</a>
+</div>
+
+    <span><a href="/2020/07/14/redis5-0-5%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/" title="redis5.0.5集群搭建">redis5.0.5集群搭建</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%B7%A5%E4%BD%9C/" title="分类于 工作">工作</a>
+</div>
+
+    <span><a href="/2020/07/12/git-%E5%91%BD%E4%BB%A4%E4%B8%80-%E5%9F%BA%E7%A1%80%E7%AF%87/" title="git 命令一 (基础篇)">git 命令一 (基础篇)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B/" title="分类于 编程">编程</a>
+</div>
+
+    <span><a href="/2020/10/15/java-%E6%B1%89%E5%AD%97%E8%BD%AC%E6%8B%BC%E9%9F%B3/" title="java 汉字转拼音">java 汉字转拼音</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2020</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">startanew @ 小小程序员</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">200k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">3:02</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2020/07/13/mysql主从复制-mycat/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

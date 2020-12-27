@@ -1,0 +1,544 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="JAVA" href="http://www.startanew.cn/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="JAVA" href="http://www.startanew.cn/atom.xml" />
+<link rel="alternate" type="application/json" title="JAVA" href="http://www.startanew.cn/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="redis" />
+
+
+<link rel="canonical" href="http://www.startanew.cn/2020/07/12/Redis-jedis/">
+
+
+
+  <title>
+Redis jedis - 编程 |
+小小程序员 = JAVA = startanew Blog</title>
+<meta name="generator" content="Hexo 5.3.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">Redis jedis
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2020-07-12 23:22:00">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2020-07-12T23:22:00+08:00">2020-07-12</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>4.6k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>4 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">小小程序员</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="http://vps.startanew.cn/u%3D552985732%2C1956346469%26fm%3D26%26gp%3D0.jpg">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="item" rel="index" title="分类于 编程"><span itemprop="name">编程</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="http://www.startanew.cn/2020/07/12/Redis-jedis/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="startanew">
+    <meta itemprop="description" content="startanew Blog, 爱编程，爱生活">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="JAVA">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h4 id="一-引入maven依赖"><a class="markdownIt-Anchor" href="#一-引入maven依赖">#</a> 一。引入 Maven 依赖</h4>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt;redis.clients&lt;&#x2F;groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;jedis&lt;&#x2F;artifactId&gt;</span><br><span class="line">	&lt;version&gt;2.9.0&lt;&#x2F;version&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>  
+<h3 id="二-代码"><a class="markdownIt-Anchor" href="#二-代码">#</a> 二。代码</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestRedis</span> </span>&#123;</span><br><span class="line"><span class="keyword">private</span> Jedis jedis;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Before</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setup</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="comment">//连接redis服务器，192.168.0.100:6379</span></span><br><span class="line">jedis = <span class="keyword">new</span> Jedis(<span class="string">&quot;192.168.0.100&quot;</span>, <span class="number">6379</span>);</span><br><span class="line"><span class="comment">//权限认证</span></span><br><span class="line">jedis.auth(<span class="string">&quot;admin&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* redis存储字符串</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testString</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="comment">//-----添加数据----------</span></span><br><span class="line">jedis.set(<span class="string">&quot;name&quot;</span>,<span class="string">&quot;xinxin&quot;</span>);<span class="comment">//向key--&gt;name中放入了value--&gt;xinxin</span></span><br><span class="line">System.out.println(jedis.get(<span class="string">&quot;name&quot;</span>));<span class="comment">//执行结果：xinxin</span></span><br><span class="line"></span><br><span class="line">jedis.append(<span class="string">&quot;name&quot;</span>, <span class="string">&quot; is my lover&quot;</span>); <span class="comment">//拼接</span></span><br><span class="line">System.out.println(jedis.get(<span class="string">&quot;name&quot;</span>));</span><br><span class="line"></span><br><span class="line">jedis.del(<span class="string">&quot;name&quot;</span>); <span class="comment">//删除某个键</span></span><br><span class="line">System.out.println(jedis.get(<span class="string">&quot;name&quot;</span>));</span><br><span class="line"><span class="comment">//设置多个键值对</span></span><br><span class="line">jedis.mset(<span class="string">&quot;name&quot;</span>,<span class="string">&quot;liuling&quot;</span>,<span class="string">&quot;age&quot;</span>,<span class="string">&quot;23&quot;</span>,<span class="string">&quot;qq&quot;</span>,<span class="string">&quot;476777XXX&quot;</span>);</span><br><span class="line">jedis.incr(<span class="string">&quot;age&quot;</span>); <span class="comment">//进行加1操作</span></span><br><span class="line">System.out.println(jedis.get(<span class="string">&quot;name&quot;</span>) + <span class="string">&quot;-&quot;</span> + jedis.get(<span class="string">&quot;age&quot;</span>) + <span class="string">&quot;-&quot;</span> + jedis.get(<span class="string">&quot;qq&quot;</span>));</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* redis操作Map</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testMap</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="comment">//-----添加数据----------</span></span><br><span class="line">Map&lt;String, String&gt; map = <span class="keyword">new</span> HashMap&lt;String, String&gt;();</span><br><span class="line">map.put(<span class="string">&quot;name&quot;</span>, <span class="string">&quot;xinxin&quot;</span>);</span><br><span class="line">map.put(<span class="string">&quot;age&quot;</span>, <span class="string">&quot;22&quot;</span>);</span><br><span class="line">map.put(<span class="string">&quot;qq&quot;</span>, <span class="string">&quot;123456&quot;</span>);</span><br><span class="line">jedis.hmset(<span class="string">&quot;user&quot;</span>,map);</span><br><span class="line"><span class="comment">//取出user中的name，执行结果:[minxr]--&gt;注意结果是一个泛型的List</span></span><br><span class="line"><span class="comment">//第一个参数是存入redis中map对象的key，后面跟的是放入map中的对象的key，后面的key可以跟多个，是可变参数</span></span><br><span class="line">List rsmap = jedis.hmget(<span class="string">&quot;user&quot;</span>, <span class="string">&quot;name&quot;</span>, <span class="string">&quot;age&quot;</span>, <span class="string">&quot;qq&quot;</span>);</span><br><span class="line">System.out.println(rsmap);</span><br><span class="line"></span><br><span class="line"><span class="comment">//删除map中的某个键值</span></span><br><span class="line">jedis.hdel(<span class="string">&quot;user&quot;</span>,<span class="string">&quot;age&quot;</span>);</span><br><span class="line">System.out.println(jedis.hmget(<span class="string">&quot;user&quot;</span>, <span class="string">&quot;age&quot;</span>)); <span class="comment">//因为删除了，所以返回的是null</span></span><br><span class="line">System.out.println(jedis.hlen(<span class="string">&quot;user&quot;</span>)); <span class="comment">//返回key为user的键中存放的值的个数2</span></span><br><span class="line">System.out.println(jedis.exists(<span class="string">&quot;user&quot;</span>));<span class="comment">//是否存在key为user的记录 返回true</span></span><br><span class="line">System.out.println(jedis.hkeys(<span class="string">&quot;user&quot;</span>));<span class="comment">//返回map对象中的所有key</span></span><br><span class="line">System.out.println(jedis.hvals(<span class="string">&quot;user&quot;</span>));<span class="comment">//返回map对象中的所有value</span></span><br><span class="line"></span><br><span class="line">Iterator iter=jedis.hkeys(<span class="string">&quot;user&quot;</span>).iterator();</span><br><span class="line"><span class="keyword">while</span> (iter.hasNext())&#123;</span><br><span class="line">String key = iter.next();</span><br><span class="line">System.out.println(key+<span class="string">&quot;:&quot;</span>+jedis.hmget(<span class="string">&quot;user&quot;</span>,key));</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* jedis操作List</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testList</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="comment">//开始前，先移除所有的内容</span></span><br><span class="line">jedis.del(<span class="string">&quot;java framework&quot;</span>);</span><br><span class="line">System.out.println(jedis.lrange(<span class="string">&quot;java framework&quot;</span>,<span class="number">0</span>,-<span class="number">1</span>));</span><br><span class="line"><span class="comment">//先向key java framework中存放三条数据</span></span><br><span class="line">jedis.lpush(<span class="string">&quot;java framework&quot;</span>,<span class="string">&quot;spring&quot;</span>);</span><br><span class="line">jedis.lpush(<span class="string">&quot;java framework&quot;</span>,<span class="string">&quot;struts&quot;</span>);</span><br><span class="line">jedis.lpush(<span class="string">&quot;java framework&quot;</span>,<span class="string">&quot;hibernate&quot;</span>);</span><br><span class="line"><span class="comment">//再取出所有数据jedis.lrange是按范围取出，</span></span><br><span class="line"><span class="comment">// 第一个是key，第二个是起始位置，第三个是结束位置，jedis.llen获取长度 -1表示取得所有</span></span><br><span class="line">System.out.println(jedis.lrange(<span class="string">&quot;java framework&quot;</span>,<span class="number">0</span>,-<span class="number">1</span>));</span><br><span class="line"></span><br><span class="line">jedis.del(<span class="string">&quot;java framework&quot;</span>);</span><br><span class="line">jedis.rpush(<span class="string">&quot;java framework&quot;</span>,<span class="string">&quot;spring&quot;</span>);</span><br><span class="line">jedis.rpush(<span class="string">&quot;java framework&quot;</span>,<span class="string">&quot;struts&quot;</span>);</span><br><span class="line">jedis.rpush(<span class="string">&quot;java framework&quot;</span>,<span class="string">&quot;hibernate&quot;</span>);</span><br><span class="line">System.out.println(jedis.lrange(<span class="string">&quot;java framework&quot;</span>,<span class="number">0</span>,-<span class="number">1</span>));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* jedis操作Set</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testSet</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="comment">//添加</span></span><br><span class="line">jedis.sadd(<span class="string">&quot;user&quot;</span>,<span class="string">&quot;liuling&quot;</span>);</span><br><span class="line">jedis.sadd(<span class="string">&quot;user&quot;</span>,<span class="string">&quot;xinxin&quot;</span>);</span><br><span class="line">jedis.sadd(<span class="string">&quot;user&quot;</span>,<span class="string">&quot;ling&quot;</span>);</span><br><span class="line">jedis.sadd(<span class="string">&quot;user&quot;</span>,<span class="string">&quot;zhangxinxin&quot;</span>);</span><br><span class="line">jedis.sadd(<span class="string">&quot;user&quot;</span>,<span class="string">&quot;who&quot;</span>);</span><br><span class="line"><span class="comment">//移除noname</span></span><br><span class="line">jedis.srem(<span class="string">&quot;user&quot;</span>,<span class="string">&quot;who&quot;</span>);</span><br><span class="line">System.out.println(jedis.smembers(<span class="string">&quot;user&quot;</span>));<span class="comment">//获取所有加入的value</span></span><br><span class="line">System.out.println(jedis.sismember(<span class="string">&quot;user&quot;</span>, <span class="string">&quot;who&quot;</span>));<span class="comment">//判断 who 是否是user集合的元素</span></span><br><span class="line">System.out.println(jedis.srandmember(<span class="string">&quot;user&quot;</span>));</span><br><span class="line">System.out.println(jedis.scard(<span class="string">&quot;user&quot;</span>));<span class="comment">//返回集合的元素个数</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line"><span class="comment">//jedis 排序</span></span><br><span class="line"><span class="comment">//注意，此处的rpush和lpush是List的操作。是一个双向链表（但从表现来看的）</span></span><br><span class="line">jedis.del(<span class="string">&quot;a&quot;</span>);<span class="comment">//先清除数据，再加入数据进行测试</span></span><br><span class="line">jedis.rpush(<span class="string">&quot;a&quot;</span>, <span class="string">&quot;1&quot;</span>);</span><br><span class="line">jedis.lpush(<span class="string">&quot;a&quot;</span>,<span class="string">&quot;6&quot;</span>);</span><br><span class="line">jedis.lpush(<span class="string">&quot;a&quot;</span>,<span class="string">&quot;3&quot;</span>);</span><br><span class="line">jedis.lpush(<span class="string">&quot;a&quot;</span>,<span class="string">&quot;9&quot;</span>);</span><br><span class="line">System.out.println(jedis.lrange(<span class="string">&quot;a&quot;</span>,<span class="number">0</span>,-<span class="number">1</span>));<span class="comment">// [9, 3, 6, 1]</span></span><br><span class="line">System.out.println(jedis.sort(<span class="string">&quot;a&quot;</span>)); <span class="comment">//[1, 3, 6, 9] //输入排序后结果</span></span><br><span class="line">System.out.println(jedis.lrange(<span class="string">&quot;a&quot;</span>,<span class="number">0</span>,-<span class="number">1</span>));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testRedisPool</span><span class="params">()</span> </span>&#123;</span><br><span class="line">RedisUtil.getJedis().set(<span class="string">&quot;newname&quot;</span>, <span class="string">&quot;中文测试&quot;</span>);</span><br><span class="line">System.out.println(RedisUtil.getJedis().get(<span class="string">&quot;newname&quot;</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      <div class="tags">
+          <a href="/tags/redis/" rel="tag"><i class="ic i-tag"></i> redis</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2020-09-25 20:36:36" itemprop="dateModified" datetime="2020-09-25T20:36:36+08:00">2020-09-25</time>
+  </span>
+  <span id="2020/07/12/Redis-jedis/" class="item leancloud_visitors" data-flag-title="Redis jedis" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>startanew <i class="ic i-at"><em>@</em></i>JAVA
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="http://www.startanew.cn/2020/07/12/Redis-jedis/" title="Redis jedis">http://www.startanew.cn/2020/07/12/Redis-jedis/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2020/07/12/redis%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" itemprop="url" rel="prev" data-background-image="http:&#x2F;&#x2F;vps.startanew.cn&#x2F;u%3D552985732%2C1956346469%26fm%3D26%26gp%3D0.jpg" title="redis基本用法">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 编程</span>
+  <h3>redis基本用法</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2020/07/12/stunserver%E6%90%AD%E5%BB%BA/" itemprop="url" rel="next" data-background-image="http:&#x2F;&#x2F;vps.startanew.cn&#x2F;webrtc.jpg" title="stunserver搭建">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 编程</span>
+  <h3>stunserver搭建</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80-%E5%BC%95%E5%85%A5maven%E4%BE%9D%E8%B5%96"><span class="toc-number">1.</span> <span class="toc-text"> 一。引入 Maven 依赖</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C-%E4%BB%A3%E7%A0%81"><span class="toc-number"></span> <span class="toc-text"> 二。代码</span></a>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/2020/07/12/Mysql%E5%BC%80%E5%90%AF%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/" rel="bookmark" title="Mysql开启远程连接">Mysql开启远程连接</a></li><li><a href="/2020/07/12/redis%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" rel="bookmark" title="redis基本用法">redis基本用法</a></li><li class="active"><a href="/2020/07/12/Redis-jedis/" rel="bookmark" title="Redis jedis">Redis jedis</a></li><li><a href="/2020/07/12/stunserver%E6%90%AD%E5%BB%BA/" rel="bookmark" title="stunserver搭建">stunserver搭建</a></li><li><a href="/2020/07/12/HashMap-%E5%92%8C-HashTable-%E7%9A%84%E5%8C%BA%E5%88%AB/" rel="bookmark" title="HashMap 和 HashTable 的区别">HashMap 和 HashTable 的区别</a></li><li><a href="/2020/07/12/maven%E6%89%93%E5%8C%85jar/" rel="bookmark" title="maven打包jar">maven打包jar</a></li><li><a href="/2020/07/13/docker-%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/" rel="bookmark" title="docker 基础入门">docker 基础入门</a></li><li><a href="/2020/07/13/docker-%E5%88%9B%E5%BB%BA%E9%95%9C%E5%83%8F%E4%B8%8E%E6%8F%90%E4%BA%A4/" rel="bookmark" title="docker 创建镜像与提交">docker 创建镜像与提交</a></li><li><a href="/2020/07/13/SpringBoot-%E9%9B%86%E6%88%90Websocket%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%EF%BC%88%E4%B8%80%EF%BC%89/" rel="bookmark" title="SpringBoot 集成Websocket问题解决（一）">SpringBoot 集成Websocket问题解决（一）</a></li><li><a href="/2020/07/13/%E5%AE%89%E5%8D%93%E6%9C%8D%E5%8A%A1%E9%87%8C%E7%9B%91%E5%90%AC%E6%8C%89%E9%92%AE/" rel="bookmark" title="安卓服务里监听按钮">安卓服务里监听按钮</a></li><li><a href="/2020/07/13/ssm-%E9%9B%86%E6%88%90-websocket/" rel="bookmark" title="ssm 集成 websocket">ssm 集成 websocket</a></li><li><a href="/2020/07/13/%E6%A0%BC%E6%9E%97%E5%A8%81%E6%B2%BB%E6%97%B6%E9%97%B4%E8%BD%AC%E6%97%B6%E9%97%B4%E6%88%B3/" rel="bookmark" title="格林威治时间转时间戳">格林威治时间转时间戳</a></li><li><a href="/2020/07/13/%E5%AE%89%E5%8D%93%E7%89%88%E8%90%BD%E5%8F%B6%E7%89%B9%E6%95%88-canvas%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89/" rel="bookmark" title="安卓版落叶特效-canvas篇（一）">安卓版落叶特效-canvas篇（一）</a></li><li><a href="/2020/07/13/kotlin%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%88%E4%B8%80%EF%BC%89/" rel="bookmark" title="kotlin基础知识（一）">kotlin基础知识（一）</a></li><li><a href="/2020/07/13/kotlin%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%88%E4%BA%8C%EF%BC%89/" rel="bookmark" title="kotlin基础知识（二）">kotlin基础知识（二）</a></li><li><a href="/2020/07/13/ssm%E6%95%B4%E5%90%88sceurity-%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95%E4%B9%8B%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E7%AF%87/" rel="bookmark" title="ssm整合sceurity-基础用法之基础环境搭建篇">ssm整合sceurity-基础用法之基础环境搭建篇</a></li><li><a href="/2020/07/13/ssm%E6%95%B4%E5%90%88sceurity-%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95%E4%B9%8Bsceurity%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D/" rel="bookmark" title="ssm整合sceurity-基础用法之sceurity基本配置介绍">ssm整合sceurity-基础用法之sceurity基本配置介绍</a></li><li><a href="/2020/07/13/ssm%E6%95%B4%E5%90%88sceurity-%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95%E4%B9%8Bsceurity%E7%BB%93%E5%90%88%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8A%A8%E6%80%81%E9%89%B4%E6%9D%83/" rel="bookmark" title="ssm整合sceurity-基础用法之sceurity结合数据库动态鉴权">ssm整合sceurity-基础用法之sceurity结合数据库动态鉴权</a></li><li><a href="/2020/07/13/mysql-%E4%BC%98%E5%8C%96%EF%BC%88%E4%B8%80%EF%BC%89/" rel="bookmark" title="mysql 优化（一）">mysql 优化（一）</a></li><li><a href="/2020/07/13/mysql%E4%BC%98%E5%8C%96-%EF%BC%88%E4%BA%8C%EF%BC%89/" rel="bookmark" title="mysql优化-（二）">mysql优化-（二）</a></li><li><a href="/2020/07/13/mysql%E4%BC%98%E5%8C%96-%EF%BC%88%E4%B8%89%EF%BC%89/" rel="bookmark" title="mysql优化-（三）">mysql优化-（三）</a></li><li><a href="/2020/07/13/mysql-%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/" rel="bookmark" title="mysql 主从复制">mysql 主从复制</a></li><li><a href="/2020/07/13/docker-%E7%9F%A5%E8%AF%86%E8%A1%A5%E5%85%85-1/" rel="bookmark" title="docker 知识补充">docker 知识补充</a></li><li><a href="/2020/07/13/mysql%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6-mycat/" rel="bookmark" title="mysql主从复制-mycat">mysql主从复制-mycat</a></li><li><a href="/2020/07/13/mycat-%E9%AB%98%E5%8F%AF%E7%94%A8haproxy/" rel="bookmark" title="mycat 高可用haproxy">mycat 高可用haproxy</a></li><li><a href="/2020/07/14/redis%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/" rel="bookmark" title="redis主从复制">redis主从复制</a></li><li><a href="/2020/07/14/redis5-0-5%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/" rel="bookmark" title="redis5.0.5集群搭建">redis5.0.5集群搭建</a></li><li><a href="/2020/07/14/jwt%E7%A7%81%E9%92%A5%E7%94%9F%E6%88%90/" rel="bookmark" title="jwt私钥生成">jwt私钥生成</a></li><li><a href="/2020/07/14/%E5%AE%89%E5%8D%93%E6%88%AA%E5%B1%8F%E5%8A%9F%E8%83%BD%E4%B8%8E%E5%8A%A0%E8%BD%BDsd%E5%8D%A1%E7%9A%84html/" rel="bookmark" title="安卓截屏功能与加载sd卡的html">安卓截屏功能与加载sd卡的html</a></li><li><a href="/2020/07/14/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85docker/" rel="bookmark" title="树莓派安装docker">树莓派安装docker</a></li><li><a href="/2020/07/14/%E8%A7%A3%E5%86%B3SpringBoot%E9%9B%86%E6%88%90WebSocket%E6%89%93%E5%8C%85%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98/" rel="bookmark" title="解决SpringBoot集成WebSocket打包失败问题">解决SpringBoot集成WebSocket打包失败问题</a></li><li><a href="/2020/10/15/java-%E6%B1%89%E5%AD%97%E8%BD%AC%E6%8B%BC%E9%9F%B3/" rel="bookmark" title="java 汉字转拼音">java 汉字转拼音</a></li><li><a href="/2020/10/16/springboot-%E9%9B%86%E6%88%90redis%E7%BC%93%E5%AD%98/" rel="bookmark" title="springboot 集成redis缓存">springboot 集成redis缓存</a></li><li><a href="/2020/10/22/CompletableFuture-%E5%BC%82%E6%AD%A5%E4%BB%BB%E5%8A%A1/" rel="bookmark" title="CompletableFuture  异步任务">CompletableFuture  异步任务</a></li><li><a href="/2020/10/24/Log4j2%E5%85%A5%E9%97%A8/" rel="bookmark" title="Log4j2入门">Log4j2入门</a></li><li><a href="/2020/11/12/Excel%E5%AF%BC%E5%87%BA/" rel="bookmark" title="Excel导出">Excel导出</a></li><li><a href="/2020/11/12/XMLHttpRequest%20%E5%BC%82%E6%AD%A5%E4%B8%8B%E8%BD%BD/" rel="bookmark" title="XMLHttpRequest 异步下载">XMLHttpRequest 异步下载</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="startanew"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">startanew</p>
+  <div class="description" itemprop="description">爱编程，爱生活</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">68</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">5</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">19</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL3pqemJ1cnk=" title="https:&#x2F;&#x2F;github.com&#x2F;zjzbury"><i class="ic i-github"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTEzMDczMjU3OTM=" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;1307325793"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOnpqenN0YXJ0YW5ld0AxNjNjb20=" title="mailto:zjzstartanew@163com"><i class="ic i-envelope"></i></span>
+      <span class="exturl item douban" data-url="aHR0cHM6Ly93d3cuZG91YmFuLmNvbS9wZW9wbGUvMjIzOTg5NzEyLw==" title="https:&#x2F;&#x2F;www.douban.com&#x2F;people&#x2F;223989712&#x2F;"><i class="ic i-douban"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/tool/" rel="section"><i class="ic i-magic"></i>工具</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/resources/" rel="section"><i class="ic i-heart"></i>资源</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2020/07/12/redis%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2020/07/12/stunserver%E6%90%AD%E5%BB%BA/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B/" title="分类于 编程">编程</a>
+</div>
+
+    <span><a href="/2020/07/14/redis%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/" title="redis主从复制">redis主从复制</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BD%91%E7%BB%9C%E6%B8%97%E9%80%8F/" title="分类于 网络渗透">网络渗透</a>
+</div>
+
+    <span><a href="/2020/07/14/windows-%E5%BF%AB%E6%8D%B7%E9%94%AE/" title="windows 快捷键">windows 快捷键</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B/" title="分类于 编程">编程</a>
+</div>
+
+    <span><a href="/2020/07/12/maven%E6%89%93%E5%8C%85jar/" title="maven打包jar">maven打包jar</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B/" title="分类于 编程">编程</a>
+</div>
+
+    <span><a href="/2020/07/14/%E5%AE%89%E5%8D%93%E6%88%AA%E5%B1%8F%E5%8A%9F%E8%83%BD%E4%B8%8E%E5%8A%A0%E8%BD%BDsd%E5%8D%A1%E7%9A%84html/" title="安卓截屏功能与加载sd卡的html">安卓截屏功能与加载sd卡的html</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B/" title="分类于 编程">编程</a>
+</div>
+
+    <span><a href="/2020/11/12/XMLHttpRequest%20%E5%BC%82%E6%AD%A5%E4%B8%8B%E8%BD%BD/" title="XMLHttpRequest 异步下载">XMLHttpRequest 异步下载</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B/" title="分类于 编程">编程</a>
+</div>
+
+    <span><a href="/2020/07/12/redis%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" title="redis基本用法">redis基本用法</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B/" title="分类于 编程">编程</a>
+</div>
+
+    <span><a href="/2020/07/13/docker-%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/" title="docker 基础入门">docker 基础入门</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B/" title="分类于 编程">编程</a>
+</div>
+
+    <span><a href="/2020/07/13/mysql%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6-mycat/" title="mysql主从复制-mycat">mysql主从复制-mycat</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B/" title="分类于 编程">编程</a>
+</div>
+
+    <span><a href="/2020/07/13/docker-%E7%9F%A5%E8%AF%86%E8%A1%A5%E5%85%85-1/" title="docker 知识补充">docker 知识补充</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B/" title="分类于 编程">编程</a>
+</div>
+
+    <span><a href="/2020/07/14/%E8%A7%A3%E5%86%B3SpringBoot%E9%9B%86%E6%88%90WebSocket%E6%89%93%E5%8C%85%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98/" title="解决SpringBoot集成WebSocket打包失败问题">解决SpringBoot集成WebSocket打包失败问题</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2020</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">startanew @ 小小程序员</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">200k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">3:02</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2020/07/12/Redis-jedis/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

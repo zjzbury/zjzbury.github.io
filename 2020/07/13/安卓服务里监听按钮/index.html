@@ -1,0 +1,546 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="JAVA" href="http://www.startanew.cn/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="JAVA" href="http://www.startanew.cn/atom.xml" />
+<link rel="alternate" type="application/json" title="JAVA" href="http://www.startanew.cn/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="android" />
+
+
+<link rel="canonical" href="http://www.startanew.cn/2020/07/13/%E5%AE%89%E5%8D%93%E6%9C%8D%E5%8A%A1%E9%87%8C%E7%9B%91%E5%90%AC%E6%8C%89%E9%92%AE/">
+
+
+
+  <title>
+安卓服务里监听按钮 - 编程 |
+小小程序员 = JAVA = startanew Blog</title>
+<meta name="generator" content="Hexo 5.3.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">安卓服务里监听按钮
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2020-07-13 14:45:00">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2020-07-13T14:45:00+08:00">2020-07-13</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>2.4k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>2 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">小小程序员</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="http://vps.startanew.cn/u%3D3122841051%2C1709320166%26fm%3D26%26gp%3D0.jpg">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="item" rel="index" title="分类于 编程"><span itemprop="name">编程</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="http://www.startanew.cn/2020/07/13/%E5%AE%89%E5%8D%93%E6%9C%8D%E5%8A%A1%E9%87%8C%E7%9B%91%E5%90%AC%E6%8C%89%E9%92%AE/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="startanew">
+    <meta itemprop="description" content="startanew Blog, 爱编程，爱生活">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="JAVA">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h5 id="一使用accessibilityservice实现按钮监听在资源文件夹新建xml资源文件夹然后新accessibility_service_configxml"><a class="markdownIt-Anchor" href="#一使用accessibilityservice实现按钮监听在资源文件夹新建xml资源文件夹然后新accessibility_service_configxml">#</a> 一。使用 AccessibilityService 实现按钮监听，在资源文件夹新建 xml 资源文件夹，然后新 accessibility_service_config.xml。</h5>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;accessibility-service xmlns:android&#x3D;&quot;http:&#x2F;&#x2F;schemas.android.com&#x2F;apk&#x2F;res&#x2F;android&quot;</span><br><span class="line">    android:accessibilityEventTypes&#x3D;&quot;typeAllMask&quot;</span><br><span class="line">    android:accessibilityFeedbackType&#x3D;&quot;feedbackGeneric&quot;</span><br><span class="line">    android:accessibilityFlags&#x3D;&quot;flagRequestFilterKeyEvents&quot;</span><br><span class="line">    android:canRetrieveWindowContent&#x3D;&quot;true&quot;</span><br><span class="line">    android:canRequestFilterKeyEvents&#x3D;&quot;true&quot;</span><br><span class="line">    android:description&#x3D;&quot;@string&#x2F;accessibility_service_description&quot;</span><br><span class="line">    &#x2F;&gt;</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h5 id="二在配置文件中配置"><a class="markdownIt-Anchor" href="#二在配置文件中配置">#</a> 二。在配置文件中配置</h5>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;service</span><br><span class="line">android:name&#x3D;&quot;.service.MyAccessibilityService&quot;</span><br><span class="line">android:label&#x3D;&quot;按钮监听&quot;</span><br><span class="line">android:enabled&#x3D;&quot;true&quot;</span><br><span class="line">android:exported&#x3D;&quot;true&quot;</span><br><span class="line">android:permission&#x3D;&quot;android.permission.BIND_ACCESSIBILITY_SERVICE&quot;</span><br><span class="line">&gt;</span><br><span class="line">&lt;intent-filter&gt;</span><br><span class="line">&lt;action android:name&#x3D;&quot;android.accessibilityservice.AccessibilityService&quot;&#x2F;&gt;</span><br><span class="line">&lt;&#x2F;intent-filter&gt;</span><br><span class="line">&lt;meta-data</span><br><span class="line">android:name&#x3D;&quot;android.accessibilityservice&quot;</span><br><span class="line">android:resource&#x3D;&quot;@xml&#x2F;accessibility_service_config&quot;</span><br><span class="line">&#x2F;&gt;</span><br><span class="line">&lt;&#x2F;service&gt;</span><br><span class="line"> </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h5 id="三创建myaccessibilityservice类继承accessibilityservice类-重写onkeyevent方法"><a class="markdownIt-Anchor" href="#三创建myaccessibilityservice类继承accessibilityservice类-重写onkeyevent方法">#</a> 三。创建 MyAccessibilityService 类，继承 AccessibilityService 类  重写 onKeyEvent 方法</h5>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">public class MyAccessibilityService extends AccessibilityService &#123;</span><br><span class="line">    private static final String TAG &#x3D; &quot;测试&quot;;</span><br><span class="line">    long aLong &#x3D; 0, bLong &#x3D; 0;</span><br><span class="line">    @Override</span><br><span class="line">    protected void onServiceConnected() &#123;</span><br><span class="line">        super.onServiceConnected();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void onAccessibilityEvent(AccessibilityEvent event) &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected boolean onKeyEvent(KeyEvent event) &#123;</span><br><span class="line">        if (event.getKeyCode()&#x3D;&#x3D;93)&#123;</span><br><span class="line">            bLong &#x3D; System.currentTimeMillis();</span><br><span class="line">            if (event.getKeyCode() &#x3D;&#x3D; 93) &#123;</span><br><span class="line">                if (aLong &#x3D;&#x3D; 0) &#123;</span><br><span class="line">                    aLong &#x3D; System.currentTimeMillis();</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                    if (bLong - aLong &lt; 2000) &#123;</span><br><span class="line">                        Map&lt;String, String&gt; map &#x3D; new HashMap&lt;&gt;();</span><br><span class="line">                        map.put(&quot;class&quot;, &quot;AdPresentation.class&quot;);</span><br><span class="line">                        EventBus.getDefault().post(map);</span><br><span class="line">                    &#125; else &#123;</span><br><span class="line">                        aLong &#x3D; System.currentTimeMillis();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void onInterrupt() &#123;</span><br><span class="line">    &#125;</span><br><span class="line">    @Override</span><br><span class="line">    public void onDestroy() &#123;</span><br><span class="line">        super.onDestroy();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      <div class="tags">
+          <a href="/tags/android/" rel="tag"><i class="ic i-tag"></i> android</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2020-09-25 20:45:28" itemprop="dateModified" datetime="2020-09-25T20:45:28+08:00">2020-09-25</time>
+  </span>
+  <span id="2020/07/13/安卓服务里监听按钮/" class="item leancloud_visitors" data-flag-title="安卓服务里监听按钮" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>startanew <i class="ic i-at"><em>@</em></i>JAVA
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="http://www.startanew.cn/2020/07/13/%E5%AE%89%E5%8D%93%E6%9C%8D%E5%8A%A1%E9%87%8C%E7%9B%91%E5%90%AC%E6%8C%89%E9%92%AE/" title="安卓服务里监听按钮">http://www.startanew.cn/2020/07/13/安卓服务里监听按钮/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2020/07/13/SpringBoot-%E9%9B%86%E6%88%90Websocket%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%EF%BC%88%E4%B8%80%EF%BC%89/" itemprop="url" rel="prev" data-background-image="http:&#x2F;&#x2F;vps.startanew.cn&#x2F;springboot.jpg" title="SpringBoot 集成Websocket问题解决（一）">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 编程</span>
+  <h3>SpringBoot 集成Websocket问题解决（一）</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2020/07/13/ssm-%E9%9B%86%E6%88%90-websocket/" itemprop="url" rel="next" data-background-image="http:&#x2F;&#x2F;vps.startanew.cn&#x2F;u%3D1640451212%2C3045819206%26fm%3D26%26gp%3D0.jpg" title="ssm 集成 websocket">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 编程</span>
+  <h3>ssm 集成 websocket</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%80%E4%BD%BF%E7%94%A8accessibilityservice%E5%AE%9E%E7%8E%B0%E6%8C%89%E9%92%AE%E7%9B%91%E5%90%AC%E5%9C%A8%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6%E5%A4%B9%E6%96%B0%E5%BB%BAxml%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6%E5%A4%B9%E7%84%B6%E5%90%8E%E6%96%B0accessibility_service_configxml"><span class="toc-number">1.</span> <span class="toc-text"> 一。使用 AccessibilityService 实现按钮监听，在资源文件夹新建 xml 资源文件夹，然后新 accessibility_service_config.xml。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%8C%E5%9C%A8%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%B8%AD%E9%85%8D%E7%BD%AE"><span class="toc-number">2.</span> <span class="toc-text"> 二。在配置文件中配置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%89%E5%88%9B%E5%BB%BAmyaccessibilityservice%E7%B1%BB%E7%BB%A7%E6%89%BFaccessibilityservice%E7%B1%BB-%E9%87%8D%E5%86%99onkeyevent%E6%96%B9%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text"> 三。创建 MyAccessibilityService 类，继承 AccessibilityService 类  重写 onKeyEvent 方法</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/2020/07/12/Mysql%E5%BC%80%E5%90%AF%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/" rel="bookmark" title="Mysql开启远程连接">Mysql开启远程连接</a></li><li><a href="/2020/07/12/redis%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" rel="bookmark" title="redis基本用法">redis基本用法</a></li><li><a href="/2020/07/12/Redis-jedis/" rel="bookmark" title="Redis jedis">Redis jedis</a></li><li><a href="/2020/07/12/stunserver%E6%90%AD%E5%BB%BA/" rel="bookmark" title="stunserver搭建">stunserver搭建</a></li><li><a href="/2020/07/12/HashMap-%E5%92%8C-HashTable-%E7%9A%84%E5%8C%BA%E5%88%AB/" rel="bookmark" title="HashMap 和 HashTable 的区别">HashMap 和 HashTable 的区别</a></li><li><a href="/2020/07/12/maven%E6%89%93%E5%8C%85jar/" rel="bookmark" title="maven打包jar">maven打包jar</a></li><li><a href="/2020/07/13/docker-%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/" rel="bookmark" title="docker 基础入门">docker 基础入门</a></li><li><a href="/2020/07/13/docker-%E5%88%9B%E5%BB%BA%E9%95%9C%E5%83%8F%E4%B8%8E%E6%8F%90%E4%BA%A4/" rel="bookmark" title="docker 创建镜像与提交">docker 创建镜像与提交</a></li><li><a href="/2020/07/13/SpringBoot-%E9%9B%86%E6%88%90Websocket%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%EF%BC%88%E4%B8%80%EF%BC%89/" rel="bookmark" title="SpringBoot 集成Websocket问题解决（一）">SpringBoot 集成Websocket问题解决（一）</a></li><li class="active"><a href="/2020/07/13/%E5%AE%89%E5%8D%93%E6%9C%8D%E5%8A%A1%E9%87%8C%E7%9B%91%E5%90%AC%E6%8C%89%E9%92%AE/" rel="bookmark" title="安卓服务里监听按钮">安卓服务里监听按钮</a></li><li><a href="/2020/07/13/ssm-%E9%9B%86%E6%88%90-websocket/" rel="bookmark" title="ssm 集成 websocket">ssm 集成 websocket</a></li><li><a href="/2020/07/13/%E6%A0%BC%E6%9E%97%E5%A8%81%E6%B2%BB%E6%97%B6%E9%97%B4%E8%BD%AC%E6%97%B6%E9%97%B4%E6%88%B3/" rel="bookmark" title="格林威治时间转时间戳">格林威治时间转时间戳</a></li><li><a href="/2020/07/13/%E5%AE%89%E5%8D%93%E7%89%88%E8%90%BD%E5%8F%B6%E7%89%B9%E6%95%88-canvas%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89/" rel="bookmark" title="安卓版落叶特效-canvas篇（一）">安卓版落叶特效-canvas篇（一）</a></li><li><a href="/2020/07/13/kotlin%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%88%E4%B8%80%EF%BC%89/" rel="bookmark" title="kotlin基础知识（一）">kotlin基础知识（一）</a></li><li><a href="/2020/07/13/kotlin%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%88%E4%BA%8C%EF%BC%89/" rel="bookmark" title="kotlin基础知识（二）">kotlin基础知识（二）</a></li><li><a href="/2020/07/13/ssm%E6%95%B4%E5%90%88sceurity-%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95%E4%B9%8B%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E7%AF%87/" rel="bookmark" title="ssm整合sceurity-基础用法之基础环境搭建篇">ssm整合sceurity-基础用法之基础环境搭建篇</a></li><li><a href="/2020/07/13/ssm%E6%95%B4%E5%90%88sceurity-%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95%E4%B9%8Bsceurity%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D/" rel="bookmark" title="ssm整合sceurity-基础用法之sceurity基本配置介绍">ssm整合sceurity-基础用法之sceurity基本配置介绍</a></li><li><a href="/2020/07/13/ssm%E6%95%B4%E5%90%88sceurity-%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95%E4%B9%8Bsceurity%E7%BB%93%E5%90%88%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8A%A8%E6%80%81%E9%89%B4%E6%9D%83/" rel="bookmark" title="ssm整合sceurity-基础用法之sceurity结合数据库动态鉴权">ssm整合sceurity-基础用法之sceurity结合数据库动态鉴权</a></li><li><a href="/2020/07/13/mysql-%E4%BC%98%E5%8C%96%EF%BC%88%E4%B8%80%EF%BC%89/" rel="bookmark" title="mysql 优化（一）">mysql 优化（一）</a></li><li><a href="/2020/07/13/mysql%E4%BC%98%E5%8C%96-%EF%BC%88%E4%BA%8C%EF%BC%89/" rel="bookmark" title="mysql优化-（二）">mysql优化-（二）</a></li><li><a href="/2020/07/13/mysql%E4%BC%98%E5%8C%96-%EF%BC%88%E4%B8%89%EF%BC%89/" rel="bookmark" title="mysql优化-（三）">mysql优化-（三）</a></li><li><a href="/2020/07/13/mysql-%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/" rel="bookmark" title="mysql 主从复制">mysql 主从复制</a></li><li><a href="/2020/07/13/docker-%E7%9F%A5%E8%AF%86%E8%A1%A5%E5%85%85-1/" rel="bookmark" title="docker 知识补充">docker 知识补充</a></li><li><a href="/2020/07/13/mysql%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6-mycat/" rel="bookmark" title="mysql主从复制-mycat">mysql主从复制-mycat</a></li><li><a href="/2020/07/13/mycat-%E9%AB%98%E5%8F%AF%E7%94%A8haproxy/" rel="bookmark" title="mycat 高可用haproxy">mycat 高可用haproxy</a></li><li><a href="/2020/07/14/redis%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/" rel="bookmark" title="redis主从复制">redis主从复制</a></li><li><a href="/2020/07/14/redis5-0-5%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/" rel="bookmark" title="redis5.0.5集群搭建">redis5.0.5集群搭建</a></li><li><a href="/2020/07/14/jwt%E7%A7%81%E9%92%A5%E7%94%9F%E6%88%90/" rel="bookmark" title="jwt私钥生成">jwt私钥生成</a></li><li><a href="/2020/07/14/%E5%AE%89%E5%8D%93%E6%88%AA%E5%B1%8F%E5%8A%9F%E8%83%BD%E4%B8%8E%E5%8A%A0%E8%BD%BDsd%E5%8D%A1%E7%9A%84html/" rel="bookmark" title="安卓截屏功能与加载sd卡的html">安卓截屏功能与加载sd卡的html</a></li><li><a href="/2020/07/14/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85docker/" rel="bookmark" title="树莓派安装docker">树莓派安装docker</a></li><li><a href="/2020/07/14/%E8%A7%A3%E5%86%B3SpringBoot%E9%9B%86%E6%88%90WebSocket%E6%89%93%E5%8C%85%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98/" rel="bookmark" title="解决SpringBoot集成WebSocket打包失败问题">解决SpringBoot集成WebSocket打包失败问题</a></li><li><a href="/2020/10/15/java-%E6%B1%89%E5%AD%97%E8%BD%AC%E6%8B%BC%E9%9F%B3/" rel="bookmark" title="java 汉字转拼音">java 汉字转拼音</a></li><li><a href="/2020/10/16/springboot-%E9%9B%86%E6%88%90redis%E7%BC%93%E5%AD%98/" rel="bookmark" title="springboot 集成redis缓存">springboot 集成redis缓存</a></li><li><a href="/2020/10/22/CompletableFuture-%E5%BC%82%E6%AD%A5%E4%BB%BB%E5%8A%A1/" rel="bookmark" title="CompletableFuture  异步任务">CompletableFuture  异步任务</a></li><li><a href="/2020/10/24/Log4j2%E5%85%A5%E9%97%A8/" rel="bookmark" title="Log4j2入门">Log4j2入门</a></li><li><a href="/2020/11/12/Excel%E5%AF%BC%E5%87%BA/" rel="bookmark" title="Excel导出">Excel导出</a></li><li><a href="/2020/11/12/XMLHttpRequest%20%E5%BC%82%E6%AD%A5%E4%B8%8B%E8%BD%BD/" rel="bookmark" title="XMLHttpRequest 异步下载">XMLHttpRequest 异步下载</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="startanew"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">startanew</p>
+  <div class="description" itemprop="description">爱编程，爱生活</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">68</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">5</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">19</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL3pqemJ1cnk=" title="https:&#x2F;&#x2F;github.com&#x2F;zjzbury"><i class="ic i-github"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTEzMDczMjU3OTM=" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;1307325793"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOnpqenN0YXJ0YW5ld0AxNjNjb20=" title="mailto:zjzstartanew@163com"><i class="ic i-envelope"></i></span>
+      <span class="exturl item douban" data-url="aHR0cHM6Ly93d3cuZG91YmFuLmNvbS9wZW9wbGUvMjIzOTg5NzEyLw==" title="https:&#x2F;&#x2F;www.douban.com&#x2F;people&#x2F;223989712&#x2F;"><i class="ic i-douban"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/tool/" rel="section"><i class="ic i-magic"></i>工具</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/resources/" rel="section"><i class="ic i-heart"></i>资源</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2020/07/13/SpringBoot-%E9%9B%86%E6%88%90Websocket%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%EF%BC%88%E4%B8%80%EF%BC%89/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2020/07/13/ssm-%E9%9B%86%E6%88%90-websocket/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BD%91%E7%BB%9C%E6%B8%97%E9%80%8F/" title="分类于 网络渗透">网络渗透</a>
+</div>
+
+    <span><a href="/2020/07/14/windows-%E5%BF%AB%E6%8D%B7%E9%94%AE/" title="windows 快捷键">windows 快捷键</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86/" title="分类于 人力资源管理">人力资源管理</a>
+</div>
+
+    <span><a href="/2020/10/08/%E5%8E%8B%E5%8A%9B%E4%B8%8E%E5%BF%83%E7%90%86%E5%81%A5%E5%BA%B7%E7%AE%A1%E7%90%86/" title="第九章 压力与心理健康管理">第九章 压力与心理健康管理</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86/" title="分类于 人力资源管理">人力资源管理</a>
+</div>
+
+    <span><a href="/2020/10/08/%E5%B7%A5%E4%BD%9C%E5%88%86%E6%9E%90%E7%9A%84%E5%8E%86%E5%8F%B2%E4%B8%8E%E5%8F%91%E5%B1%95/" title="第一章 工作分析的历史与发展">第一章 工作分析的历史与发展</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BD%91%E7%BB%9C%E6%B8%97%E9%80%8F/" title="分类于 网络渗透">网络渗透</a>
+</div>
+
+    <span><a href="/2020/07/14/dos%E5%91%BD%E4%BB%A4/" title="dos命令">dos命令</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86/" title="分类于 人力资源管理">人力资源管理</a>
+</div>
+
+    <span><a href="/2020/10/08/%E5%B7%A5%E4%BD%9C%E8%AE%BE%E8%AE%A1/" title="第八章 工作设计">第八章 工作设计</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B/" title="分类于 编程">编程</a>
+</div>
+
+    <span><a href="/2020/07/14/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85docker/" title="树莓派安装docker">树莓派安装docker</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86/" title="分类于 人力资源管理">人力资源管理</a>
+</div>
+
+    <span><a href="/2020/10/08/%E5%B2%97%E4%BD%8D%E8%AF%84%E4%BB%B7/" title="第七章 岗位评价">第七章 岗位评价</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B/" title="分类于 编程">编程</a>
+</div>
+
+    <span><a href="/2020/07/13/%E6%A0%BC%E6%9E%97%E5%A8%81%E6%B2%BB%E6%97%B6%E9%97%B4%E8%BD%AC%E6%97%B6%E9%97%B4%E6%88%B3/" title="格林威治时间转时间戳">格林威治时间转时间戳</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%B7%A5%E4%BD%9C/" title="分类于 工作">工作</a>
+</div>
+
+    <span><a href="/2020/07/13/swagger%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90api%E6%96%87%E6%A1%A3/" title="swagger自动生成api文档">swagger自动生成api文档</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B/" title="分类于 编程">编程</a>
+</div>
+
+    <span><a href="/2020/07/13/docker-%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/" title="docker 基础入门">docker 基础入门</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2020</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">startanew @ 小小程序员</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">200k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">3:02</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2020/07/13/安卓服务里监听按钮/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

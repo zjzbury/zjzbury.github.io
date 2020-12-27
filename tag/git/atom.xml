@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://www.startanew.cn</id>
+    <title>JAVA • Posts by &#34;git&#34; tag</title>
+    <link href="http://www.startanew.cn" />
+    <updated>2020-10-18T10:53:46.000Z</updated>
+    <category term="springboot" />
+    <category term="javaweb" />
+    <category term="java" />
+    <category term="redis" />
+    <category term="MYSQL" />
+    <category term="其他" />
+    <category term="js" />
+    <category term="docker" />
+    <category term="dos命令" />
+    <category term="git" />
+    <category term="android" />
+    <category term="maven" />
+    <category term="mysql" />
+    <category term="spring-sceurity" />
+    <category term="webrtc" />
+    <category term="员工关系管理" />
+    <category term="近代史" />
+    <category term="工作分析" />
+    <category term="树莓派" />
+    <entry>
+        <id>http://www.startanew.cn/2020/10/18/git-%E6%8B%89%E5%8F%96%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%85%A8%E9%83%A8%E5%88%86%E6%94%AF/</id>
+        <title>git 拉取远程仓库全部分支</title>
+        <link rel="alternate" href="http://www.startanew.cn/2020/10/18/git-%E6%8B%89%E5%8F%96%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%85%A8%E9%83%A8%E5%88%86%E6%94%AF/"/>
+        <content type="html">&lt;h3 id=&#34;拉取远程仓库全部分支&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#拉取远程仓库全部分支&#34;&gt;#&lt;/a&gt; 拉取远程仓库全部分支&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;git clone   // 拉取仓库&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt; git branch -a   // 列出远程仓库所有分支&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git checkout -b 本地分支名 origin/远程分支名  // 切换分支&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+        <category term="git" />
+        <updated>2020-10-18T10:53:46.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://www.startanew.cn/2020/07/14/git%E8%A1%A5%E5%85%85/</id>
+        <title>git补充</title>
+        <link rel="alternate" href="http://www.startanew.cn/2020/07/14/git%E8%A1%A5%E5%85%85/"/>
+        <content type="html">&lt;ul&gt;
+&lt;li&gt;撤销 add&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;git status 查看当下更新的文件&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;git reset HEAD 表示撤销上次add的所有文件&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;git reset HEAD dir&amp;#x2F;dir&amp;#x2F;test.php 撤销指定文件&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;撤销commit&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;a id=&#34;more&#34;&gt;&lt;/a&gt;  
+&lt;ul&gt;
+&lt;li&gt;在项目开发过程中，完成某项功能的时候需要执行以下命令&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;git add . 添加所有文件&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;git commit -m “finish”&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;有时候在执行完commit，想撤回去再次修改可以执行以下命令&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;git reset –soft HEAD^ &amp;#x2F;&amp;#x2F;这样就成功的撤销了你上次的commit（仅仅是撤回commit操作，代码仍然保留）&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;PS：&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;HEAD^的意思是上一个版本，也可以写成HEAD~1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;如果你进行了两次commit，想都撤回，可以使用HEAD~2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
+        <category term="git" />
+        <updated>2020-07-14T01:03:04.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://www.startanew.cn/2020/07/12/git-%E5%91%BD%E4%BB%A4%E4%B8%89%EF%BC%88-gitignore%E7%AF%87%EF%BC%89/</id>
+        <title>git 命令三（.gitignore篇）</title>
+        <link rel="alternate" href="http://www.startanew.cn/2020/07/12/git-%E5%91%BD%E4%BB%A4%E4%B8%89%EF%BC%88-gitignore%E7%AF%87%EF%BC%89/"/>
+        <content type="html">&lt;h5 id=&#34;一-新建gitignore文件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#一-新建gitignore文件&#34;&gt;#&lt;/a&gt; 一。新建.gitignore 文件&lt;/h5&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;touch .gitignore&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;a id=&#34;more&#34;&gt;&lt;/a&gt;  
+&lt;h5 id=&#34;二-notepad-打开文件进行编辑添加规则如下&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#二-notepad-打开文件进行编辑添加规则如下&#34;&gt;#&lt;/a&gt; 二 . notepad++ 打开文件进行编辑，添加规则如下&lt;/h5&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&amp;#x2F;target&amp;#x2F; ：过滤文件设置，表示过滤这个文件夹&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;*.mdb  ，*.ldb  ，*.sln 表示过滤某种类型的文件&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#x2F;mtk&amp;#x2F;do.c ，&amp;#x2F;mtk&amp;#x2F;if.h  表示指定过滤某个文件下具体文件&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; !*.c , !&amp;#x2F;dir&amp;#x2F;subdir&amp;#x2F;     !开头表示不过滤&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;*.[oa]    支持通配符：过滤repo中所有以.o或者.a为扩展名的文件&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h5 id=&#34;三-当需要删除暂存区或分支上的文件同时工作区不需要这个文件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#三-当需要删除暂存区或分支上的文件同时工作区不需要这个文件&#34;&gt;#&lt;/a&gt; 三。当需要删除暂存区或分支上的文件，同时工作区不需要这个文件&lt;/h5&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;git rm fileName&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h5 id=&#34;四-当需要删除暂存区或分支上的文件同时工作区需要这个文件但是不需要被版本控制&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#四-当需要删除暂存区或分支上的文件同时工作区需要这个文件但是不需要被版本控制&#34;&gt;#&lt;/a&gt; 四。当需要删除暂存区或分支上的文件，同时工作区需要这个文件，但是不需要被版本控制&lt;/h5&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;git rm –cache fileName&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;#后面添加进.gitignore文件中的文件可以使用这条命令解除版本控制的追踪，然后在commit忽略这个文件。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h5 id=&#34;五补充解决push失败问题&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#五补充解决push失败问题&#34;&gt;#&lt;/a&gt; 五。补充：解决 push 失败问题&lt;/h5&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;git pull --rebase origin master     本地生成远程仓库文件&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;git push origin master&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
+        <category term="git" />
+        <updated>2020-07-12T14:18:00.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://www.startanew.cn/2020/07/12/git-%E5%91%BD%E4%BB%A4%E4%BA%8C-%E5%88%86%E6%94%AF%E7%AF%87/</id>
+        <title>git 命令二 (分支篇)</title>
+        <link rel="alternate" href="http://www.startanew.cn/2020/07/12/git-%E5%91%BD%E4%BB%A4%E4%BA%8C-%E5%88%86%E6%94%AF%E7%AF%87/"/>
+        <content type="html">&lt;h2 id=&#34;分支管理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#分支管理&#34;&gt;#&lt;/a&gt; 分支管理&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;1.git branch 列出分支&lt;/p&gt;
+&lt;center&gt;
+ &lt;img data-src=&#34;http://vps.startanew.cn/15945618944574r5yfysi.png&#34; &gt;
+&lt;/center&gt;     
+&lt;p&gt;2.git branch (branchname) 创建分支&lt;br&gt;
+ 3.git checkout (branchname) 切换分支&lt;/p&gt;
+&lt;a id=&#34;more&#34;&gt;&lt;/a&gt;  
+&lt;p&gt;4 git merge 合并分支&lt;br&gt;
+ 5.git log 查看提交历史&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;oneline 选项来查看历史记录的简洁的版本  &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;graph 选项，查看历史中什么时候出现了分支、合并&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;查找指定用户的提交日志可以使用命令：git log –author&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;6.git log git revert commitID 回滚操作&lt;br&gt;
+ 7.ssh-keygen -t ras -C “邮箱” 生成密钥&lt;br&gt;
+ 8.git branch –set-upstream 本地关联远程分支&lt;/p&gt;
+</content>
+        <category term="git" />
+        <updated>2020-07-12T13:48:00.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://www.startanew.cn/2020/07/12/git-%E5%91%BD%E4%BB%A4%E4%B8%80-%E5%9F%BA%E7%A1%80%E7%AF%87/</id>
+        <title>git 命令一 (基础篇)</title>
+        <link rel="alternate" href="http://www.startanew.cn/2020/07/12/git-%E5%91%BD%E4%BB%A4%E4%B8%80-%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
+        <content type="html">&lt;h2 id=&#34;git基础用法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#git基础用法&#34;&gt;#&lt;/a&gt; git 基础用法&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;1.git init  初始化一个 Git 仓库，执行完后会在当前目录生成一个 .git 目录 。&lt;br&gt;
+2.git init [目录地址] 会在指定目录下 生成一个名为 .git 的目录 。&lt;br&gt;
+3.git add 命令告诉 Git 开始对这些文件进行跟踪&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;$ git add *.c&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$ git add README&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$ git commit -m &amp;#39;初始化项目版本&amp;#39;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;a id=&#34;more&#34;&gt;&lt;/a&gt;  
+&lt;p&gt;4.git clone 从现有 Git 仓库中拷贝项目 。&lt;br&gt;
+5.git clone &lt;repo&gt; &lt;directory&gt; 克隆到指定的目录&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;示例：git clone https:&amp;#x2F;&amp;#x2F;gitee.com&amp;#x2F;medua&amp;#x2F;test.git&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;6.git status 命令用于查看项目的当前状态&lt;br&gt;
+ 7.git diff 命令显示已写入缓存与已修改但尚未写入缓存的改动的区别&lt;br&gt;
+ 8.git commit 使用 git add 命令将想要快照的内容写入缓存区， 而执行 git commit 将缓存区内容添加到仓库中。&lt;br&gt;
+9.git rm 从 Git 中移除某个文件&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;如果删除之前修改过并且已经放到暂存区域的话，则必须要用强制删除选项 –f ,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;git rm –r * 递归删除 &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;10. 使用步骤&lt;/p&gt;
+ &lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;git add .&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;git commit -m 提交信息&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;git push&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;提交失败 git pull&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;查看状态 git status&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;解决冲突&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;返回第一步 git add&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
+        <category term="git" />
+        <updated>2020-07-12T13:26:00.000Z</updated>
+    </entry>
+</feed>

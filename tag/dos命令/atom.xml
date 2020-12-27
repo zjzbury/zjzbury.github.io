@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://www.startanew.cn</id>
+    <title>JAVA • Posts by &#34;dos命令&#34; tag</title>
+    <link href="http://www.startanew.cn" />
+    <updated>2020-07-14T00:52:04.000Z</updated>
+    <category term="springboot" />
+    <category term="javaweb" />
+    <category term="java" />
+    <category term="redis" />
+    <category term="MYSQL" />
+    <category term="其他" />
+    <category term="js" />
+    <category term="docker" />
+    <category term="dos命令" />
+    <category term="git" />
+    <category term="android" />
+    <category term="maven" />
+    <category term="mysql" />
+    <category term="spring-sceurity" />
+    <category term="webrtc" />
+    <category term="员工关系管理" />
+    <category term="近代史" />
+    <category term="工作分析" />
+    <category term="树莓派" />
+    <entry>
+        <id>http://www.startanew.cn/2020/07/14/windows-%E5%BF%AB%E6%8D%B7%E9%94%AE/</id>
+        <title>windows 快捷键</title>
+        <link rel="alternate" href="http://www.startanew.cn/2020/07/14/windows-%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+        <content type="html">&lt;ol&gt;
+&lt;li&gt;F2   重命名&lt;/li&gt;
+&lt;li&gt;shift+delete   永久删除文件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;a id=&#34;more&#34;&gt;&lt;/a&gt;  
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;win  或  ctrl + esc   打开开始菜单&lt;/li&gt;
+&lt;li&gt;win  + m   最新化隐藏所有窗口&lt;/li&gt;
+&lt;li&gt;alt + F4  关闭当前程序&lt;/li&gt;
+&lt;li&gt;alt +tab  窗口切换&lt;/li&gt;
+&lt;li&gt;alt  +  esc   切换当前程序&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+        <category term="dos命令" />
+        <updated>2020-07-14T00:52:04.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://www.startanew.cn/2020/07/14/dos%E5%91%BD%E4%BB%A4/</id>
+        <title>dos命令</title>
+        <link rel="alternate" href="http://www.startanew.cn/2020/07/14/dos%E5%91%BD%E4%BB%A4/"/>
+        <content type="html">&lt;ol&gt;
+&lt;li&gt;shutdown  -s  -t  180  -c ” 文本 “&lt;/li&gt;
+&lt;li&gt;dir   查看目录&lt;/li&gt;
+&lt;li&gt;start  文件名   打开文件&lt;/li&gt;
+&lt;li&gt;type   文件名    查看文件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;a id=&#34;more&#34;&gt;&lt;/a&gt;  
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;copy  con  文件名   创建文件  并写入内容  ctrl+Z 停止输入  enter  保存&lt;/li&gt;
+&lt;li&gt;md   目录名   创建目录&lt;/li&gt;
+&lt;li&gt;rd   目录名   删除目录&lt;/li&gt;
+&lt;li&gt;ren  原名   新名    修改文件夹或文件名称&lt;/li&gt;
+&lt;li&gt;del   文件名   删除文件&lt;/li&gt;
+&lt;li&gt;copy   文件名   目标路径   拷贝文件&lt;/li&gt;
+&lt;li&gt;move  文件名   目标路径   移动文件&lt;/li&gt;
+&lt;li&gt;tree   列出文件树&lt;/li&gt;
+&lt;li&gt;net use k: \ip\c$     将远程主机 c 盘映射到本地主机 K 盘&lt;/li&gt;
+&lt;li&gt;net use k: \ip\c$   del   删除&lt;/li&gt;
+&lt;li&gt;net  start 查看开启的服务&lt;/li&gt;
+&lt;li&gt;net  start 服务名  开启服务&lt;/li&gt;
+&lt;li&gt;net  stop 服务名  关闭服务&lt;/li&gt;
+&lt;li&gt;net share     查看共享&lt;/li&gt;
+&lt;li&gt;net share ipc$ 创建共享&lt;/li&gt;
+&lt;li&gt;net share ipc$ /del   删除共享&lt;/li&gt;
+&lt;li&gt;netstat -a   查看端口&lt;/li&gt;
+&lt;li&gt;netstat -n    查看端口网络状态&lt;/li&gt;
+&lt;li&gt;netstat -v   查看正在进行的工作&lt;/li&gt;
+&lt;li&gt;net  user  用户名  密码  /add   添加用户&lt;/li&gt;
+&lt;li&gt;net  user  用户名  /del  删除用户&lt;/li&gt;
+&lt;li&gt;net  localgroup  administrator  用户名   /add   添加用户到 administrator  组&lt;/li&gt;
+&lt;li&gt;calc  打开计算器&lt;/li&gt;
+&lt;li&gt;charmap：启动字符映射表&lt;/li&gt;
+&lt;li&gt;自动关机命令&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Shutdown -s -t 600：表示 600 秒后自动关机&lt;/li&gt;
+&lt;li&gt;shutdown -a ：可取消定时关机&lt;/li&gt;
+&lt;li&gt;Shutdown -r -t 600：表示 600 秒后自动重启&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;30&#34;&gt;
+&lt;li&gt;control  控制面版&lt;/li&gt;
+&lt;li&gt;netstat -ano | findstr “端口号” 查看端口占用情况&lt;/li&gt;
+&lt;li&gt;tasklist | findstr pid  根据 pid 查询程序&lt;/li&gt;
+&lt;li&gt;taskkill /f/t  /im  软件名称   杀死程序&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+        <category term="dos命令" />
+        <updated>2020-07-14T00:43:07.000Z</updated>
+    </entry>
+</feed>

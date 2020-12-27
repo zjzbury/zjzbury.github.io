@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>JAVA • Posts by &#34;树莓派&#34; tag</title>
+        <link>http://www.startanew.cn</link>
+        <description>爱编程，爱生活</description>
+        <language>zh-CN</language>
+        <pubDate>Tue, 14 Jul 2020 08:55:56 +0800</pubDate>
+        <lastBuildDate>Tue, 14 Jul 2020 08:55:56 +0800</lastBuildDate>
+        <category>springboot</category>
+        <category>javaweb</category>
+        <category>java</category>
+        <category>redis</category>
+        <category>MYSQL</category>
+        <category>其他</category>
+        <category>js</category>
+        <category>docker</category>
+        <category>dos命令</category>
+        <category>git</category>
+        <category>android</category>
+        <category>maven</category>
+        <category>mysql</category>
+        <category>spring-sceurity</category>
+        <category>webrtc</category>
+        <category>员工关系管理</category>
+        <category>近代史</category>
+        <category>工作分析</category>
+        <category>树莓派</category>
+        <item>
+            <guid isPermalink="true">http://www.startanew.cn/2020/07/14/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85docker/</guid>
+            <title>树莓派安装docker</title>
+            <link>http://www.startanew.cn/2020/07/14/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85docker/</link>
+            <category>树莓派</category>
+            <pubDate>Tue, 14 Jul 2020 08:55:56 +0800</pubDate>
+            <description><![CDATA[ &lt;ol&gt;
+&lt;li&gt;url -fsSL &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9nZXQuZG9ja2VyLmNvbQ==&#34;&gt;https://get.docker.com&lt;/span&gt; -o &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2dldC1kb2NrZXIuc2g=&#34;&gt;get-docker.sh&lt;/span&gt;    下载安装脚本&lt;/li&gt;
+&lt;li&gt;sh &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2dldC1kb2NrZXIuc2g=&#34;&gt;get-docker.sh&lt;/span&gt; –mirror Aliyun       执行安装脚本&lt;/li&gt;
+&lt;li&gt;安装完成后  配置免 sudo  执行 docker&lt;/li&gt;
+&lt;/ol&gt;
+&lt;a id=&#34;more&#34;&gt;&lt;/a&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;sudo groupadd docker #添加 docker 用户组&lt;/li&gt;
+&lt;li&gt;sudo gpasswd -a $USER docker #将登陆用户加入到 docker 用户组中&lt;/li&gt;
+&lt;li&gt;newgrp docker #更新用户组&lt;/li&gt;
+&lt;li&gt;docker ps #测试 docker 命令是否可以使用&lt;/li&gt;
+&lt;/ol&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

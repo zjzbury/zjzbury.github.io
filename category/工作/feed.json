@@ -1,0 +1,78 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "JAVA • All posts by \"工作\" category",
+    "description": "爱编程，爱生活",
+    "home_page_url": "http://www.startanew.cn",
+    "items": [
+        {
+            "id": "http://www.startanew.cn/2020/10/18/git-%E6%8B%89%E5%8F%96%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%85%A8%E9%83%A8%E5%88%86%E6%94%AF/",
+            "url": "http://www.startanew.cn/2020/10/18/git-%E6%8B%89%E5%8F%96%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%85%A8%E9%83%A8%E5%88%86%E6%94%AF/",
+            "title": "git 拉取远程仓库全部分支",
+            "date_published": "2020-10-18T10:53:46.000Z",
+            "content_html": "<h3 id=\"拉取远程仓库全部分支\"><a class=\"markdownIt-Anchor\" href=\"#拉取远程仓库全部分支\">#</a> 拉取远程仓库全部分支</h3>\n<ol>\n<li><code>git clone   // 拉取仓库</code></li>\n<li><code> git branch -a   // 列出远程仓库所有分支</code></li>\n<li><code>git checkout -b 本地分支名 origin/远程分支名  // 切换分支</code></li>\n</ol>\n",
+            "tags": [
+                "git"
+            ]
+        },
+        {
+            "id": "http://www.startanew.cn/2020/07/14/git%E8%A1%A5%E5%85%85/",
+            "url": "http://www.startanew.cn/2020/07/14/git%E8%A1%A5%E5%85%85/",
+            "title": "git补充",
+            "date_published": "2020-07-14T01:03:04.000Z",
+            "content_html": "<ul>\n<li>撤销 add</li>\n</ul>\n<figure class=\"highlight plain\"><table><tr><td class=\"gutter\"><pre><span class=\"line\">1</span><br><span class=\"line\">2</span><br><span class=\"line\">3</span><br><span class=\"line\">4</span><br><span class=\"line\">5</span><br></pre></td><td class=\"code\"><pre><span class=\"line\">git status 查看当下更新的文件</span><br><span class=\"line\">git reset HEAD 表示撤销上次add的所有文件</span><br><span class=\"line\">git reset HEAD dir&#x2F;dir&#x2F;test.php 撤销指定文件</span><br><span class=\"line\">撤销commit</span><br><span class=\"line\"></span><br></pre></td></tr></table></figure>\n<a id=\"more\"></a>  \n<ul>\n<li>在项目开发过程中，完成某项功能的时候需要执行以下命令</li>\n</ul>\n<figure class=\"highlight plain\"><table><tr><td class=\"gutter\"><pre><span class=\"line\">1</span><br><span class=\"line\">2</span><br><span class=\"line\">3</span><br><span class=\"line\">4</span><br></pre></td><td class=\"code\"><pre><span class=\"line\">git add . 添加所有文件</span><br><span class=\"line\">git commit -m “finish”</span><br><span class=\"line\">有时候在执行完commit，想撤回去再次修改可以执行以下命令</span><br><span class=\"line\">git reset –soft HEAD^ &#x2F;&#x2F;这样就成功的撤销了你上次的commit（仅仅是撤回commit操作，代码仍然保留）</span><br></pre></td></tr></table></figure>\n<figure class=\"highlight plain\"><table><tr><td class=\"gutter\"><pre><span class=\"line\">1</span><br><span class=\"line\">2</span><br><span class=\"line\">3</span><br></pre></td><td class=\"code\"><pre><span class=\"line\">PS：</span><br><span class=\"line\">HEAD^的意思是上一个版本，也可以写成HEAD~1</span><br><span class=\"line\">如果你进行了两次commit，想都撤回，可以使用HEAD~2</span><br></pre></td></tr></table></figure>",
+            "tags": [
+                "git"
+            ]
+        },
+        {
+            "id": "http://www.startanew.cn/2020/07/13/swagger%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90api%E6%96%87%E6%A1%A3/",
+            "url": "http://www.startanew.cn/2020/07/13/swagger%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90api%E6%96%87%E6%A1%A3/",
+            "title": "swagger自动生成api文档",
+            "date_published": "2020-07-13T06:37:00.000Z",
+            "content_html": "<p><span class=\"exturl\" data-url=\"aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM5ODU2NjQvYXJ0aWNsZS9kZXRhaWxzLzgwMDA5Mjc0\">https://blog.csdn.net/u013985664/article/details/80009274</span></p>\n<p><span class=\"exturl\" data-url=\"aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2OTExMTQ1L2FydGljbGUvZGV0YWlscy84Mjg1NDQxNw==\">https://blog.csdn.net/qq_36911145/article/details/82854417</span></p>\n",
+            "tags": [
+                "javaweb"
+            ]
+        },
+        {
+            "id": "http://www.startanew.cn/2020/07/12/redis%E5%AE%89%E8%A3%85/",
+            "url": "http://www.startanew.cn/2020/07/12/redis%E5%AE%89%E8%A3%85/",
+            "title": "redis安装",
+            "date_published": "2020-07-12T14:24:45.000Z",
+            "content_html": "<h6 id=\"一安装环境\"><a class=\"markdownIt-Anchor\" href=\"#一安装环境\">#</a> 一。安装环境</h6>\n<ul>\n<li>系统： ubuntu 18.04</li>\n<li>软件：redis</li>\n</ul>\n<hr>\n<h6 id=\"二命令安装\"><a class=\"markdownIt-Anchor\" href=\"#二命令安装\">#</a> 二。命令安装</h6>\n<figure class=\"highlight plain\"><table><tr><td class=\"gutter\"><pre><span class=\"line\">1</span><br><span class=\"line\">2</span><br></pre></td><td class=\"code\"><pre><span class=\"line\">执行命令:sudo  apt-get install redis-server</span><br><span class=\"line\"></span><br></pre></td></tr></table></figure>\n<a id=\"more\"></a>  \n<center>\n <img data-src=\"http://vps.startanew.cn/15945641310039zwqsuzo.png\" >\n</center>  \n<ul>\n<li>连接 redis 服务器，测试是否开启</li>\n<li>在终端输入 redis-cli   连接服务器。</li>\n</ul>\n<center>\n <img data-src=\"http://vps.startanew.cn/1594564119256rghiyuvu.png\" >\n</center>  \n<ul>\n<li>如果连接失败，输入 redis 服务开启命令:redis-server, 接着 输入 netstat -ap | grep  6379 查看 tcp 连接</li>\n</ul>\n<center>\n <img data-src=\"http://vps.startanew.cn/15945641110801icuoa92.png\" >\n</center>    \n<h6 id=\"三-源码安装\"><a class=\"markdownIt-Anchor\" href=\"#三-源码安装\">#</a> 三。源码安装</h6>\n<ul>\n<li>通过 wget 命令进行下载:</li>\n</ul>\n<figure class=\"highlight plain\"><table><tr><td class=\"gutter\"><pre><span class=\"line\">1</span><br></pre></td><td class=\"code\"><pre><span class=\"line\">wget http:&#x2F;&#x2F;download.redis.io&#x2F;releases&#x2F;redis-4.0.6.tar.gz</span><br></pre></td></tr></table></figure>\n<ul>\n<li>解压：</li>\n</ul>\n<figure class=\"highlight plain\"><table><tr><td class=\"gutter\"><pre><span class=\"line\">1</span><br></pre></td><td class=\"code\"><pre><span class=\"line\">tar -zxf redis-4.0.6.tar.gz </span><br></pre></td></tr></table></figure>\n <center>\n  <img data-src=\"http://vps.startanew.cn/1594564092044khrt0hzt.png\" >\n </center>  \n<ul>\n<li>安装编译环境</li>\n</ul>\n<figure class=\"highlight plain\"><table><tr><td class=\"gutter\"><pre><span class=\"line\">1</span><br></pre></td><td class=\"code\"><pre><span class=\"line\">sudo apt-get install gcc</span><br></pre></td></tr></table></figure>\n<ul>\n<li>切换到 redis-4.0.6  目录进行编译安装</li>\n<li>切换目录   cd redis-4.0.6/</li>\n<li>编译  make</li>\n<li>进入到 src 目录  cd   src</li>\n<li>执行安装  make install   或   make PREFIX=/usr/local/redis install</li>\n</ul>\n",
+            "tags": [
+                "redis"
+            ]
+        },
+        {
+            "id": "http://www.startanew.cn/2020/07/12/git-%E5%91%BD%E4%BB%A4%E4%B8%89%EF%BC%88-gitignore%E7%AF%87%EF%BC%89/",
+            "url": "http://www.startanew.cn/2020/07/12/git-%E5%91%BD%E4%BB%A4%E4%B8%89%EF%BC%88-gitignore%E7%AF%87%EF%BC%89/",
+            "title": "git 命令三（.gitignore篇）",
+            "date_published": "2020-07-12T14:18:00.000Z",
+            "content_html": "<h5 id=\"一-新建gitignore文件\"><a class=\"markdownIt-Anchor\" href=\"#一-新建gitignore文件\">#</a> 一。新建.gitignore 文件</h5>\n<figure class=\"highlight plain\"><table><tr><td class=\"gutter\"><pre><span class=\"line\">1</span><br></pre></td><td class=\"code\"><pre><span class=\"line\">touch .gitignore</span><br></pre></td></tr></table></figure>\n<a id=\"more\"></a>  \n<h5 id=\"二-notepad-打开文件进行编辑添加规则如下\"><a class=\"markdownIt-Anchor\" href=\"#二-notepad-打开文件进行编辑添加规则如下\">#</a> 二 . notepad++ 打开文件进行编辑，添加规则如下</h5>\n<figure class=\"highlight plain\"><table><tr><td class=\"gutter\"><pre><span class=\"line\">1</span><br><span class=\"line\">2</span><br><span class=\"line\">3</span><br><span class=\"line\">4</span><br><span class=\"line\">5</span><br></pre></td><td class=\"code\"><pre><span class=\"line\">&#x2F;target&#x2F; ：过滤文件设置，表示过滤这个文件夹</span><br><span class=\"line\">*.mdb  ，*.ldb  ，*.sln 表示过滤某种类型的文件</span><br><span class=\"line\">&#x2F;mtk&#x2F;do.c ，&#x2F;mtk&#x2F;if.h  表示指定过滤某个文件下具体文件</span><br><span class=\"line\"> !*.c , !&#x2F;dir&#x2F;subdir&#x2F;     !开头表示不过滤</span><br><span class=\"line\">*.[oa]    支持通配符：过滤repo中所有以.o或者.a为扩展名的文件</span><br></pre></td></tr></table></figure>\n<h5 id=\"三-当需要删除暂存区或分支上的文件同时工作区不需要这个文件\"><a class=\"markdownIt-Anchor\" href=\"#三-当需要删除暂存区或分支上的文件同时工作区不需要这个文件\">#</a> 三。当需要删除暂存区或分支上的文件，同时工作区不需要这个文件</h5>\n<figure class=\"highlight plain\"><table><tr><td class=\"gutter\"><pre><span class=\"line\">1</span><br></pre></td><td class=\"code\"><pre><span class=\"line\">git rm fileName</span><br></pre></td></tr></table></figure>\n<h5 id=\"四-当需要删除暂存区或分支上的文件同时工作区需要这个文件但是不需要被版本控制\"><a class=\"markdownIt-Anchor\" href=\"#四-当需要删除暂存区或分支上的文件同时工作区需要这个文件但是不需要被版本控制\">#</a> 四。当需要删除暂存区或分支上的文件，同时工作区需要这个文件，但是不需要被版本控制</h5>\n<figure class=\"highlight plain\"><table><tr><td class=\"gutter\"><pre><span class=\"line\">1</span><br><span class=\"line\">2</span><br></pre></td><td class=\"code\"><pre><span class=\"line\">git rm –cache fileName</span><br><span class=\"line\">#后面添加进.gitignore文件中的文件可以使用这条命令解除版本控制的追踪，然后在commit忽略这个文件。</span><br></pre></td></tr></table></figure>\n<h5 id=\"五补充解决push失败问题\"><a class=\"markdownIt-Anchor\" href=\"#五补充解决push失败问题\">#</a> 五。补充：解决 push 失败问题</h5>\n<figure class=\"highlight plain\"><table><tr><td class=\"gutter\"><pre><span class=\"line\">1</span><br><span class=\"line\">2</span><br></pre></td><td class=\"code\"><pre><span class=\"line\">git pull --rebase origin master     本地生成远程仓库文件</span><br><span class=\"line\">git push origin master</span><br></pre></td></tr></table></figure>",
+            "tags": [
+                "git"
+            ]
+        },
+        {
+            "id": "http://www.startanew.cn/2020/07/12/git-%E5%91%BD%E4%BB%A4%E4%BA%8C-%E5%88%86%E6%94%AF%E7%AF%87/",
+            "url": "http://www.startanew.cn/2020/07/12/git-%E5%91%BD%E4%BB%A4%E4%BA%8C-%E5%88%86%E6%94%AF%E7%AF%87/",
+            "title": "git 命令二 (分支篇)",
+            "date_published": "2020-07-12T13:48:00.000Z",
+            "content_html": "<h2 id=\"分支管理\"><a class=\"markdownIt-Anchor\" href=\"#分支管理\">#</a> 分支管理</h2>\n<hr>\n<p>1.git branch 列出分支</p>\n<center>\n <img data-src=\"http://vps.startanew.cn/15945618944574r5yfysi.png\" >\n</center>     \n<p>2.git branch (branchname) 创建分支<br>\n 3.git checkout (branchname) 切换分支</p>\n<a id=\"more\"></a>  \n<p>4 git merge 合并分支<br>\n 5.git log 查看提交历史</p>\n<figure class=\"highlight plain\"><table><tr><td class=\"gutter\"><pre><span class=\"line\">1</span><br><span class=\"line\">2</span><br><span class=\"line\">3</span><br></pre></td><td class=\"code\"><pre><span class=\"line\">oneline 选项来查看历史记录的简洁的版本  </span><br><span class=\"line\">graph 选项，查看历史中什么时候出现了分支、合并</span><br><span class=\"line\">查找指定用户的提交日志可以使用命令：git log –author</span><br></pre></td></tr></table></figure>\n<p>6.git log git revert commitID 回滚操作<br>\n 7.ssh-keygen -t ras -C “邮箱” 生成密钥<br>\n 8.git branch –set-upstream 本地关联远程分支</p>\n",
+            "tags": [
+                "git"
+            ]
+        },
+        {
+            "id": "http://www.startanew.cn/2020/07/12/git-%E5%91%BD%E4%BB%A4%E4%B8%80-%E5%9F%BA%E7%A1%80%E7%AF%87/",
+            "url": "http://www.startanew.cn/2020/07/12/git-%E5%91%BD%E4%BB%A4%E4%B8%80-%E5%9F%BA%E7%A1%80%E7%AF%87/",
+            "title": "git 命令一 (基础篇)",
+            "date_published": "2020-07-12T13:26:00.000Z",
+            "content_html": "<h2 id=\"git基础用法\"><a class=\"markdownIt-Anchor\" href=\"#git基础用法\">#</a> git 基础用法</h2>\n<hr>\n<p>1.git init  初始化一个 Git 仓库，执行完后会在当前目录生成一个 .git 目录 。<br>\n2.git init [目录地址] 会在指定目录下 生成一个名为 .git 的目录 。<br>\n3.git add 命令告诉 Git 开始对这些文件进行跟踪</p>\n<figure class=\"highlight plain\"><table><tr><td class=\"gutter\"><pre><span class=\"line\">1</span><br><span class=\"line\">2</span><br><span class=\"line\">3</span><br></pre></td><td class=\"code\"><pre><span class=\"line\">$ git add *.c</span><br><span class=\"line\">$ git add README</span><br><span class=\"line\">$ git commit -m &#39;初始化项目版本&#39;</span><br></pre></td></tr></table></figure>\n<a id=\"more\"></a>  \n<p>4.git clone 从现有 Git 仓库中拷贝项目 。<br>\n5.git clone <repo> <directory> 克隆到指定的目录</p>\n<figure class=\"highlight plain\"><table><tr><td class=\"gutter\"><pre><span class=\"line\">1</span><br></pre></td><td class=\"code\"><pre><span class=\"line\">示例：git clone https:&#x2F;&#x2F;gitee.com&#x2F;medua&#x2F;test.git</span><br></pre></td></tr></table></figure>\n<p>6.git status 命令用于查看项目的当前状态<br>\n 7.git diff 命令显示已写入缓存与已修改但尚未写入缓存的改动的区别<br>\n 8.git commit 使用 git add 命令将想要快照的内容写入缓存区， 而执行 git commit 将缓存区内容添加到仓库中。<br>\n9.git rm 从 Git 中移除某个文件</p>\n<figure class=\"highlight plain\"><table><tr><td class=\"gutter\"><pre><span class=\"line\">1</span><br><span class=\"line\">2</span><br></pre></td><td class=\"code\"><pre><span class=\"line\">如果删除之前修改过并且已经放到暂存区域的话，则必须要用强制删除选项 –f ,</span><br><span class=\"line\">git rm –r * 递归删除 </span><br></pre></td></tr></table></figure>\n<p>10. 使用步骤</p>\n <figure class=\"highlight plain\"><table><tr><td class=\"gutter\"><pre><span class=\"line\">1</span><br><span class=\"line\">2</span><br><span class=\"line\">3</span><br><span class=\"line\">4</span><br><span class=\"line\">5</span><br><span class=\"line\">6</span><br><span class=\"line\">7</span><br></pre></td><td class=\"code\"><pre><span class=\"line\">git add .</span><br><span class=\"line\">git commit -m 提交信息</span><br><span class=\"line\">git push</span><br><span class=\"line\">提交失败 git pull</span><br><span class=\"line\">查看状态 git status</span><br><span class=\"line\">解决冲突</span><br><span class=\"line\">返回第一步 git add</span><br></pre></td></tr></table></figure>",
+            "tags": [
+                "git"
+            ]
+        }
+    ]
+}

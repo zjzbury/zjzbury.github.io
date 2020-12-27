@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>JAVA • Posts by &#34;docker&#34; tag</title>
+        <link>http://www.startanew.cn</link>
+        <description>爱编程，爱生活</description>
+        <language>zh-CN</language>
+        <pubDate>Mon, 13 Jul 2020 16:46:29 +0800</pubDate>
+        <lastBuildDate>Mon, 13 Jul 2020 16:46:29 +0800</lastBuildDate>
+        <category>springboot</category>
+        <category>javaweb</category>
+        <category>java</category>
+        <category>redis</category>
+        <category>MYSQL</category>
+        <category>其他</category>
+        <category>js</category>
+        <category>docker</category>
+        <category>dos命令</category>
+        <category>git</category>
+        <category>android</category>
+        <category>maven</category>
+        <category>mysql</category>
+        <category>spring-sceurity</category>
+        <category>webrtc</category>
+        <category>员工关系管理</category>
+        <category>近代史</category>
+        <category>工作分析</category>
+        <category>树莓派</category>
+        <item>
+            <guid isPermalink="true">http://www.startanew.cn/2020/07/13/docker-%E7%9F%A5%E8%AF%86%E8%A1%A5%E5%85%85-1/</guid>
+            <title>docker 知识补充</title>
+            <link>http://www.startanew.cn/2020/07/13/docker-%E7%9F%A5%E8%AF%86%E8%A1%A5%E5%85%85-1/</link>
+            <category>docker</category>
+            <pubDate>Mon, 13 Jul 2020 16:46:29 +0800</pubDate>
+            <description><![CDATA[ &lt;h3 id=&#34;docker-给容器指定ip&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#docker-给容器指定ip&#34;&gt;#&lt;/a&gt; docker 给容器指定 ip&lt;/h3&gt;
+&lt;p&gt;查看网络模式&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;docker network ls&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;创建新的 bridge 网络&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;docker network create --driver bridge --subnet&amp;#x3D;172.18.12.0&amp;#x2F;16 --gateway&amp;#x3D;172.18.1.1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;a id=&#34;more&#34;&gt;&lt;/a&gt;  
+&lt;p&gt;启动容器时 通过–network=bridge 网络名称  –ip 指定 ip&lt;/p&gt;
+&lt;p&gt;查看容器 ip&lt;/p&gt;
+&lt;p&gt;docker inspect 容器名称或 id&lt;/p&gt;
+&lt;p&gt;创建集群 docker 命令备份&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;docker run -it --name mysql-master -p 3308:3306 -e MYSQL_ROOT_PASSWORD&amp;#x3D;root --privileged&amp;#x3D;true -v E:&amp;#x2F;mysql&amp;#x2F;master&amp;#x2F;conf&amp;#x2F;my.cnf:&amp;#x2F;etc&amp;#x2F;mysql&amp;#x2F;my.cnf -v E:&amp;#x2F;mysql&amp;#x2F;master&amp;#x2F;data:&amp;#x2F;var&amp;#x2F;lib&amp;#x2F;mysql -v E:&amp;#x2F;mysql&amp;#x2F;master&amp;#x2F;logs:&amp;#x2F;var&amp;#x2F;log&amp;#x2F;mysql -d --restart&amp;#x3D;always --network&amp;#x3D;mynet --ip 172.18.12.1 mysql:5.7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;docker run -it --name mysql-master1 -p 3318:3306 -e MYSQL_ROOT_PASSWORD&amp;#x3D;root --privileged&amp;#x3D;true -v E:&amp;#x2F;mysql&amp;#x2F;master1&amp;#x2F;conf&amp;#x2F;my.cnf:&amp;#x2F;etc&amp;#x2F;mysql&amp;#x2F;my.cnf -v E:&amp;#x2F;mysql&amp;#x2F;master1&amp;#x2F;data:&amp;#x2F;var&amp;#x2F;lib&amp;#x2F;mysql -v E:&amp;#x2F;mysql&amp;#x2F;master1&amp;#x2F;logs:&amp;#x2F;var&amp;#x2F;log&amp;#x2F;mysql -d --restart&amp;#x3D;always --network&amp;#x3D;mynet --ip 172.18.12.2 mysql:5.7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;docker run -it --name mysql-slave -p 3309:3306 -e MYSQL_ROOT_PASSWORD&amp;#x3D;root --privileged&amp;#x3D;true -v E:&amp;#x2F;mysql&amp;#x2F;slave&amp;#x2F;conf&amp;#x2F;my.cnf:&amp;#x2F;etc&amp;#x2F;mysql&amp;#x2F;my.cnf -v E:&amp;#x2F;mysql&amp;#x2F;slave&amp;#x2F;data:&amp;#x2F;var&amp;#x2F;lib&amp;#x2F;mysql -v E:&amp;#x2F;mysql&amp;#x2F;slave&amp;#x2F;logs:&amp;#x2F;var&amp;#x2F;log&amp;#x2F;mysql -d --restart&amp;#x3D;always --network&amp;#x3D;mynet --ip 172.18.12.3 mysql:5.7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;docker run -it --name mysql-slave1 -p 3319:3306 -e MYSQL_ROOT_PASSWORD&amp;#x3D;root --privileged&amp;#x3D;true -v E:&amp;#x2F;mysql&amp;#x2F;slave1&amp;#x2F;conf&amp;#x2F;my.cnf:&amp;#x2F;etc&amp;#x2F;mysql&amp;#x2F;my.cnf -v E:&amp;#x2F;mysql&amp;#x2F;slave1&amp;#x2F;data:&amp;#x2F;var&amp;#x2F;lib&amp;#x2F;mysql -v E:&amp;#x2F;mysql&amp;#x2F;slave1&amp;#x2F;logs:&amp;#x2F;var&amp;#x2F;log&amp;#x2F;mysql -d --restart&amp;#x3D;always --network&amp;#x3D;mynet --ip 172.18.12.4 mysql:5.7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;docker run -it -p:8166:8066 --name mycat1 -p 9166:9066 -v E:&amp;#x2F;mysql&amp;#x2F;mycat1&amp;#x2F;logs:&amp;#x2F;mycat&amp;#x2F;logs -v E:&amp;#x2F;mysql&amp;#x2F;mycat1&amp;#x2F;conf:&amp;#x2F;mycat&amp;#x2F;conf -d --network&amp;#x3D;mynet --ip 172.18.12.6 mycat:1.6.5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;docker run -it -p:8066:8066 --name mycat -p 9066:9066 -v E:&amp;#x2F;mysql&amp;#x2F;mycat&amp;#x2F;logs:&amp;#x2F;mycat&amp;#x2F;logs -v E:&amp;#x2F;mysql&amp;#x2F;mycat&amp;#x2F;conf:&amp;#x2F;mycat&amp;#x2F;conf -d --network&amp;#x3D;mynet --ip 172.18.12.5 mycat:1.6.5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;docker run -d --name haproxy -p 8888:8888 -p 13306:3306 --network&amp;#x3D;mynet --ip 172.18.12.7 -v e:&amp;#x2F;mysql&amp;#x2F;haproxy:&amp;#x2F;usr&amp;#x2F;local&amp;#x2F;etc&amp;#x2F;haproxy haproxy:1.9.6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;docker run --name redis-6379 -p 6379:6379 --network&amp;#x3D;mynet --ip 172.18.12.10 --privileged&amp;#x3D;true -v E:&amp;#x2F;mysql&amp;#x2F;redis&amp;#x2F;sentinel.conf:&amp;#x2F;sentinel.conf --restart&amp;#x3D;always -d daocloud.io&amp;#x2F;library&amp;#x2F;redis&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;docker run --name redis-6380 -p 6380:6379 --network&amp;#x3D;mynet --ip 172.18.12.11 --privileged&amp;#x3D;true -v E:&amp;#x2F;mysql&amp;#x2F;redis&amp;#x2F;sentinel.conf:&amp;#x2F;sentinel.conf --restart&amp;#x3D;always -d daocloud.io&amp;#x2F;library&amp;#x2F;redis&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;docker run --name redis-6381 -p 6381:6379 --network&amp;#x3D;mynet --ip 172.18.12.12 --privileged&amp;#x3D;true -v E:&amp;#x2F;mysql&amp;#x2F;redis&amp;#x2F;sentinel.conf:&amp;#x2F;sentinel.conf --restart&amp;#x3D;always -d daocloud.io&amp;#x2F;library&amp;#x2F;redis&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;mycat dockerfile  备份&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;FROM java:8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;USER root&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;COPY Mycat-server-1.6.5-release-20180122220033-linux.tar.gz &amp;#x2F;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;RUN tar -zxf &amp;#x2F;Mycat-server-1.6.5-release-20180122220033-linux.tar.gz&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;ENV MYCAT_HOME&amp;#x3D;&amp;#x2F;mycat&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;ENV PATH&amp;#x3D;$PATH:$&amp;#123;MYCAT_HOME&amp;#125;&amp;#x2F;bin&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;WORKDIR $MYCAT_HOME&amp;#x2F;bin&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;RUN chmod u+x .&amp;#x2F;mycat&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;EXPOSE 8066 9066&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;CMD [&amp;quot;.&amp;#x2F;mycat&amp;quot;, &amp;quot;console&amp;quot;]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt; ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://www.startanew.cn/2020/07/13/docker-%E5%88%9B%E5%BB%BA%E9%95%9C%E5%83%8F%E4%B8%8E%E6%8F%90%E4%BA%A4/</guid>
+            <title>docker 创建镜像与提交</title>
+            <link>http://www.startanew.cn/2020/07/13/docker-%E5%88%9B%E5%BB%BA%E9%95%9C%E5%83%8F%E4%B8%8E%E6%8F%90%E4%BA%A4/</link>
+            <category>docker</category>
+            <pubDate>Mon, 13 Jul 2020 14:29:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h3 id=&#34;创建镜像&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#创建镜像&#34;&gt;#&lt;/a&gt; 创建镜像&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;创建文件 Dockerfile&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;FROM centos:7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;MAINTAINER bury &amp;quot;2054084196@qq.com&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;RUN rpm -ivh http:&amp;#x2F;&amp;#x2F;nginx.org&amp;#x2F;packages&amp;#x2F;centos&amp;#x2F;7&amp;#x2F;noarch&amp;#x2F;RPMS&amp;#x2F;nginx-release-centos-7-0.el7.ngx.noarch.rpm&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;RUN yum install -y nginx&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;EXPOSE 80&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;a id=&#34;more&#34;&gt;&lt;/a&gt;  
+&lt;ul&gt;
+&lt;li&gt;构建镜像:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;docker build -t&amp;#x3D;“medua&amp;#x2F;bury:v1” . &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;p&gt;(- t 告诉 Docker 镜像的名称和版本。是为了让 Docker 到当前本地目录去寻找 Dockerfile 文件)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;docker commit -a “bury” -m “第一次提交鏡像”  daf571e7608b medua&amp;#x2F;bury:v1.0&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;a “bury” 为创建镜像的作者名字&lt;br&gt;
+ - m “第一次提交鏡像” 为提交信息&lt;br&gt;
+ daf571e7608b 为容器 id,medua/bury 为镜像名，&lt;br&gt;
+v1.0 为 tag&lt;br&gt;
+docker images 命令可见镜像创建成功&lt;br&gt;
+ docker push medua/bury:v1.0 (推送到服务器)&lt;/p&gt;
+&lt;center&gt;
+ &lt;img data-src=&#34;http://vps.startanew.cn/1594621928977llpohrz0.png&#34; &gt;
+&lt;/center&gt;  
+&gt;补充:  
+docker inspect 容器ID | grep IPAddress(查看容器ip地址)
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://www.startanew.cn/2020/07/13/docker-%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/</guid>
+            <title>docker 基础入门</title>
+            <link>http://www.startanew.cn/2020/07/13/docker-%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/</link>
+            <category>docker</category>
+            <pubDate>Mon, 13 Jul 2020 14:18:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h3 id=&#34;一-win10安装docker&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#一-win10安装docker&#34;&gt;#&lt;/a&gt; 一 . win10 安装 docker&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;官网地址:&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9odWIuZG9ja2VyLmNvbS8=&#34;&gt;https://hub.docker.com/&lt;/span&gt;&lt;br&gt;
+ 注册，下载 ， 双击安装包进行安装&lt;br&gt;
+安装完成后，打开软件，当状态栏出现一个鲸鱼的小图标，并且显示 isrunning 时运行成功。&lt;br&gt;
+设置加速&lt;br&gt;
+阿里云教程:&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9jci5jb25zb2xlLmFsaXl1bi5jb20vY24taGFuZ3pob3UvaW5zdGFuY2VzL21pcnJvcnM=&#34;&gt;https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;a id=&#34;more&#34;&gt;&lt;/a&gt;  
+&lt;h3 id=&#34;二-基础操作&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#二-基础操作&#34;&gt;#&lt;/a&gt; 二。基础操作&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;查看版本:docker version&lt;br&gt;
+ 搭建 web 服务器&lt;br&gt;
+拉取镜像:  docker run -p 80 –name web -i -t centos /bin/bash&lt;br&gt;
+ 安装  nginx 服务器：rpm -ivh &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL25naW54Lm9yZy9wYWNrYWdlcy9jZW50b3MvNy9ub2FyY2gvUlBNUy9uZ2lueC1yZWxlYXNlLWNlbnRvcy03LTAuZWw3Lm5neC5ub2FyY2gucnBt&#34;&gt;http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm&lt;/span&gt;&lt;br&gt;
+yum install -y nginx&lt;br&gt;
+ 切换后台运行 web 服务器 现在，ctrl+p   ctrl+q 切换到后台。&lt;br&gt;
+查看运行端口 : docker ps -a&lt;br&gt;
+ 在浏览器访问:&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovLzEyNy4wLjAuMTozMjc2OA==&#34;&gt;http://127.0.0.1:32768&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;center&gt;
+ &lt;img data-src=&#34;http://vps.startanew.cn/1594621402325bkw2sjr9.png&#34; &gt;
+&lt;/center&gt;    
+&lt;blockquote&gt;
+&lt;p&gt;成功&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;三-命令详解&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#三-命令详解&#34;&gt;#&lt;/a&gt; 三。命令详解&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;docker  images  查看已有镜像&lt;br&gt;
+ docker  pull  name 拉取镜像&lt;br&gt;
+ docker  search  name  搜索镜像&lt;br&gt;
+ docker   run  运行一个容器（每次使用都会创建一个新的容器）&lt;br&gt;
+/bin/bash  运行交互式容器&lt;br&gt;
+ - i 选项告诉 Docker 容器保持标准输入流对容器开放&lt;br&gt;
+ - t 选项告诉 Docker 为容器分配一个虚拟终端&lt;br&gt;
+ - d 选项告诉 Docker 在后台运行容器的守护进程&lt;br&gt;
+ docker start 重新启动已存在的镜像&lt;br&gt;
+ exit 命令关闭 Docker 容器&lt;br&gt;
+ docker stop name 停止 name 容器&lt;br&gt;
+ docker attach 命令切换到运行交互式容器（Docker 容器重启后会沿用 docker run 命令指定的参数来运行）&lt;br&gt;
+官方文档链接:  &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9kb2NzLmRvY2tlci5jb20vZW5naW5lL3JlZmVyZW5jZS9jb21tYW5kbGluZS9kb2NrZXIv&#34;&gt;https://docs.docker.com/engine/reference/commandline/docker/&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

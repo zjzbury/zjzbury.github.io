@@ -1,0 +1,745 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="JAVA" href="http://www.startanew.cn/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="JAVA" href="http://www.startanew.cn/atom.xml" />
+<link rel="alternate" type="application/json" title="JAVA" href="http://www.startanew.cn/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="工作分析" />
+
+
+<link rel="canonical" href="http://www.startanew.cn/2020/10/08/%E5%B7%A5%E4%BD%9C%E8%AE%BE%E8%AE%A1/">
+
+
+
+  <title>
+第八章 工作设计 - 人力资源管理 |
+小小程序员 = JAVA = startanew Blog</title>
+<meta name="generator" content="Hexo 5.3.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">第八章 工作设计
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2020-10-08 19:45:25">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2020-10-08T19:45:25+08:00">2020-10-08</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>1.9k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>2 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">小小程序员</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="http://vps.startanew.cn/book354395881%2C3476763686%26fm%3D26%26gp%3D0.jpg">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86/" itemprop="item" rel="index" title="分类于 人力资源管理"><span itemprop="name">人力资源管理</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="http://www.startanew.cn/2020/10/08/%E5%B7%A5%E4%BD%9C%E8%AE%BE%E8%AE%A1/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="startanew">
+    <meta itemprop="description" content="startanew Blog, 爱编程，爱生活">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="JAVA">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h3 id="题型分析-第八章平均分值15分"><a class="markdownIt-Anchor" href="#题型分析-第八章平均分值15分">#</a> 题型分析  <code>（第八章平均分值15分） </code></h3>
+<blockquote>
+<p>单选 5 题<br>
+多选 1 题<br>
+填空一题<br>
+名词解释不考<br>
+简答一题（80%）<br>
+论述一题 (90%)</p>
+</blockquote>
+<h3 id="名词解释"><a class="markdownIt-Anchor" href="#名词解释">#</a> 名词解释</h3>
+<ul>
+<li>工作设计<br>
+又称岗位设计，是指为了有效地达到组织目标并满足个人需要而进行的工作内容、工作职能和工作关系的设计。</li>
+<li>工作专业化<br>
+工作专业化是通过动作和时间研究，将工作分解为若干很小的单一化、标准化及专业化的操作内容与程序，并对员工进行培训和适当的激励，以达到提高生产效率的目的。</li>
+<li>工作轮换<br>
+工作轮换是指将员工轮换到另一个同样水平、技能要求相近的工作岗位，以减少员工在一个岗位上的枯燥感，同时也扩大员工掌握技能的范围，有利于员工在此过程中找出自己的真正兴趣。</li>
+<li>工作扩大化<br>
+工作扩大化是指通过增加工作内容，使工作本身变得更加多样化，以提高员工的工作热情。</li>
+<li>工作团队<br>
+工作团队是通过其成员的共同努力而产生积极的协同作用，其团队成员努力的结果使团队的绩效水平大于个体成员绩效的总和。</li>
+<li>工作丰富化<br>
+工作丰富化是指提高工作的挑战性和任务的同一性，同时赋予员工更多的职责、决策权和控制权的工作设计方法。</li>
+</ul>
+<h3 id="主观题"><a class="markdownIt-Anchor" href="#主观题">#</a> 主观题</h3>
+<ul>
+<li>试述工作设计的目的意义。<br>
+工作设计的目的是：通过满足员工与工作有关的需求来提高工作效率，从而改变员工与工作的关系。<br>
+工作设计的意义：</li>
+</ul>
+<ol>
+<li>工作设计的最大意义在于它改变了员工和工作之间的基本关系。</li>
+<li>工作设计也推进了员工对工作的积极态度，工作设计不是试图改变员工的态度，而是假定在工作得到适当的设计后，员工积极的态度就会随之而来；</li>
+<li>工作设计重新赋予工作以乐趣，通过重新设计工作，“工作也是一种乐趣” 将成为员工的新发现；</li>
+<li>工作设计有利于改善人际关系，员工的工作热情也会随之提高；</li>
+<li>工作设计使职责分明，研究表明，职责分明的工作设计大大提高了员工的工作积极性，进而提高工作绩效。</li>
+</ol>
+<ul>
+<li>简述工作设计的影响因素。</li>
+</ul>
+<ol>
+<li>员工的因素</li>
+<li>组织的因素</li>
+<li>环境因素</li>
+</ol>
+<ul>
+<li>试述工作设计的内容。 <code>1910</code></li>
+</ul>
+<blockquote>
+<p>（一）工作内容</p>
+<blockquote>
+<p>1. 工作的广度。<br>
+2. 工作的深度。<br>
+3. 工作的完整性。<br>
+4. 工作的自主性。<br>
+5. 工作的反馈性。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>（二）工作职责</p>
+<blockquote>
+<p>1. 工作责任。<br>
+2. 工作权利。<br>
+3. 工作方法。<br>
+4. 相互沟通。<br>
+5. 协作。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>（三）工作关系</p>
+</blockquote>
+<ul>
+<li>简述人际关系理论的主要观点。</li>
+</ul>
+<ol>
+<li>工人是 “社会人” 而不是 “经济人”。</li>
+<li>企业中存在着非正式组织。</li>
+<li>强调提高工人的满意度的工作设计。</li>
+</ol>
+<ul>
+<li>工作特征模型的核心维度。</li>
+</ul>
+<ol>
+<li>技能多样性。</li>
+<li>任务同一性。</li>
+<li>任务重要性。</li>
+<li>自主性。</li>
+<li>反馈性。</li>
+</ol>
+<ul>
+<li>简述激励型工作设计的主要内容。</li>
+</ul>
+<ol>
+<li>工作专业化</li>
+<li>工作轮换</li>
+<li>工作扩大化</li>
+<li>工作丰富化</li>
+<li>工作团队</li>
+</ol>
+<ul>
+<li>试述工作专业化的主要优点。</li>
+</ul>
+<ol>
+<li>工作专业化把专业化和单一化紧密地结合在一起，从而可以最大限 度地提高工人的操作效率，増加组织的经济效益。</li>
+<li>由于把工作分解为很多简单的高度专业化的操作单元，因此对工人 的技术要求低，可以节省大量的培训费用，并且有利于劳动力在不同岗位之间 的轮换，而不致影响生产的正常进行。</li>
+<li>专业化对工人的技术要求低，可大大降低生产成本，因为只需廉价的 劳动力来完成工作设计所规定的岗位要求。</li>
+<li>由于机械化程度高，有标准化的工序和操作方法，加强了管理者对工 人生产的产品数量和质量的控制，以保证生产的均衡。</li>
+</ol>
+<ul>
+<li>试述工作轮换的优缺点。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>丰富了员工的工作内容，减少工作中的枯燥感，使员工的积极性得到提高。</td>
+<td>工作轮换后，往往由于对业务的不熟悉，而带来不适应和工作效率下降。</td>
+</tr>
+<tr>
+<td>适时的工作轮换带动了企业内部的人员流动，可以延长组织的寿命，激发组织的活力。</td>
+<td>由于工作轮换，员工对新岗位不熟悉，需要给员工提供各种培训以使他们掌握多种技能，因此增加了培训费用。</td>
+</tr>
+<tr>
+<td>人才储备首先要求培养复合型人才，通过工作轮换，使员工轮换做不同的工作，以取得多种技能，同时也挖掘了各职位最合适的人才。</td>
+<td>工作岗位的轮换是全局性的，往往牵一发而动全身，这增加了管理人员的工作量和工作难度。</td>
+</tr>
+<tr>
+<td>增强了员工所掌握的技能范围，使员工能够很好地适应环境变化，也为员工在内部的提升打下基础。</td>
+<td></td>
+</tr>
+<tr>
+<td>内部岗位的轮换，使得员工不断有新的挑战机会，从而降低离职的概率。</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>简述工作丰富化的设计途径。</li>
+</ul>
+<ol>
+<li>组合工作任务。</li>
+<li>建构自然的工作单位。</li>
+<li>建立员工 —— 客户关系。</li>
+<li>纵向扩展任务。</li>
+<li>畅通反馈渠道。</li>
+</ol>
+<ul>
+<li>工作设计的步骤</li>
+</ul>
+<ol>
+<li>需求分析；</li>
+<li>可行性分析；</li>
+<li>成立工作设计小组；</li>
+<li>制定工作设计方案；</li>
+<li>评价与推广</li>
+</ol>
+<ul>
+<li>工作设计的具体流程：</li>
+</ul>
+<blockquote>
+<p>（一）组织任务的确定阶段<br>
+①内外环境分析。<br>
+②组织定位分析。<br>
+③组织任务分析。<br>
+（二）部门任务的确定阶段<br>
+①分析并改进业务流程。<br>
+②组织结构设计。<br>
+③部门工作任务的确定。<br>
+（三）岗位工作任务的确定阶段<br>
+①设计部门内的岗位。<br>
+②界定岗位工作。<br>
+③形成设计文件。</p>
+</blockquote>
+<ul>
+<li>简述新组织工作设计的程序。</li>
+</ul>
+<ol>
+<li>分析阶段；</li>
+<li>设计阶段；</li>
+<li>编制工作设计文件阶段。</li>
+</ol>
+<ul>
+<li>简述既定组织的工作再设计的程序。</li>
+</ul>
+<ol>
+<li>组织分析；</li>
+<li>工作分析；</li>
+<li>针对问题的工作再设计。</li>
+</ol>
+<ul>
+<li>简述工作设计中常见的错误。</li>
+</ul>
+<ol>
+<li>工作量不足</li>
+<li>工作量过大</li>
+<li>缺乏实质性工作内容</li>
+<li>多人参与同_项工作</li>
+<li>“几乎包含一切” 的工作</li>
+<li>无法完成的工作</li>
+</ol>
+
+      <div class="tags">
+          <a href="/tags/%E5%B7%A5%E4%BD%9C%E5%88%86%E6%9E%90/" rel="tag"><i class="ic i-tag"></i> 工作分析</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2020-10-11 15:53:15" itemprop="dateModified" datetime="2020-10-11T15:53:15+08:00">2020-10-11</time>
+  </span>
+  <span id="2020/10/08/工作设计/" class="item leancloud_visitors" data-flag-title="第八章 工作设计" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>startanew <i class="ic i-at"><em>@</em></i>JAVA
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="http://www.startanew.cn/2020/10/08/%E5%B7%A5%E4%BD%9C%E8%AE%BE%E8%AE%A1/" title="第八章 工作设计">http://www.startanew.cn/2020/10/08/工作设计/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2020/10/08/%E5%B2%97%E4%BD%8D%E8%AF%84%E4%BB%B7/" itemprop="url" rel="prev" data-background-image="http:&#x2F;&#x2F;vps.startanew.cn&#x2F;book354395881%2C3476763686%26fm%3D26%26gp%3D0.jpg" title="第七章 岗位评价">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 人力资源管理</span>
+  <h3>第七章 岗位评价</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2020/10/08/%E5%B7%A5%E4%BD%9C%E5%88%86%E6%9E%90%E6%95%88%E6%9E%9C%E8%AF%84%E4%BC%B0/" itemprop="url" rel="next" data-background-image="http:&#x2F;&#x2F;vps.startanew.cn&#x2F;book354395881%2C3476763686%26fm%3D26%26gp%3D0.jpg" title="第九章 工作分析效果评估">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 人力资源管理</span>
+  <h3>第九章 工作分析效果评估</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E5%9E%8B%E5%88%86%E6%9E%90-%E7%AC%AC%E5%85%AB%E7%AB%A0%E5%B9%B3%E5%9D%87%E5%88%86%E5%80%BC15%E5%88%86"><span class="toc-number">1.</span> <span class="toc-text"> 题型分析  （第八章平均分值15分） </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A"><span class="toc-number">2.</span> <span class="toc-text"> 名词解释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A7%82%E9%A2%98"><span class="toc-number">3.</span> <span class="toc-text"> 主观题</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li><a href="/2020/10/08/%E5%B7%A5%E4%BD%9C%E5%88%86%E6%9E%90%E7%9A%84%E5%8E%86%E5%8F%B2%E4%B8%8E%E5%8F%91%E5%B1%95/" rel="bookmark" title="第一章 工作分析的历史与发展">第一章 工作分析的历史与发展</a></li><li><a href="/2020/10/08/%E5%B7%A5%E4%BD%9C%E5%88%86%E6%9E%90%E6%A6%82%E8%BF%B0/" rel="bookmark" title="第二章 工作分析概述">第二章 工作分析概述</a></li><li><a href="/2020/10/08/%E5%B7%A5%E4%BD%9C%E5%88%86%E6%9E%90%E7%9A%84%E4%B8%BB%E8%A6%81%E6%96%B9%E6%B3%95/" rel="bookmark" title="第三章 工作分析的主要方法">第三章 工作分析的主要方法</a></li><li><a href="/2020/10/08/%E5%B7%A5%E4%BD%9C%E5%88%86%E6%9E%90%E7%9A%84%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/" rel="bookmark" title="第四章 工作分析的前期准备工作">第四章 工作分析的前期准备工作</a></li><li><a href="/2020/10/08/%E5%B7%A5%E4%BD%9C%E5%88%86%E6%9E%90%E7%9A%84%E6%B5%81%E7%A8%8B/" rel="bookmark" title="第五章 工作分析的流程">第五章 工作分析的流程</a></li><li><a href="/2020/10/08/%E5%B7%A5%E4%BD%9C%E5%88%86%E6%9E%90%E7%BB%93%E6%9E%9C%E5%8F%8A%E5%BA%94%E7%94%A8/" rel="bookmark" title="第六章 工作分析结果及应用">第六章 工作分析结果及应用</a></li><li><a href="/2020/10/08/%E5%B2%97%E4%BD%8D%E8%AF%84%E4%BB%B7/" rel="bookmark" title="第七章 岗位评价">第七章 岗位评价</a></li><li class="active"><a href="/2020/10/08/%E5%B7%A5%E4%BD%9C%E8%AE%BE%E8%AE%A1/" rel="bookmark" title="第八章 工作设计">第八章 工作设计</a></li><li><a href="/2020/10/08/%E5%B7%A5%E4%BD%9C%E5%88%86%E6%9E%90%E6%95%88%E6%9E%9C%E8%AF%84%E4%BC%B0/" rel="bookmark" title="第九章 工作分析效果评估">第九章 工作分析效果评估</a></li><li><a href="/2020/10/08/%E5%B7%A5%E4%BD%9C%E5%88%86%E6%9E%90%E5%9C%A8%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E4%B8%AD%E7%9A%84%E5%BA%94/" rel="bookmark" title="第十章 工作分析在人力资源管理中的应用">第十章 工作分析在人力资源管理中的应用</a></li><li><a href="/2020/10/08/%E5%91%98%E5%B7%A5%E5%85%B3%E7%B3%BB%E7%AE%A1%E7%90%86%E6%A6%82%E8%AE%BA/" rel="bookmark" title="第一章 员工关系管理概论">第一章 员工关系管理概论</a></li><li><a href="/2020/10/08/%E5%8A%B3%E5%8A%A8%E5%85%B3%E7%B3%BB%E7%AE%A1%E7%90%86/" rel="bookmark" title="第二章 劳动关系管理">第二章 劳动关系管理</a></li><li><a href="/2020/10/08/%E5%91%98%E5%B7%A5%E6%B2%9F%E9%80%9A%E7%AE%A1%E7%90%86/" rel="bookmark" title="第三章 员工沟通管理">第三章 员工沟通管理</a></li><li><a href="/2020/10/08/%E5%91%98%E5%B7%A5%E5%BF%83%E7%90%86%E5%A5%91%E7%BA%A6%E4%B8%8E%E6%BB%A1%E6%84%8F%E5%BA%A6%E7%AE%A1%E7%90%86/" rel="bookmark" title="第四章 员工心理契约与满意度管理">第四章 员工心理契约与满意度管理</a></li><li><a href="/2020/10/08/%E5%86%B2%E7%AA%81%E7%AE%A1%E7%90%86%E5%92%8C%E5%8D%B1%E6%9C%BA%E7%AE%A1%E7%90%86/" rel="bookmark" title="第五章 冲突管理和危机管理">第五章 冲突管理和危机管理</a></li><li><a href="/2020/10/08/%E5%91%98%E5%B7%A5%E7%BA%AA%E5%BE%8B%E7%AE%A1%E7%90%86/" rel="bookmark" title="第六章 员工纪律管理">第六章 员工纪律管理</a></li><li><a href="/2020/10/08/%E5%91%98%E5%B7%A5%E5%BC%82%E5%8A%A8%E7%AE%A1%E7%90%86/" rel="bookmark" title="第七章 员工异动管理">第七章 员工异动管理</a></li><li><a href="/2020/10/08/%E5%91%98%E5%B7%A5%E7%A6%BB%E8%81%8C%E7%AE%A1%E7%90%86/" rel="bookmark" title="第八章 员工离职管理">第八章 员工离职管理</a></li><li><a href="/2020/10/08/%E5%8E%8B%E5%8A%9B%E4%B8%8E%E5%BF%83%E7%90%86%E5%81%A5%E5%BA%B7%E7%AE%A1%E7%90%86/" rel="bookmark" title="第九章 压力与心理健康管理">第九章 压力与心理健康管理</a></li><li><a href="/2020/10/08/%E5%8A%B3%E5%8A%A8%E4%BA%89%E8%AE%AE%E7%AE%A1%E7%90%86/" rel="bookmark" title="第十章 劳动争议管理">第十章 劳动争议管理</a></li><li><a href="/2020/10/08/%E5%8F%8D%E5%AF%B9%E5%A4%96%E5%9B%BD%E4%BE%B5%E7%95%A5%E7%9A%84%E6%96%97%E4%BA%89/" rel="bookmark" title="第一章 反对外国侵略的斗争">第一章 反对外国侵略的斗争</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="startanew"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">startanew</p>
+  <div class="description" itemprop="description">爱编程，爱生活</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">68</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">5</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">19</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL3pqemJ1cnk=" title="https:&#x2F;&#x2F;github.com&#x2F;zjzbury"><i class="ic i-github"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTEzMDczMjU3OTM=" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;1307325793"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOnpqenN0YXJ0YW5ld0AxNjNjb20=" title="mailto:zjzstartanew@163com"><i class="ic i-envelope"></i></span>
+      <span class="exturl item douban" data-url="aHR0cHM6Ly93d3cuZG91YmFuLmNvbS9wZW9wbGUvMjIzOTg5NzEyLw==" title="https:&#x2F;&#x2F;www.douban.com&#x2F;people&#x2F;223989712&#x2F;"><i class="ic i-douban"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/tool/" rel="section"><i class="ic i-magic"></i>工具</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/resources/" rel="section"><i class="ic i-heart"></i>资源</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>关于</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2020/10/08/%E5%B2%97%E4%BD%8D%E8%AF%84%E4%BB%B7/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2020/10/08/%E5%B7%A5%E4%BD%9C%E5%88%86%E6%9E%90%E6%95%88%E6%9E%9C%E8%AF%84%E4%BC%B0/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B/" title="分类于 编程">编程</a>
+</div>
+
+    <span><a href="/2020/10/15/java-%E6%B1%89%E5%AD%97%E8%BD%AC%E6%8B%BC%E9%9F%B3/" title="java 汉字转拼音">java 汉字转拼音</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86/" title="分类于 人力资源管理">人力资源管理</a>
+</div>
+
+    <span><a href="/2020/10/08/%E5%8A%B3%E5%8A%A8%E4%BA%89%E8%AE%AE%E7%AE%A1%E7%90%86/" title="第十章 劳动争议管理">第十章 劳动争议管理</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B/" title="分类于 编程">编程</a>
+</div>
+
+    <span><a href="/2020/07/13/ssm%E6%95%B4%E5%90%88sceurity-%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95%E4%B9%8Bsceurity%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D/" title="ssm整合sceurity-基础用法之sceurity基本配置介绍">ssm整合sceurity-基础用法之sceurity基本配置介绍</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BD%91%E7%BB%9C%E6%B8%97%E9%80%8F/" title="分类于 网络渗透">网络渗透</a>
+</div>
+
+    <span><a href="/2020/07/14/windows-%E5%BF%AB%E6%8D%B7%E9%94%AE/" title="windows 快捷键">windows 快捷键</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B/" title="分类于 编程">编程</a>
+</div>
+
+    <span><a href="/2020/11/12/Excel%E5%AF%BC%E5%87%BA/" title="Excel导出">Excel导出</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B/" title="分类于 编程">编程</a>
+</div>
+
+    <span><a href="/2020/07/13/ssm%E6%95%B4%E5%90%88sceurity-%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95%E4%B9%8Bsceurity%E7%BB%93%E5%90%88%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8A%A8%E6%80%81%E9%89%B4%E6%9D%83/" title="ssm整合sceurity-基础用法之sceurity结合数据库动态鉴权">ssm整合sceurity-基础用法之sceurity结合数据库动态鉴权</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%B7%A5%E4%BD%9C/" title="分类于 工作">工作</a>
+</div>
+
+    <span><a href="/2020/07/12/git-%E5%91%BD%E4%BB%A4%E4%B8%89%EF%BC%88-gitignore%E7%AF%87%EF%BC%89/" title="git 命令三（.gitignore篇）">git 命令三（.gitignore篇）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B/" title="分类于 编程">编程</a>
+</div>
+
+    <span><a href="/2020/07/13/docker-%E7%9F%A5%E8%AF%86%E8%A1%A5%E5%85%85-1/" title="docker 知识补充">docker 知识补充</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BC%96%E7%A8%8B/" title="分类于 编程">编程</a>
+</div>
+
+    <span><a href="/2020/07/13/mysql%E4%BC%98%E5%8C%96-%EF%BC%88%E4%BA%8C%EF%BC%89/" title="mysql优化-（二）">mysql优化-（二）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86/" title="分类于 人力资源管理">人力资源管理</a>
+</div>
+
+    <span><a href="/2020/10/08/%E5%B7%A5%E4%BD%9C%E5%88%86%E6%9E%90%E7%9A%84%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/" title="第四章 工作分析的前期准备工作">第四章 工作分析的前期准备工作</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2020</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">startanew @ 小小程序员</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">200k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">3:02</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2020/10/08/工作设计/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
