@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://www.startanew.cn</id>
+    <title>JAVA • Posts by &#34;javascript&#34; tag</title>
+    <link href="http://www.startanew.cn" />
+    <updated>2020-12-30T06:14:46.000Z</updated>
+    <category term="java" />
+    <category term="springboot" />
+    <category term="javaweb" />
+    <category term="MYSQL" />
+    <category term="redis" />
+    <category term="其他" />
+    <category term="js" />
+    <category term="docker" />
+    <category term="dos命令" />
+    <category term="git" />
+    <category term="android" />
+    <category term="maven" />
+    <category term="mysql" />
+    <category term="spring-sceurity" />
+    <category term="webrtc" />
+    <category term="员工关系管理" />
+    <category term="近代史" />
+    <category term="工作分析" />
+    <category term="树莓派" />
+    <category term="javascript" />
+    <entry>
+        <id>http://www.startanew.cn/2020/12/30/JavaScript%E5%A4%8D%E5%88%B6%E6%96%87%E6%9C%AC/</id>
+        <title>JavaScript复制文本</title>
+        <link rel="alternate" href="http://www.startanew.cn/2020/12/30/JavaScript%E5%A4%8D%E5%88%B6%E6%96%87%E6%9C%AC/"/>
+        <content type="html">&lt;h3 id=&#34;javascript代码&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#javascript代码&#34;&gt;#&lt;/a&gt; JavaScript 代码&lt;/h3&gt;
+&lt;figure class=&#34;highlight javascript&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;copy&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;var&lt;/span&gt; input = &lt;span class=&#34;built_in&#34;&gt;document&lt;/span&gt;.createElement(&lt;span class=&#34;string&#34;&gt;&amp;#x27;input&amp;#x27;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    input.setAttribute(&lt;span class=&#34;string&#34;&gt;&amp;#x27;readonly&amp;#x27;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;#x27;readonly&amp;#x27;&lt;/span&gt;); &lt;span class=&#34;comment&#34;&gt;// 防止手机上弹出软键盘&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    input.setAttribute(&lt;span class=&#34;string&#34;&gt;&amp;#x27;value&amp;#x27;&lt;/span&gt;,  $(&lt;span class=&#34;string&#34;&gt;&amp;quot;#id&amp;quot;&lt;/span&gt;).text()); &lt;span class=&#34;comment&#34;&gt;//赋值&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;document&lt;/span&gt;.body.appendChild(input);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    input.select();&lt;span class=&#34;comment&#34;&gt;//选中&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;var&lt;/span&gt; res = &lt;span class=&#34;built_in&#34;&gt;document&lt;/span&gt;.execCommand(&lt;span class=&#34;string&#34;&gt;&amp;#x27;copy&amp;#x27;&lt;/span&gt;);  &lt;span class=&#34;comment&#34;&gt;//拷贝&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;document&lt;/span&gt;.body.removeChild(input);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; (res)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;built_in&#34;&gt;console&lt;/span&gt;.log(&lt;span class=&#34;string&#34;&gt;&amp;quot;复制成功&amp;quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;span class=&#34;keyword&#34;&gt;else&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;built_in&#34;&gt;console&lt;/span&gt;.log(&lt;span class=&#34;string&#34;&gt;&amp;quot;复制失败&amp;quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+        <category term="javascript" />
+        <updated>2020-12-30T06:14:46.000Z</updated>
+    </entry>
+</feed>
