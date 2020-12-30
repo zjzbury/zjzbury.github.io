@@ -10,7 +10,6 @@
     <category term="MYSQL" />
     <category term="redis" />
     <category term="其他" />
-    <category term="js" />
     <category term="docker" />
     <category term="dos命令" />
     <category term="git" />
@@ -24,6 +23,7 @@
     <category term="工作分析" />
     <category term="树莓派" />
     <category term="javascript" />
+    <category term="JavaScript复制文本.md" />
     <entry>
         <id>http://www.startanew.cn/2020/07/13/mycat-%E9%AB%98%E5%8F%AF%E7%94%A8haproxy/</id>
         <title>mycat 高可用haproxy</title>

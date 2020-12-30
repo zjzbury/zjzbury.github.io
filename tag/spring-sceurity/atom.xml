@@ -10,7 +10,6 @@
     <category term="MYSQL" />
     <category term="redis" />
     <category term="其他" />
-    <category term="js" />
     <category term="docker" />
     <category term="dos命令" />
     <category term="git" />
@@ -24,6 +23,7 @@
     <category term="工作分析" />
     <category term="树莓派" />
     <category term="javascript" />
+    <category term="JavaScript复制文本.md" />
     <entry>
         <id>http://www.startanew.cn/2020/07/13/ssm%E6%95%B4%E5%90%88sceurity-%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95%E4%B9%8Bsceurity%E7%BB%93%E5%90%88%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8A%A8%E6%80%81%E9%89%B4%E6%9D%83/</id>
         <title>ssm整合sceurity-基础用法之sceurity结合数据库动态鉴权</title>
