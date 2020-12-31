@@ -10,6 +10,7 @@
         <category>java</category>
         <category>springboot</category>
         <category>javaweb</category>
+        <category>javascript</category>
         <category>MYSQL</category>
         <category>redis</category>
         <category>其他</category>
@@ -25,7 +26,6 @@
         <category>近代史</category>
         <category>工作分析</category>
         <category>树莓派</category>
-        <category>javascript</category>
         <item>
             <guid isPermalink="true">http://www.startanew.cn/2020/07/14/%E5%AE%89%E5%8D%93%E6%88%AA%E5%B1%8F%E5%8A%9F%E8%83%BD%E4%B8%8E%E5%8A%A0%E8%BD%BDsd%E5%8D%A1%E7%9A%84html/</guid>
             <title>安卓截屏功能与加载sd卡的html</title>

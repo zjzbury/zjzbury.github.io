@@ -7,6 +7,7 @@
     <category term="java" />
     <category term="springboot" />
     <category term="javaweb" />
+    <category term="javascript" />
     <category term="MYSQL" />
     <category term="redis" />
     <category term="其他" />
@@ -22,7 +23,6 @@
     <category term="近代史" />
     <category term="工作分析" />
     <category term="树莓派" />
-    <category term="javascript" />
     <entry>
         <id>http://www.startanew.cn/2020/07/14/%E5%AE%89%E5%8D%93%E6%88%AA%E5%B1%8F%E5%8A%9F%E8%83%BD%E4%B8%8E%E5%8A%A0%E8%BD%BDsd%E5%8D%A1%E7%9A%84html/</id>
         <title>安卓截屏功能与加载sd卡的html</title>

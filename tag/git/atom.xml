@@ -7,6 +7,7 @@
     <category term="java" />
     <category term="springboot" />
     <category term="javaweb" />
+    <category term="javascript" />
     <category term="MYSQL" />
     <category term="redis" />
     <category term="其他" />
@@ -22,7 +23,6 @@
     <category term="近代史" />
     <category term="工作分析" />
     <category term="树莓派" />
-    <category term="javascript" />
     <entry>
         <id>http://www.startanew.cn/2020/10/18/git-%E6%8B%89%E5%8F%96%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%85%A8%E9%83%A8%E5%88%86%E6%94%AF/</id>
         <title>git 拉取远程仓库全部分支</title>

@@ -7,6 +7,7 @@
     <category term="java" />
     <category term="springboot" />
     <category term="javaweb" />
+    <category term="javascript" />
     <category term="MYSQL" />
     <category term="redis" />
     <category term="其他" />
@@ -22,7 +23,6 @@
     <category term="近代史" />
     <category term="工作分析" />
     <category term="树莓派" />
-    <category term="javascript" />
     <entry>
         <id>http://www.startanew.cn/2020/07/14/windows-%E5%BF%AB%E6%8D%B7%E9%94%AE/</id>
         <title>windows 快捷键</title>
