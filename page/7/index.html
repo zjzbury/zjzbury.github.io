@@ -91,12 +91,12 @@
       </div>
       <div id="imgs" class="pjax">
         <ul>
+          <li class="item" data-background-image="http://image.startanew.cn/16090732398.jpg"></li>
+          <li class="item" data-background-image="http://image.startanew.cn/68189098_p0.png"></li>
+          <li class="item" data-background-image="http://image.startanew.cn/%E6%80%9D%E3%81%84%E5%87%BA%E3%81%AE%E9%9D%92%E7%A9%BA%2C%E7%9C%9F%E5%A4%9C%E4%B8%AD%E3%81%AE%E6%9C%88%E3%80%8C8%E3%80%8D.jpg"></li>
+          <li class="item" data-background-image="http://image.startanew.cn/1609073358929.jpg"></li>
           <li class="item" data-background-image="http://image.startanew.cn/1609073147998.jpg"></li>
-          <li class="item" data-background-image="http://image.startanew.cn/1609073109673.jpg"></li>
-          <li class="item" data-background-image="http://image.startanew.cn/STAR%20BEAT.jpg"></li>
-          <li class="item" data-background-image="http://image.startanew.cn/%E6%98%A5%E7%81%AF.jpg"></li>
-          <li class="item" data-background-image="http://image.startanew.cn/1609073269445-1.jpg"></li>
-          <li class="item" data-background-image="http://image.startanew.cn/%E7%B6%BA%E9%BA%97%E3%81%AA%E3%81%BE%E3%81%BE%E5%BF%98%E3%82%8C%E3%81%9F%E3%81%84.jpg"></li>
+          <li class="item" data-background-image="http://image.startanew.cn/1609073126407.jpg"></li>
         </ul>
       </div>
     </header>
@@ -119,6 +119,50 @@
           
   <div class="index wrap">
     <div class="segments posts">
+        
+<article class="item">
+  <div class="cover">
+    <a href="/2020/07/12/maven%E6%89%93%E5%8C%85jar/" itemprop="url" title="maven打包jar"><img data-src="http://vps.startanew.cn/u%3D663922151%2C3641574306%26fm%3D26%26gp%3D0.png"></a>
+  </div>
+  <div class="info">
+    
+<div class="meta">
+  <span class="item" title="创建时间：2020-07-12 23:32:00">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <time itemprop="dateCreated datePublished" datetime="2020-07-12T23:32:00+08:00">2020-07-12</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span>901</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span>1 分钟</span>
+  </span>
+</div>
+
+    <h3><a href="/2020/07/12/maven%E6%89%93%E5%8C%85jar/" itemprop="url" title="maven打包jar">maven打包jar</a></h3>
+    <div class="excerpt">
+        <h6 id="添加插件"><a class="markdownIt-Anchor" href="#添加插件">#</a> 添加插件</h6>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;plugin&gt;</span><br><span class="line">   &lt;artifactId&gt;maven-assembly-plugin&lt;&#x2F;artifactId&gt;</span><br><span class="line">   &lt;configuration&gt;</span><br><span class="line">      &lt;appendAssemblyId&gt;false&lt;&#x2F;appendAssemblyId&gt;</span><br><span class="line">      &lt;descriptorRefs&gt;</span><br><span class="line">         &lt;descriptorRef&gt;jar-with-dependencies&lt;&#x2F;descriptorRef&gt;</span><br><span class="line">      &lt;&#x2F;descriptorRefs&gt;</span><br><span class="line">      &lt;archive&gt;</span><br><span class="line">         &lt;manifest&gt;</span><br><span class="line">            &lt;mainClass&gt;webrtc.WebrtcServer&lt;&#x2F;mainClass&gt;</span><br><span class="line">         &lt;&#x2F;manifest&gt;</span><br><span class="line">      &lt;&#x2F;archive&gt;</span><br><span class="line">   &lt;&#x2F;configuration&gt;</span><br><span class="line">   &lt;executions&gt;</span><br><span class="line">      &lt;execution&gt;</span><br><span class="line">         &lt;id&gt;make-assembly&lt;&#x2F;id&gt;</span><br><span class="line">         &lt;phase&gt;package&lt;&#x2F;phase&gt;</span><br><span class="line">         &lt;goals&gt;</span><br><span class="line">            &lt;goal&gt;assembly&lt;&#x2F;goal&gt;</span><br><span class="line">         &lt;&#x2F;goals&gt;</span><br><span class="line">      &lt;&#x2F;execution&gt;</span><br><span class="line">   &lt;&#x2F;executions&gt;</span><br><span class="line">&lt;&#x2F;plugin&gt;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <div class="meta footer">
+      <span>
+        <a href="/categories/programming/" itemprop="url" title="编程"><i class="ic i-flag"></i>编程</a>
+      </span>
+    </div>
+    <a href="/2020/07/12/maven%E6%89%93%E5%8C%85jar/" itemprop="url" title="maven打包jar" class="btn">more...</a>
+  </div>
+</article>
+
         
 <article class="item">
   <div class="cover">
@@ -546,53 +590,6 @@ ps aux | grep ‘6379’  — 查询端口<br>
   </div>
 </article>
 
-        
-<article class="item">
-  <div class="cover">
-    <a href="/2020/07/12/WordPress%E6%90%AD%E5%BB%BA/" itemprop="url" title="WordPress搭建"><img data-src="http://vps.startanew.cn/wordpress.jpg"></a>
-  </div>
-  <div class="info">
-    
-<div class="meta">
-  <span class="item" title="创建时间：2020-07-12 21:03:00">
-    <span class="icon">
-      <i class="ic i-calendar"></i>
-    </span>
-    <time itemprop="dateCreated datePublished" datetime="2020-07-12T21:03:00+08:00">2020-07-12</time>
-  </span>
-  <span class="item" title="本文字数">
-    <span class="icon">
-      <i class="ic i-pen"></i>
-    </span>
-    <span>3.5k</span>
-    <span class="text">字</span>
-  </span>
-  <span class="item" title="阅读时长">
-    <span class="icon">
-      <i class="ic i-clock"></i>
-    </span>
-    <span>3 分钟</span>
-  </span>
-</div>
-
-    <h3><a href="/2020/07/12/WordPress%E6%90%AD%E5%BB%BA/" itemprop="url" title="WordPress搭建">WordPress搭建</a></h3>
-    <div class="excerpt">
-        <h1 id="基本环境搭建"><a class="markdownIt-Anchor" href="#基本环境搭建">#</a> 基本环境搭建</h1>
-<hr>
-<p>1. 在宝塔面板上安装 Apache ，mysql , php<br>
-2. 设置 mysql 远程连接<br>
- 3. 使用 navicat 远程连接数据库，创建 wordpress 数据库，默认字符集 utf-8</p>
-      
-    </div>
-    <div class="meta footer">
-      <span>
-        <a href="/categories/other/" itemprop="url" title="其他"><i class="ic i-flag"></i>其他</a>
-      </span>
-    </div>
-    <a href="/2020/07/12/WordPress%E6%90%AD%E5%BB%BA/" itemprop="url" title="WordPress搭建" class="btn">more...</a>
-  </div>
-</article>
-
     </div>
 
   </div>
@@ -600,7 +597,7 @@ ps aux | grep ‘6379’  — 查询端口<br>
   
   <nav class="pagination">
     <div class="inner">
-    <a class="extend prev" rel="prev" href="/page/6/"><i class="ic i-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span>
+    <a class="extend prev" rel="prev" href="/page/6/"><i class="ic i-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/8/"><i class="ic i-angle-right" aria-label="下一页"></i></a>
     </div>
   </nav>
 
@@ -628,7 +625,7 @@ ps aux | grep ‘6379’  — 查询端口<br>
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">70</span>
+        <span class="count">71</span>
         <span class="name">文章</span>
       </a>
     </div>
@@ -721,6 +718,7 @@ ps aux | grep ‘6379’  — 查询端口<br>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
+        <a href="/page/8/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -741,50 +739,10 @@ ps aux | grep ‘6379’  — 查询端口<br>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/HumanResourceManagement/" title="分类于 人力资源管理">人力资源管理</a>
-</div>
-
-    <span><a href="/2020/10/08/%E5%91%98%E5%B7%A5%E5%85%B3%E7%B3%BB%E7%AE%A1%E7%90%86%E6%A6%82%E8%AE%BA/" title="第一章 员工关系管理概论">第一章 员工关系管理概论</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/other/" title="分类于 其他">其他</a>
-</div>
-
-    <span><a href="/2020/07/12/WordPress%E6%90%AD%E5%BB%BA/" title="WordPress搭建">WordPress搭建</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="/categories/programming/" title="分类于 编程">编程</a>
 </div>
 
-    <span><a href="/2020/10/15/java-%E6%B1%89%E5%AD%97%E8%BD%AC%E6%8B%BC%E9%9F%B3/" title="java 汉字转拼音">java 汉字转拼音</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/HumanResourceManagement/" title="分类于 人力资源管理">人力资源管理</a>
-</div>
-
-    <span><a href="/2020/10/08/%E5%B7%A5%E4%BD%9C%E5%88%86%E6%9E%90%E7%BB%93%E6%9E%9C%E5%8F%8A%E5%BA%94%E7%94%A8/" title="第六章 工作分析结果及应用">第六章 工作分析结果及应用</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/programming/" title="分类于 编程">编程</a>
-</div>
-
-    <span><a href="/2020/07/13/mycat-%E9%AB%98%E5%8F%AF%E7%94%A8haproxy/" title="mycat 高可用haproxy">mycat 高可用haproxy</a></span>
+    <span><a href="/2020/07/13/kotlin%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%88%E4%BA%8C%EF%BC%89/" title="kotlin基础知识（二）">kotlin基础知识（二）</a></span>
   </li>
 
       
@@ -801,10 +759,10 @@ ps aux | grep ‘6379’  — 查询端口<br>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/programming/" title="分类于 编程">编程</a>
+<a href="/categories/HumanResourceManagement/" title="分类于 人力资源管理">人力资源管理</a>
 </div>
 
-    <span><a href="/2020/07/14/%E8%A7%A3%E5%86%B3SpringBoot%E9%9B%86%E6%88%90WebSocket%E6%89%93%E5%8C%85%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98/" title="解决SpringBoot集成WebSocket打包失败问题">解决SpringBoot集成WebSocket打包失败问题</a></span>
+    <span><a href="/2020/10/08/%E5%8A%B3%E5%8A%A8%E5%85%B3%E7%B3%BB%E7%AE%A1%E7%90%86/" title="第二章 劳动关系管理">第二章 劳动关系管理</a></span>
   </li>
 
       
@@ -814,7 +772,17 @@ ps aux | grep ‘6379’  — 查询端口<br>
 <a href="/categories/programming/" title="分类于 编程">编程</a>
 </div>
 
-    <span><a href="/2020/07/14/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85docker/" title="树莓派安装docker">树莓派安装docker</a></span>
+    <span><a href="/2020/07/13/mysql-%E4%BC%98%E5%8C%96%EF%BC%88%E4%B8%80%EF%BC%89/" title="mysql 优化（一）">mysql 优化（一）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/programming/" title="分类于 编程">编程</a>
+</div>
+
+    <span><a href="/2020/07/14/redis5-0-5%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/" title="redis5.0.5集群搭建">redis5.0.5集群搭建</a></span>
   </li>
 
       
@@ -824,7 +792,7 @@ ps aux | grep ‘6379’  — 查询端口<br>
 <a href="/categories/HumanResourceManagement/" title="分类于 人力资源管理">人力资源管理</a>
 </div>
 
-    <span><a href="/2020/10/08/%E5%B7%A5%E4%BD%9C%E5%88%86%E6%9E%90%E7%9A%84%E4%B8%BB%E8%A6%81%E6%96%B9%E6%B3%95/" title="第三章 工作分析的主要方法">第三章 工作分析的主要方法</a></span>
+    <span><a href="/2020/10/08/%E5%91%98%E5%B7%A5%E7%BA%AA%E5%BE%8B%E7%AE%A1%E7%90%86/" title="第六章 员工纪律管理">第六章 员工纪律管理</a></span>
   </li>
 
       
@@ -834,7 +802,37 @@ ps aux | grep ‘6379’  — 查询端口<br>
 <a href="/categories/HumanResourceManagement/" title="分类于 人力资源管理">人力资源管理</a>
 </div>
 
-    <span><a href="/2020/10/08/%E5%91%98%E5%B7%A5%E6%B2%9F%E9%80%9A%E7%AE%A1%E7%90%86/" title="第三章 员工沟通管理">第三章 员工沟通管理</a></span>
+    <span><a href="/2020/10/08/%E5%B7%A5%E4%BD%9C%E5%88%86%E6%9E%90%E7%9A%84%E6%B5%81%E7%A8%8B/" title="第五章 工作分析的流程">第五章 工作分析的流程</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BD%91%E7%BB%9C%E6%B8%97%E9%80%8F/" title="分类于 网络渗透">网络渗透</a>
+</div>
+
+    <span><a href="/2020/07/14/dos%E5%91%BD%E4%BB%A4/" title="dos命令">dos命令</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/programming/" title="分类于 编程">编程</a>
+</div>
+
+    <span><a href="/2020/07/12/Redis-jedis/" title="Redis jedis">Redis jedis</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/programming/" title="分类于 编程">编程</a>
+</div>
+
+    <span><a href="/2020/07/14/jwt%E7%A7%81%E9%92%A5%E7%94%9F%E6%88%90/" title="jwt私钥生成">jwt私钥生成</a></span>
   </li>
 
   </ul>
@@ -859,13 +857,13 @@ ps aux | grep ‘6379’  — 查询端口<br>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">201k 字</span>
+    <span title="站点总字数">202k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:03</span>
+    <span title="站点阅读时长">3:04</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
