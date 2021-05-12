@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://www.startanew.cn</id>
+    <title>JAVA • Posts by &#34;随笔&#34; category</title>
+    <link href="http://www.startanew.cn" />
+    <updated>2021-05-12T13:49:20.000Z</updated>
+    <category term="java" />
+    <category term="springboot" />
+    <category term="javaweb" />
+    <category term="javascript" />
+    <category term="MYSQL" />
+    <category term="redis" />
+    <category term="其他" />
+    <category term="docker" />
+    <category term="dos命令" />
+    <category term="git" />
+    <category term="android" />
+    <category term="maven" />
+    <category term="mysql" />
+    <category term="spring-sceurity" />
+    <category term="webrtc" />
+    <category term="员工关系管理" />
+    <category term="近代史" />
+    <category term="工作分析" />
+    <category term="树莓派" />
+    <category term="tinc" />
+    <category term="目标" />
+    <entry>
+        <id>http://www.startanew.cn/2021/05/12/%E5%AE%9A%E4%B8%AA%E7%9B%AE%E6%A0%87/</id>
+        <title>随笔05</title>
+        <link rel="alternate" href="http://www.startanew.cn/2021/05/12/%E5%AE%9A%E4%B8%AA%E7%9B%AE%E6%A0%87/"/>
+        <content type="html">&lt;h3 id=&#34;一-定个目标&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#一-定个目标&#34;&gt;#&lt;/a&gt; 一。定个目标&lt;/h3&gt;
+&lt;p&gt;======================  k  ===============================&lt;/p&gt;
+&lt;p&gt;======================  z  ================================&lt;/p&gt;
+&lt;p&gt;======================  t  ================================&lt;/p&gt;
+</content>
+        <category term="目标" />
+        <updated>2021-05-12T13:49:20.000Z</updated>
+    </entry>
+</feed>

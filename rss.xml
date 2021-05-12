@@ -5,8 +5,8 @@
         <link>http://www.startanew.cn</link>
         <description>爱编程，爱生活</description>
         <language>zh-CN</language>
-        <pubDate>Sat, 17 Apr 2021 14:11:09 +0800</pubDate>
-        <lastBuildDate>Sat, 17 Apr 2021 14:11:09 +0800</lastBuildDate>
+        <pubDate>Wed, 12 May 2021 21:49:20 +0800</pubDate>
+        <lastBuildDate>Wed, 12 May 2021 21:49:20 +0800</lastBuildDate>
         <category>java</category>
         <category>springboot</category>
         <category>javaweb</category>
@@ -27,83 +27,17 @@
         <category>工作分析</category>
         <category>树莓派</category>
         <category>tinc</category>
+        <category>目标</category>
         <item>
-            <guid isPermalink="true">http://www.startanew.cn/2021/04/17/tinc%E7%BB%84%E5%BB%BA%E4%BB%A5%E5%A4%AA%E7%BD%91-win10%E5%AE%89%E8%A3%85/</guid>
-            <title>tinc组建以太网-win10安装</title>
-            <link>http://www.startanew.cn/2021/04/17/tinc%E7%BB%84%E5%BB%BA%E4%BB%A5%E5%A4%AA%E7%BD%91-win10%E5%AE%89%E8%A3%85/</link>
-            <category>tinc</category>
-            <pubDate>Sat, 17 Apr 2021 14:11:09 +0800</pubDate>
-            <description><![CDATA[ &lt;h3 id=&#34;win10安装&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#win10安装&#34;&gt;#&lt;/a&gt; win10 安装&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;安装 tinc 下载  安装&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;https:&amp;#x2F;&amp;#x2F;www.tinc-vpn.org&amp;#x2F;download&amp;#x2F;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;blockquote&gt;
-&lt;p&gt;在 Windows PowerShell（管理员）执行命令  安装虚拟网卡设备&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&amp;amp; &amp;#39;C:\Program Files (x86)\tinc\tap-win64\addtap.bat&amp;#39;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;blockquote&gt;
-&lt;p&gt;创建配置文件&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;建立网络配置目录  管理员：Windows PowerShell 窗口中执行以下命令&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;mkdir -p &amp;#39;C:\Program Files (x86)\tinc\home_vpn\hosts&amp;#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;ul&gt;
-&lt;li&gt;建立配置文件 tinc.conf&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;notepad &amp;#39;C:\Program Files (x86)\tinc\home_vpn\tinc.conf&amp;#39;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;ul&gt;
-&lt;li&gt;编辑 tinc.conf 内容如下&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;Name &amp;#x3D; notebook&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;ConnectTo tinc_ali&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Interface &amp;#x3D; 以太网 2    &amp;#x2F;&amp;#x2F;刚刚创建的虚拟网卡&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;blockquote&gt;
-&lt;p&gt;建立启动和关闭脚本 创建启动脚本 tinc-up&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;创建启动脚本 tinc-up.bat&lt;/li&gt;
-&lt;/ul&gt;
- &lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;echo &amp;#39;&amp;#39; &amp;gt; &amp;#39;C:\Program Files (x86)\tinc\home_vpn\tinc-up.bat&amp;#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;notepad &amp;#39;C:\Program Files (x86)\tinc\home_vpn\tinc-up.bat&amp;#39;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;ul&gt;
-&lt;li&gt;编辑 tinc-up 内容如下&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;netsh interface ip set address tinciface static 10.0.0.101 255.255.255.0   &amp;#x2F;&amp;#x2F;tinciface 虚拟网卡&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;ul&gt;
-&lt;li&gt;创建关闭脚本 tinc-down.bat&lt;/li&gt;
-&lt;/ul&gt;
- &lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;echo &amp;#39;&amp;#39; &amp;gt; &amp;#39;C:\Program Files (x86)\tinc\home_vpn\tinc-down.bat&amp;#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;notepad &amp;#39;C:\Program Files (x86)\tinc\home_vpn\tinc-down.bat&amp;#39;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;ul&gt;
-&lt;li&gt;编辑 tinc-down 内空&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;创建本主机描述文件（网络名称为 notebook）&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;echo &amp;#39;&amp;#39; &amp;gt; &amp;#39;C:\Program Files (x86)\tinc\home_vpn\hosts\notebook&amp;#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;notepad &amp;#39;C:\Program Files (x86)\tinc\home_vpn\hosts\notebook&amp;#39;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;编辑 notebook 内容如下&lt;/p&gt;
-&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;Subnet &amp;#x3D; 10.0.0.101&amp;#x2F;32  &amp;#x2F;&amp;#x2F;（10.0.0.101以太网ip地址, 唯一的)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;blockquote&gt;
-&lt;p&gt;生成密钥&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&amp;amp; &amp;#39;C:\Program Files (x86)\tinc\tincd.exe&amp;#39; -n home_vpn -K&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;blockquote&gt;
-&lt;p&gt;与其他主机交换密钥&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;将本主机的 /etc/tinc/home_vpn/hosts/desktop 复制到核心主机的同样位置。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;复制核心主机的 /etc/tinc/home_vpn/hosts/tinc_ali 到本主机的同样位置。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;测试连接服务器   需要管理员运行&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;tincd --net&amp;#x3D;home_vpn -D -d 5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;blockquote&gt;
-&lt;p&gt;设为自启&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;tincd --net&amp;#x3D;home_vpn&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+            <guid isPermalink="true">http://www.startanew.cn/2021/05/12/%E5%AE%9A%E4%B8%AA%E7%9B%AE%E6%A0%87/</guid>
+            <title>随笔05</title>
+            <link>http://www.startanew.cn/2021/05/12/%E5%AE%9A%E4%B8%AA%E7%9B%AE%E6%A0%87/</link>
+            <category>目标</category>
+            <pubDate>Wed, 12 May 2021 21:49:20 +0800</pubDate>
+            <description><![CDATA[ &lt;h3 id=&#34;一-定个目标&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#一-定个目标&#34;&gt;#&lt;/a&gt; 一。定个目标&lt;/h3&gt;
+&lt;p&gt;======================  k  ===============================&lt;/p&gt;
+&lt;p&gt;======================  z  ================================&lt;/p&gt;
+&lt;p&gt;======================  t  ================================&lt;/p&gt;
  ]]></description>
         </item>
         <item>
@@ -188,6 +122,85 @@
 &lt;p&gt;设为自启&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sudo systemctl enable tinc@home_vpn&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://www.startanew.cn/2021/04/17/tinc%E7%BB%84%E5%BB%BA%E4%BB%A5%E5%A4%AA%E7%BD%91-win10%E5%AE%89%E8%A3%85/</guid>
+            <title>tinc组建以太网-win10安装</title>
+            <link>http://www.startanew.cn/2021/04/17/tinc%E7%BB%84%E5%BB%BA%E4%BB%A5%E5%A4%AA%E7%BD%91-win10%E5%AE%89%E8%A3%85/</link>
+            <category>tinc</category>
+            <pubDate>Sat, 17 Apr 2021 14:11:09 +0800</pubDate>
+            <description><![CDATA[ &lt;h3 id=&#34;win10安装&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#win10安装&#34;&gt;#&lt;/a&gt; win10 安装&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;安装 tinc 下载  安装&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;https:&amp;#x2F;&amp;#x2F;www.tinc-vpn.org&amp;#x2F;download&amp;#x2F;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在 Windows PowerShell（管理员）执行命令  安装虚拟网卡设备&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&amp;amp; &amp;#39;C:\Program Files (x86)\tinc\tap-win64\addtap.bat&amp;#39;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;p&gt;创建配置文件&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;建立网络配置目录  管理员：Windows PowerShell 窗口中执行以下命令&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;mkdir -p &amp;#39;C:\Program Files (x86)\tinc\home_vpn\hosts&amp;#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;建立配置文件 tinc.conf&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;notepad &amp;#39;C:\Program Files (x86)\tinc\home_vpn\tinc.conf&amp;#39;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;编辑 tinc.conf 内容如下&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;Name &amp;#x3D; notebook&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;ConnectTo tinc_ali&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Interface &amp;#x3D; 以太网 2    &amp;#x2F;&amp;#x2F;刚刚创建的虚拟网卡&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;p&gt;建立启动和关闭脚本 创建启动脚本 tinc-up&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;创建启动脚本 tinc-up.bat&lt;/li&gt;
+&lt;/ul&gt;
+ &lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;echo &amp;#39;&amp;#39; &amp;gt; &amp;#39;C:\Program Files (x86)\tinc\home_vpn\tinc-up.bat&amp;#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;notepad &amp;#39;C:\Program Files (x86)\tinc\home_vpn\tinc-up.bat&amp;#39;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;编辑 tinc-up 内容如下&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;netsh interface ip set address tinciface static 10.0.0.101 255.255.255.0   &amp;#x2F;&amp;#x2F;tinciface 虚拟网卡&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;创建关闭脚本 tinc-down.bat&lt;/li&gt;
+&lt;/ul&gt;
+ &lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;echo &amp;#39;&amp;#39; &amp;gt; &amp;#39;C:\Program Files (x86)\tinc\home_vpn\tinc-down.bat&amp;#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;notepad &amp;#39;C:\Program Files (x86)\tinc\home_vpn\tinc-down.bat&amp;#39;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;编辑 tinc-down 内空&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;创建本主机描述文件（网络名称为 notebook）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;echo &amp;#39;&amp;#39; &amp;gt; &amp;#39;C:\Program Files (x86)\tinc\home_vpn\hosts\notebook&amp;#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;notepad &amp;#39;C:\Program Files (x86)\tinc\home_vpn\hosts\notebook&amp;#39;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;编辑 notebook 内容如下&lt;/p&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;Subnet &amp;#x3D; 10.0.0.101&amp;#x2F;32  &amp;#x2F;&amp;#x2F;（10.0.0.101以太网ip地址, 唯一的)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;p&gt;生成密钥&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&amp;amp; &amp;#39;C:\Program Files (x86)\tinc\tincd.exe&amp;#39; -n home_vpn -K&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;p&gt;与其他主机交换密钥&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;将本主机的 /etc/tinc/home_vpn/hosts/desktop 复制到核心主机的同样位置。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;复制核心主机的 /etc/tinc/home_vpn/hosts/tinc_ali 到本主机的同样位置。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;测试连接服务器   需要管理员运行&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;tincd --net&amp;#x3D;home_vpn -D -d 5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;p&gt;设为自启&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&#34;highlight plain&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;tincd --net&amp;#x3D;home_vpn&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
  ]]></description>
         </item>
         <item>
