@@ -91,12 +91,12 @@
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zjzbury/images@main/20201231/xxx.72alw6y3rbk0.png"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zjzbury/images@main/20201231/1609073109673.4kbxhgyi1cm0.jpg"></li>
           <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zjzbury/images@main/20201231/xxx.4riasejllms0.png"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zjzbury/images@main/20201231/1609073006815.3id1whcs6fc0.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zjzbury/images@main/20201231/xxx.1s2fpxt5hl1c.jpg"></li>
-          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zjzbury/images@main/20201231/1609073302700.3vjqx5luzze0.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zjzbury/images@main/20201231/xxx.72alw6y3rbk0.png"></li>
           <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zjzbury/images@main/20201231/xxx.ounr34jenyo.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zjzbury/images@main/20201231/xxx.5t01ld6l0xs0.jpg"></li>
+          <li class="item" data-background-image="https://cdn.jsdelivr.net/gh/zjzbury/images@main/20201231/xxx.5b9stk9rn140.jpg"></li>
         </ul>
       </div>
     </header>
@@ -119,6 +119,102 @@
           
   <div class="index wrap">
     <div class="segments posts">
+        
+<article class="item">
+  <div class="cover">
+    <a href="/2020/07/13/mysql-%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/" itemprop="url" title="mysql 主从复制"><img data-src="http://vps.startanew.cn/u%3D2742417061%2C4093062017%26fm%3D26%26gp%3D0.jpg"></a>
+  </div>
+  <div class="info">
+    
+<div class="meta">
+  <span class="item" title="创建时间：2020-07-13 16:19:27">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <time itemprop="dateCreated datePublished" datetime="2020-07-13T16:19:27+08:00">2020-07-13</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span>4k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span>4 分钟</span>
+  </span>
+</div>
+
+    <h3><a href="/2020/07/13/mysql-%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/" itemprop="url" title="mysql 主从复制">mysql 主从复制</a></h3>
+    <div class="excerpt">
+        <h4 id="复制原理"><a class="markdownIt-Anchor" href="#复制原理">#</a> 复制原理</h4>
+<ol>
+<li>Master 将数据改变记录到二进制日志 (binary log) 中，也就是配置文件 log-bin 指定的文件，这些记录叫做二进制日志事件 (binary log events)</li>
+<li>Slave 通过 I/O 线程读取 Master 中的 binary log events 并写入到它的中继日志 (relay log)</li>
+<li>Slave 重做中继日志中的事件，把中继日志中的事件信息一条一条的在本地执行一次，完成数据在本地的存储，从而实现将改变反映到它自己的数据 (数据重放)</li>
+</ol>
+      
+    </div>
+    <div class="meta footer">
+      <span>
+        <a href="/categories/programming/" itemprop="url" title="编程"><i class="ic i-flag"></i>编程</a>
+      </span>
+    </div>
+    <a href="/2020/07/13/mysql-%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/" itemprop="url" title="mysql 主从复制" class="btn">more...</a>
+  </div>
+</article>
+
+        
+<article class="item">
+  <div class="cover">
+    <a href="/2020/07/13/mysql%E4%BC%98%E5%8C%96-%EF%BC%88%E4%B8%89%EF%BC%89/" itemprop="url" title="mysql优化-（三）"><img data-src="http://vps.startanew.cn/u%3D2742417061%2C4093062017%26fm%3D26%26gp%3D0.jpg"></a>
+  </div>
+  <div class="info">
+    
+<div class="meta">
+  <span class="item" title="创建时间：2020-07-13 16:08:59">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <time itemprop="dateCreated datePublished" datetime="2020-07-13T16:08:59+08:00">2020-07-13</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span>1.3k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span>1 分钟</span>
+  </span>
+</div>
+
+    <h3><a href="/2020/07/13/mysql%E4%BC%98%E5%8C%96-%EF%BC%88%E4%B8%89%EF%BC%89/" itemprop="url" title="mysql优化-（三）">mysql优化-（三）</a></h3>
+    <div class="excerpt">
+        <h4 id="sql优化技巧"><a class="markdownIt-Anchor" href="#sql优化技巧">#</a> SQL 优化技巧</h4>
+<ul>
+<li>使用 group by 分组查询是，默认分组后，还会排序，可能会降低速度，<br>
+在 group by 后面增加 order by null 就可以防止排序.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">explain select * from emp  group by deptno order by null;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <div class="meta footer">
+      <span>
+        <a href="/categories/programming/" itemprop="url" title="编程"><i class="ic i-flag"></i>编程</a>
+      </span>
+    </div>
+    <a href="/2020/07/13/mysql%E4%BC%98%E5%8C%96-%EF%BC%88%E4%B8%89%EF%BC%89/" itemprop="url" title="mysql优化-（三）" class="btn">more...</a>
+  </div>
+</article>
+
         
 <article class="item">
   <div class="cover">
@@ -490,97 +586,6 @@ ssm 整合 security 项目地址: https://github.com/zjzbury/security_ssm
   </div>
 </article>
 
-        
-<article class="item">
-  <div class="cover">
-    <a href="/2020/07/13/%E6%A0%BC%E6%9E%97%E5%A8%81%E6%B2%BB%E6%97%B6%E9%97%B4%E8%BD%AC%E6%97%B6%E9%97%B4%E6%88%B3/" itemprop="url" title="格林威治时间转时间戳"><img data-src="http://vps.startanew.cn/java.gif"></a>
-  </div>
-  <div class="info">
-    
-<div class="meta">
-  <span class="item" title="创建时间：2020-07-13 14:53:00">
-    <span class="icon">
-      <i class="ic i-calendar"></i>
-    </span>
-    <time itemprop="dateCreated datePublished" datetime="2020-07-13T14:53:00+08:00">2020-07-13</time>
-  </span>
-  <span class="item" title="本文字数">
-    <span class="icon">
-      <i class="ic i-pen"></i>
-    </span>
-    <span>333</span>
-    <span class="text">字</span>
-  </span>
-  <span class="item" title="阅读时长">
-    <span class="icon">
-      <i class="ic i-clock"></i>
-    </span>
-    <span>1 分钟</span>
-  </span>
-</div>
-
-    <h3><a href="/2020/07/13/%E6%A0%BC%E6%9E%97%E5%A8%81%E6%B2%BB%E6%97%B6%E9%97%B4%E8%BD%AC%E6%97%B6%E9%97%B4%E6%88%B3/" itemprop="url" title="格林威治时间转时间戳">格林威治时间转时间戳</a></h3>
-    <div class="excerpt">
-        # 示例：Jul 24, 2019 3:00:46 PM
-# 示例代码:
-12345678String str=&amp;quot;Jul 24, 2019 3:00:46 PM&amp;quot;;SimpleDateFormat format=new SimpleDateFormat(&amp;quot;MMM dd, yyyy hh:mm:ss aa&amp;quot;, Locale.ENGLISH);try &amp;#123; System.out.println(format.format(new Date()));...
-    </div>
-    <div class="meta footer">
-      <span>
-        <a href="/categories/programming/" itemprop="url" title="编程"><i class="ic i-flag"></i>编程</a>
-      </span>
-    </div>
-    <a href="/2020/07/13/%E6%A0%BC%E6%9E%97%E5%A8%81%E6%B2%BB%E6%97%B6%E9%97%B4%E8%BD%AC%E6%97%B6%E9%97%B4%E6%88%B3/" itemprop="url" title="格林威治时间转时间戳" class="btn">more...</a>
-  </div>
-</article>
-
-        
-<article class="item">
-  <div class="cover">
-    <a href="/2020/07/13/ssm-%E9%9B%86%E6%88%90-websocket/" itemprop="url" title="ssm 集成 websocket"><img data-src="http://vps.startanew.cn/u%3D1640451212%2C3045819206%26fm%3D26%26gp%3D0.jpg"></a>
-  </div>
-  <div class="info">
-    
-<div class="meta">
-  <span class="item" title="创建时间：2020-07-13 14:50:00">
-    <span class="icon">
-      <i class="ic i-calendar"></i>
-    </span>
-    <time itemprop="dateCreated datePublished" datetime="2020-07-13T14:50:00+08:00">2020-07-13</time>
-  </span>
-  <span class="item" title="本文字数">
-    <span class="icon">
-      <i class="ic i-pen"></i>
-    </span>
-    <span>4k</span>
-    <span class="text">字</span>
-  </span>
-  <span class="item" title="阅读时长">
-    <span class="icon">
-      <i class="ic i-clock"></i>
-    </span>
-    <span>4 分钟</span>
-  </span>
-</div>
-
-    <h3><a href="/2020/07/13/ssm-%E9%9B%86%E6%88%90-websocket/" itemprop="url" title="ssm 集成 websocket">ssm 集成 websocket</a></h3>
-    <div class="excerpt">
-        <h3 id="添加架包"><a class="markdownIt-Anchor" href="#添加架包">#</a> 添加架包</h3>
-<blockquote>
-<p>在 pom 文件中添加一下坐标</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"> &lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework&lt;&#x2F;groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-websocket&lt;&#x2F;artifactId&gt;</span><br><span class="line">    &lt;version&gt;$&#123;spring.version&#125;&lt;&#x2F;version&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework&lt;&#x2F;groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-messaging&lt;&#x2F;artifactId&gt;</span><br><span class="line">    &lt;version&gt;$&#123;spring.version&#125;&lt;&#x2F;version&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.fasterxml.jackson.core&lt;&#x2F;groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;jackson-core&lt;&#x2F;artifactId&gt;</span><br><span class="line">    &lt;version&gt;2.9.5&lt;&#x2F;version&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.fasterxml.jackson.core&lt;&#x2F;groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;jackson-databind&lt;&#x2F;artifactId&gt;</span><br><span class="line">    &lt;version&gt;2.9.5&lt;&#x2F;version&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.fasterxml.jackson.core&lt;&#x2F;groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;jackson-annotations&lt;&#x2F;artifactId&gt;</span><br><span class="line">    &lt;version&gt;2.9.5&lt;&#x2F;version&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.fasterxml.jackson.module&lt;&#x2F;groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;jackson-module-jaxb-annotations&lt;&#x2F;artifactId&gt;</span><br><span class="line">    &lt;version&gt;2.9.5&lt;&#x2F;version&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <div class="meta footer">
-      <span>
-        <a href="/categories/programming/" itemprop="url" title="编程"><i class="ic i-flag"></i>编程</a>
-      </span>
-    </div>
-    <a href="/2020/07/13/ssm-%E9%9B%86%E6%88%90-websocket/" itemprop="url" title="ssm 集成 websocket" class="btn">more...</a>
-  </div>
-</article>
-
     </div>
 
   </div>
@@ -616,19 +621,19 @@ ssm 整合 security 项目地址: https://github.com/zjzbury/security_ssm
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">76</span>
+        <span class="count">78</span>
         <span class="name">文章</span>
       </a>
     </div>
     <div class="item categories">
       <a href="/categories/">
-        <span class="count">7</span>
+        <span class="count">6</span>
         <span class="name">分类</span>
       </a>
     </div>
     <div class="item tags">
       <a href="/tags/">
-        <span class="count">21</span>
+        <span class="count">20</span>
         <span class="name">标签</span>
       </a>
     </div>
@@ -676,7 +681,7 @@ ssm 整合 security 项目地址: https://github.com/zjzbury/security_ssm
 
         
   <li class="item">
-    <a href="/tool/" rel="section"><i class="ic i-magic"></i>工具</a>
+    <a href="/tool/" rel="section"><i class="ic i-magic"></i>收藏</a>
   </li>
 
         
@@ -730,80 +735,50 @@ ssm 整合 security 项目地址: https://github.com/zjzbury/security_ssm
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/programming/" title="分类于 编程">编程</a>
-</div>
-
-    <span><a href="/2020/07/13/mysql-%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6/" title="mysql 主从复制">mysql 主从复制</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" title="分类于 内网穿透">内网穿透</a>
-</div>
-
-    <span><a href="/2021/04/17/tinc%E7%BB%84%E5%BB%BA%E4%BB%A5%E5%A4%AA%E7%BD%91-%E5%85%B6%E4%BB%96%E4%B8%BB%E6%9C%BA%E5%AE%89%E8%A3%85/" title="tinc组建以太网-其他主机安装.md">tinc组建以太网-其他主机安装.md</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/programming/" title="分类于 编程">编程</a>
-</div>
-
-    <span><a href="/2020/07/14/redis5-0-5%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/" title="redis5.0.5集群搭建">redis5.0.5集群搭建</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/programming/" title="分类于 编程">编程</a>
-</div>
-
-    <span><a href="/2020/07/13/%E5%AE%89%E5%8D%93%E6%9C%8D%E5%8A%A1%E9%87%8C%E7%9B%91%E5%90%AC%E6%8C%89%E9%92%AE/" title="安卓服务里监听按钮">安卓服务里监听按钮</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/programming/" title="分类于 编程">编程</a>
-</div>
-
-    <span><a href="/2020/12/30/JavaScript%E5%A4%8D%E5%88%B6%E6%96%87%E6%9C%AC/" title="JavaScript复制文本">JavaScript复制文本</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/work/" title="分类于 工作">工作</a>
-</div>
-
-    <span><a href="/2020/07/14/git%E8%A1%A5%E5%85%85/" title="git补充">git补充</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="/categories/HumanResourceManagement/" title="分类于 人力资源管理">人力资源管理</a>
 </div>
 
-    <span><a href="/2020/10/08/%E5%91%98%E5%B7%A5%E5%BC%82%E5%8A%A8%E7%AE%A1%E7%90%86/" title="第七章 员工异动管理">第七章 员工异动管理</a></span>
+    <span><a href="/2020/10/08/%E5%91%98%E5%B7%A5%E5%85%B3%E7%B3%BB%E7%AE%A1%E7%90%86%E6%A6%82%E8%AE%BA/" title="第一章 员工关系管理概论">第一章 员工关系管理概论</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/HumanResourceManagement/" title="分类于 人力资源管理">人力资源管理</a>
+<a href="/categories/programming/" title="分类于 编程">编程</a>
 </div>
 
-    <span><a href="/2020/10/08/%E5%B2%97%E4%BD%8D%E8%AF%84%E4%BB%B7/" title="第七章 岗位评价">第七章 岗位评价</a></span>
+    <span><a href="/2020/10/24/Log4j2%E5%85%A5%E9%97%A8/" title="Log4j2入门">Log4j2入门</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/programming/" title="分类于 编程">编程</a>
+</div>
+
+    <span><a href="/2020/07/13/ssm%E6%95%B4%E5%90%88sceurity-%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95%E4%B9%8B%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E7%AF%87/" title="ssm整合sceurity-基础用法之基础环境搭建篇">ssm整合sceurity-基础用法之基础环境搭建篇</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/programming/" title="分类于 编程">编程</a>
+</div>
+
+    <span><a href="/2020/07/13/ssm%E6%95%B4%E5%90%88sceurity-%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95%E4%B9%8Bsceurity%E7%BB%93%E5%90%88%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8A%A8%E6%80%81%E9%89%B4%E6%9D%83/" title="ssm整合sceurity-基础用法之sceurity结合数据库动态鉴权">ssm整合sceurity-基础用法之sceurity结合数据库动态鉴权</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/programming/" title="分类于 编程">编程</a>
+</div>
+
+    <span><a href="/2020/10/16/springboot-%E9%9B%86%E6%88%90redis%E7%BC%93%E5%AD%98/" title="springboot 集成redis缓存">springboot 集成redis缓存</a></span>
   </li>
 
       
@@ -823,7 +798,37 @@ ssm 整合 security 项目地址: https://github.com/zjzbury/security_ssm
 <a href="/categories/programming/" title="分类于 编程">编程</a>
 </div>
 
-    <span><a href="/2020/07/13/docker-%E5%88%9B%E5%BB%BA%E9%95%9C%E5%83%8F%E4%B8%8E%E6%8F%90%E4%BA%A4/" title="docker 创建镜像与提交">docker 创建镜像与提交</a></span>
+    <span><a href="/2020/10/15/java-%E6%B1%89%E5%AD%97%E8%BD%AC%E6%8B%BC%E9%9F%B3/" title="java 汉字转拼音">java 汉字转拼音</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/programming/" title="分类于 编程">编程</a>
+</div>
+
+    <span><a href="/2020/07/13/SpringBoot-%E9%9B%86%E6%88%90Websocket%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%EF%BC%88%E4%B8%80%EF%BC%89/" title="SpringBoot 集成Websocket问题解决（一）">SpringBoot 集成Websocket问题解决（一）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/programming/" title="分类于 编程">编程</a>
+</div>
+
+    <span><a href="/2020/07/13/mysql%E4%BC%98%E5%8C%96-%EF%BC%88%E4%BA%8C%EF%BC%89/" title="mysql优化-（二）">mysql优化-（二）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/programming/" title="分类于 编程">编程</a>
+</div>
+
+    <span><a href="/2020/07/13/ssm-%E9%9B%86%E6%88%90-websocket/" title="ssm 集成 websocket">ssm 集成 websocket</a></span>
   </li>
 
   </ul>
@@ -848,13 +853,13 @@ ssm 整合 security 项目地址: https://github.com/zjzbury/security_ssm
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">207k 字</span>
+    <span title="站点总字数">219k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:09</span>
+    <span title="站点阅读时长">3:19</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>

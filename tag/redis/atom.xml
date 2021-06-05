@@ -24,7 +24,6 @@
     <category term="工作分析" />
     <category term="树莓派" />
     <category term="tinc" />
-    <category term="目标" />
     <entry>
         <id>http://www.startanew.cn/2020/07/14/redis5-0-5%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/</id>
         <title>redis5.0.5集群搭建</title>
